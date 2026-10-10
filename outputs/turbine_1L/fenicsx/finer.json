@@ -1,0 +1,80 @@
+{
+  "solver": "FEniCSx P2/P1 IPCS, CN/AB2 semi-implicit advection; no upwind/artificial viscosity",
+  "dolfinx_version": "0.11.0",
+  "grid_subdivisions": [
+    27,
+    18,
+    18
+  ],
+  "dt_s": 0.001,
+  "velocity_dofs": 225885,
+  "pressure_dofs": 10108,
+  "nu_reference": 9e-07,
+  "nu_fit": 9e-07,
+  "calibrated": false,
+  "nu_bounds": [
+    4.5e-07,
+    1.8e-06
+  ],
+  "fit_at_bound": false,
+  "optimizer_success": null,
+  "optimizer_message": null,
+  "fit_reference": {
+    "rmse_m_per_s": 0.04047089808782073,
+    "component_rmse_m_per_s": [
+      0.04094990968122027,
+      0.04247869791037014,
+      0.03784634588759844
+    ],
+    "relative_l2": 0.3001964586788714,
+    "observation_vectors": 4851
+  },
+  "fit_calibrated": {
+    "rmse_m_per_s": 0.04047089808782073,
+    "component_rmse_m_per_s": [
+      0.04094990968122027,
+      0.04247869791037014,
+      0.03784634588759844
+    ],
+    "relative_l2": 0.3001964586788714,
+    "observation_vectors": 4851
+  },
+  "validation_reference": {
+    "rmse_m_per_s": 0.03778793557114245,
+    "component_rmse_m_per_s": [
+      0.03749753436823406,
+      0.03883156797826587,
+      0.03701119383158098
+    ],
+    "relative_l2": 0.2785461635195878,
+    "observation_vectors": 3773
+  },
+  "validation_calibrated": {
+    "rmse_m_per_s": 0.03778793557114245,
+    "component_rmse_m_per_s": [
+      0.03749753436823406,
+      0.03883156797826587,
+      0.03701119383158098
+    ],
+    "relative_l2": 0.2785461635195878,
+    "observation_vectors": 3773
+  },
+  "component_relative_validation": [
+    0.16867506585422276,
+    0.7077969545058026,
+    0.7017097624668936
+  ],
+  "max_divergence_rms_s_inv": 71.47897849876857,
+  "max_boundary_flux_m3_per_s": 5.9771210795244725e-18,
+  "max_boundary_normal_shift_m_per_s": 0.0008289399605256192,
+  "evaluations": [
+    {
+      "nu": 9e-07,
+      "J": 148.97665903051274,
+      "seconds": 120.42332029200043
+    }
+  ],
+  "profile": [],
+  "comparison_policy": "Same 18 real frames, 539 physical observation points, windows, interpolation and flux correction rule as MAC; separate projected IC for each discretization, p0=0",
+  "weak_incompressibility": "P1 pressure / IPCS does not enforce pointwise zero divergence like the MAC projection"
+}

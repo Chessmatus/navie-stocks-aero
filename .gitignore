@@ -1,0 +1,37 @@
+.venv/
+.fenicsx/
+.tools/
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+tmp/
+.DS_Store
+
+# Full experimental frames are reconstructed with fetch_experiment.py.
+data/turbine_1L/B[0-9][0-9][0-9][0-9][0-9].txt
+data/turbine_1L/zip_*.bin
+data/turbine_1L/*.range
+data/turbine_1L/*.part
+
+# Temporary solver checkpoints; final reports and solutions are committed.
+outputs/turbine_1L/fenicsx/*_progress.json
+outputs/turbine_1L/fenicsx/fit_latest_*.npz
+
+# TeX and notebook build/cache files.
+*.aux
+*.log
+*.nav
+*.snm
+*.toc
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+.ipython/
+
+# Local credentials and editor configuration.
+.env
+.env.*
+!.env.example
+.agents/
+.codex/

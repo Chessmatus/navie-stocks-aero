@@ -1,0 +1,148 @@
+{
+  "solver": "FEniCSx P2/P1 IPCS, CN/AB2 semi-implicit advection; no upwind/artificial viscosity",
+  "dolfinx_version": "0.11.0",
+  "grid_subdivisions": [
+    18,
+    12,
+    12
+  ],
+  "dt_s": 0.001,
+  "velocity_dofs": 69375,
+  "pressure_dofs": 3211,
+  "nu_reference": 9e-07,
+  "nu_fit": 1.7999999999959183e-06,
+  "calibrated": true,
+  "nu_bounds": [
+    4.5e-07,
+    1.8e-06
+  ],
+  "fit_at_bound": true,
+  "optimizer_success": true,
+  "optimizer_message": "`gtol` termination condition is satisfied.",
+  "fit_reference": {
+    "rmse_m_per_s": 0.04147150404937156,
+    "component_rmse_m_per_s": [
+      0.04258392673119752,
+      0.0434842115562883,
+      0.03814956715129401
+    ],
+    "relative_l2": 0.30761854171589,
+    "observation_vectors": 4851
+  },
+  "fit_calibrated": {
+    "rmse_m_per_s": 0.040367930337650106,
+    "component_rmse_m_per_s": [
+      0.04153744888917252,
+      0.042300812698003926,
+      0.03706738437095192
+    ],
+    "relative_l2": 0.2994326863036628,
+    "observation_vectors": 4851
+  },
+  "validation_reference": {
+    "rmse_m_per_s": 0.03894128695916354,
+    "component_rmse_m_per_s": [
+      0.03904403648706121,
+      0.040033841111463936,
+      0.03771108949323594
+    ],
+    "relative_l2": 0.287047861203454,
+    "observation_vectors": 3773
+  },
+  "validation_calibrated": {
+    "rmse_m_per_s": 0.0382027605639187,
+    "component_rmse_m_per_s": [
+      0.03836085286143318,
+      0.03921836009721161,
+      0.03699618822448093
+    ],
+    "relative_l2": 0.28160396248434816,
+    "observation_vectors": 3773
+  },
+  "component_relative_validation": [
+    0.17255852929113857,
+    0.7148471535595691,
+    0.7014252652674312
+  ],
+  "max_divergence_rms_s_inv": 55.96258246239084,
+  "max_boundary_flux_m3_per_s": 5.151879378327269e-18,
+  "max_boundary_normal_shift_m_per_s": 0.0007522463440832098,
+  "evaluations": [
+    {
+      "nu": 9e-07,
+      "J": 156.43434898154564,
+      "seconds": 33.88710345900108
+    },
+    {
+      "nu": 9.000000134110451e-07,
+      "J": 156.43434883651474,
+      "seconds": 34.297974666998925
+    },
+    {
+      "nu": 1.6459897343241062e-06,
+      "J": 149.43807555910553,
+      "seconds": 34.28439687500213
+    },
+    {
+      "nu": 1.6459897588512648e-06,
+      "J": 149.43807535970723,
+      "seconds": 35.14931683299801
+    },
+    {
+      "nu": 1.795258405179689e-06,
+      "J": 148.25609795975575,
+      "seconds": 35.274488083003234
+    },
+    {
+      "nu": 1.795258431931124e-06,
+      "J": 148.25609775343273,
+      "seconds": 35.33332912499827
+    },
+    {
+      "nu": 1.7999954895681077e-06,
+      "J": 148.2195928278734,
+      "seconds": 34.232506000000285
+    },
+    {
+      "nu": 1.7999955163901308e-06,
+      "J": 148.21959262134592,
+      "seconds": 34.871087207997334
+    },
+    {
+      "nu": 1.7999999999959183e-06,
+      "J": 148.21955809808998,
+      "seconds": 34.84810424999887
+    },
+    {
+      "nu": 1.7999999731738282e-06,
+      "J": 148.2195583046165,
+      "seconds": 34.52051374999792
+    },
+    {
+      "nu": 4.5e-07,
+      "J": 161.79175615322666,
+      "seconds": 34.985847542000556
+    },
+    {
+      "nu": 1.8e-06,
+      "J": 148.21955809805826,
+      "seconds": 34.975258333000966
+    }
+  ],
+  "profile": [
+    {
+      "nu": 4.5e-07,
+      "J": 161.79175615322666
+    },
+    {
+      "nu": 9e-07,
+      "J": 156.43434898154564
+    },
+    {
+      "nu": 1.8e-06,
+      "J": 148.21955809805826
+    }
+  ],
+  "comparison_policy": "Same 18 real frames, 539 physical observation points, windows, interpolation and flux correction rule as MAC; separate projected IC for each discretization, p0=0",
+  "weak_incompressibility": "P1 pressure / IPCS does not enforce pointwise zero divergence like the MAC projection"
+}

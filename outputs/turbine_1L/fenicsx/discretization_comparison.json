@@ -1,0 +1,18 @@
+{
+  "nu_for_checks": 9e-07,
+  "control_error_at_reference_nu": {
+    "coarser": 0.30101259179732454,
+    "primary": 0.287047861203454,
+    "finer": 0.2785461635195878,
+    "half_dt": 0.2869813879987337
+  },
+  "halved_dt_field_difference_relative_l2": 0.004853240902697388,
+  "primary_vs_finer_field_difference_relative_l2": 0.14415866342717884,
+  "maximum_strong_divergence_of_reported_run_s_inv": {
+    "coarser": 48.01132125536216,
+    "primary": 55.96258246239084,
+    "finer": 71.47897849876857,
+    "half_dt": 65.60685559402121
+  },
+  "interpretation": "Same physical observation points; differing initial projections. These checks do not establish convergence or pointwise incompressibility."
+}

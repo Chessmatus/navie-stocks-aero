@@ -1,0 +1,118 @@
+{
+  "schema": "operator-dag-v1",
+  "edge_direction": "input_to_operation",
+  "matrix_convention": "Z[target,source]",
+  "order": [
+    "n01",
+    "n02",
+    "n03",
+    "n04",
+    "n05",
+    "n06",
+    "n07",
+    "n08",
+    "n09",
+    "n10",
+    "n11"
+  ],
+  "graph": {
+    "output": "n11",
+    "representation": "expression_tree"
+  },
+  "nodes": {
+    "n01": {
+      "label": "u",
+      "kind": "field",
+      "shape": "vector3",
+      "op": null,
+      "args": []
+    },
+    "n02": {
+      "label": "grad",
+      "kind": "operation",
+      "shape": "matrix3x3",
+      "op": "gradient",
+      "args": [
+        "n01"
+      ]
+    },
+    "n03": {
+      "label": "u",
+      "kind": "field",
+      "shape": "vector3",
+      "op": null,
+      "args": []
+    },
+    "n04": {
+      "label": "curl",
+      "kind": "operation",
+      "shape": "vector3",
+      "op": "curl",
+      "args": [
+        "n03"
+      ]
+    },
+    "n05": {
+      "label": "mv",
+      "kind": "operation",
+      "shape": "vector3",
+      "op": "matvec",
+      "args": [
+        "n02",
+        "n04"
+      ]
+    },
+    "n06": {
+      "label": "u",
+      "kind": "field",
+      "shape": "vector3",
+      "op": null,
+      "args": []
+    },
+    "n07": {
+      "label": "curl",
+      "kind": "operation",
+      "shape": "vector3",
+      "op": "curl",
+      "args": [
+        "n06"
+      ]
+    },
+    "n08": {
+      "label": "grad",
+      "kind": "operation",
+      "shape": "matrix3x3",
+      "op": "gradient",
+      "args": [
+        "n07"
+      ]
+    },
+    "n09": {
+      "label": "u",
+      "kind": "field",
+      "shape": "vector3",
+      "op": null,
+      "args": []
+    },
+    "n10": {
+      "label": "mv",
+      "kind": "operation",
+      "shape": "vector3",
+      "op": "matvec",
+      "args": [
+        "n08",
+        "n09"
+      ]
+    },
+    "n11": {
+      "label": "\u2212",
+      "kind": "operation",
+      "shape": "vector3",
+      "op": "subtract",
+      "args": [
+        "n05",
+        "n10"
+      ]
+    }
+  }
+}

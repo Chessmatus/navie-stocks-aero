@@ -1,0 +1,131 @@
+{
+  "schema": "operator-dag-v1",
+  "edge_direction": "input_to_operation",
+  "matrix_convention": "Z[target,source]",
+  "order": [
+    "kappa",
+    "u",
+    "div_u",
+    "grad_u",
+    "omega",
+    "grad_omega",
+    "lap_omega",
+    "diffusion",
+    "stretch",
+    "transport",
+    "inviscid",
+    "rhs"
+  ],
+  "graph": {},
+  "nodes": {
+    "kappa": {
+      "label": "kappa=1/Re",
+      "kind": "parameter",
+      "shape": "scalar",
+      "op": null,
+      "args": []
+    },
+    "u": {
+      "label": "u(x,y,z,t)",
+      "kind": "field",
+      "shape": "vector3",
+      "op": null,
+      "args": []
+    },
+    "div_u": {
+      "label": "div(u)=0",
+      "kind": "operation",
+      "shape": "scalar",
+      "op": "divergence",
+      "args": [
+        "u"
+      ]
+    },
+    "grad_u": {
+      "label": "grad(u)",
+      "kind": "operation",
+      "shape": "matrix3x3",
+      "op": "gradient",
+      "args": [
+        "u"
+      ]
+    },
+    "omega": {
+      "label": "curl(u)",
+      "kind": "operation",
+      "shape": "vector3",
+      "op": "curl",
+      "args": [
+        "u"
+      ]
+    },
+    "grad_omega": {
+      "label": "grad(omega)",
+      "kind": "operation",
+      "shape": "matrix3x3",
+      "op": "gradient",
+      "args": [
+        "omega"
+      ]
+    },
+    "lap_omega": {
+      "label": "laplacian(omega)",
+      "kind": "operation",
+      "shape": "vector3",
+      "op": "laplacian",
+      "args": [
+        "omega"
+      ]
+    },
+    "diffusion": {
+      "label": "kappa * lap(omega)",
+      "kind": "operation",
+      "shape": "vector3",
+      "op": "scale",
+      "args": [
+        "kappa",
+        "lap_omega"
+      ]
+    },
+    "stretch": {
+      "label": "(omega.grad)u",
+      "kind": "operation",
+      "shape": "vector3",
+      "op": "matvec",
+      "args": [
+        "grad_u",
+        "omega"
+      ]
+    },
+    "transport": {
+      "label": "(u.grad)omega",
+      "kind": "operation",
+      "shape": "vector3",
+      "op": "matvec",
+      "args": [
+        "grad_omega",
+        "u"
+      ]
+    },
+    "inviscid": {
+      "label": "stretch - transport",
+      "kind": "operation",
+      "shape": "vector3",
+      "op": "subtract",
+      "args": [
+        "stretch",
+        "transport"
+      ]
+    },
+    "rhs": {
+      "label": "d(omega)/dt",
+      "kind": "operation",
+      "shape": "vector3",
+      "op": "add",
+      "args": [
+        "inviscid",
+        "diffusion"
+      ]
+    }
+  }
+}

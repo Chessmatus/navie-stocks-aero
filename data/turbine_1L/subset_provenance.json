@@ -1,0 +1,209 @@
+{
+  "dataset_doi": "10.18710/SX0ZQT",
+  "case": "1L",
+  "archive": "1WT_rand_100_2D.zip",
+  "source_url": "https://dataverse.no/api/access/datafile/:persistentId?persistentId=doi:10.18710/SX0ZQT/FWZUIM",
+  "extraction": "HTTP byte ranges + raw DEFLATE; every entry checked against ZIP CRC32",
+  "files": [
+    {
+      "file": "data/turbine_1L/B02732.txt",
+      "archive_entry": "1WT_rand_100_2D/instantaneous/B02732.txt",
+      "compressed_bytes": 12087996,
+      "bytes": 43727354,
+      "crc32": 3557333412,
+      "sha256": "a29e152e9bcf893e050ac73a7896ffbf149e25b53b154af76b0c6da2ddb4fd0a",
+      "byte_offset": 26011,
+      "cached": true
+    },
+    {
+      "file": "data/turbine_1L/B02737.txt",
+      "archive_entry": "1WT_rand_100_2D/instantaneous/B02737.txt",
+      "compressed_bytes": 12088316,
+      "bytes": 43724073,
+      "crc32": 3989706055,
+      "sha256": "217a1527c19a1974bb6e08e4bcf0100e3a27ece69a804f394316cf1ae6a87fb0",
+      "byte_offset": 60490902,
+      "cached": false
+    },
+    {
+      "file": "data/turbine_1L/B02742.txt",
+      "archive_entry": "1WT_rand_100_2D/instantaneous/B02742.txt",
+      "compressed_bytes": 12100302,
+      "bytes": 43732631,
+      "crc32": 2722787487,
+      "sha256": "cd80cbc5374f1583131951e11de5e2acf94250f4a375a551c62deef2b845f28b",
+      "byte_offset": 33025699752,
+      "cached": false
+    },
+    {
+      "file": "data/turbine_1L/B02747.txt",
+      "archive_entry": "1WT_rand_100_2D/instantaneous/B02747.txt",
+      "compressed_bytes": 12098987,
+      "bytes": 43726167,
+      "crc32": 2353992551,
+      "sha256": "5f2a1ec05427411e71d71fee4141149e18dcf53e30a11feed78af69a0bc30601",
+      "byte_offset": 33086198311,
+      "cached": false
+    },
+    {
+      "file": "data/turbine_1L/B02752.txt",
+      "archive_entry": "1WT_rand_100_2D/instantaneous/B02752.txt",
+      "compressed_bytes": 12097824,
+      "bytes": 43708589,
+      "crc32": 814592411,
+      "sha256": "cddb39537bbafe1ee4aa0422bf44bb9f7e8b0255235d1f648416cabc6ccd45ba",
+      "byte_offset": 33146704035,
+      "cached": false
+    },
+    {
+      "file": "data/turbine_1L/B02757.txt",
+      "archive_entry": "1WT_rand_100_2D/instantaneous/B02757.txt",
+      "compressed_bytes": 12094514,
+      "bytes": 43741689,
+      "crc32": 410600781,
+      "sha256": "989a040509c8a2d89b5a5cb33de8d8a959ca7831d844e083b7304b3b73422b38",
+      "byte_offset": 33207179491,
+      "cached": false
+    },
+    {
+      "file": "data/turbine_1L/B02762.txt",
+      "archive_entry": "1WT_rand_100_2D/instantaneous/B02762.txt",
+      "compressed_bytes": 12096899,
+      "bytes": 43749086,
+      "crc32": 1521594922,
+      "sha256": "fa004d11001c90eb325cb7432ac2a19eb5078a4690139613b3510e1972cd25a9",
+      "byte_offset": 33267662239,
+      "cached": false
+    },
+    {
+      "file": "data/turbine_1L/B02767.txt",
+      "archive_entry": "1WT_rand_100_2D/instantaneous/B02767.txt",
+      "compressed_bytes": 12093094,
+      "bytes": 43748300,
+      "crc32": 941040546,
+      "sha256": "9378fdde4f080b5d37cd2635e35da6a27d419aa301dfdb7545f94dd1accd62ae",
+      "byte_offset": 33328131380,
+      "cached": false
+    },
+    {
+      "file": "data/turbine_1L/B02772.txt",
+      "archive_entry": "1WT_rand_100_2D/instantaneous/B02772.txt",
+      "compressed_bytes": 12094915,
+      "bytes": 43766975,
+      "crc32": 3908685720,
+      "sha256": "eeb33adc2db778ff99152a834405aa38af144c5c7e89cd554d6f56c213c8e6c4",
+      "byte_offset": 33388617729,
+      "cached": false
+    },
+    {
+      "file": "data/turbine_1L/B02777.txt",
+      "archive_entry": "1WT_rand_100_2D/instantaneous/B02777.txt",
+      "compressed_bytes": 12095099,
+      "bytes": 43766881,
+      "crc32": 2522513070,
+      "sha256": "08139507642edeb133ef4128af20c2e5c85e0b78aa816984cd28a069ec2a196a",
+      "byte_offset": 33449101522,
+      "cached": false
+    },
+    {
+      "file": "data/turbine_1L/B02782.txt",
+      "archive_entry": "1WT_rand_100_2D/instantaneous/B02782.txt",
+      "compressed_bytes": 12089451,
+      "bytes": 43784562,
+      "crc32": 725122269,
+      "sha256": "2ac6d377aedb983efc782538ad77482a7780e23f57c3d9b4ff4b63a2bb090cd0",
+      "byte_offset": 33509557171,
+      "cached": false
+    },
+    {
+      "file": "data/turbine_1L/B02787.txt",
+      "archive_entry": "1WT_rand_100_2D/instantaneous/B02787.txt",
+      "compressed_bytes": 12098798,
+      "bytes": 43766734,
+      "crc32": 4139565779,
+      "sha256": "bd3952dc86615c7c9d2c0a4ba3971d21a23ba827b21328ca8fcaaf94594ca14f",
+      "byte_offset": 33570046765,
+      "cached": false
+    },
+    {
+      "file": "data/turbine_1L/B02792.txt",
+      "archive_entry": "1WT_rand_100_2D/instantaneous/B02792.txt",
+      "compressed_bytes": 12099357,
+      "bytes": 43770403,
+      "crc32": 54978684,
+      "sha256": "b5ae8e362b49f5fa713f85b94e1a4f653eddbb4453bfd583b3a0013ef863b623",
+      "byte_offset": 33630532833,
+      "cached": false
+    },
+    {
+      "file": "data/turbine_1L/B02797.txt",
+      "archive_entry": "1WT_rand_100_2D/instantaneous/B02797.txt",
+      "compressed_bytes": 12083796,
+      "bytes": 43791980,
+      "crc32": 1870932005,
+      "sha256": "f5f56b46c8a44e288e7221cbceb98217d4509993f3c5a2f74490ae3f59b73d0a",
+      "byte_offset": 33690998024,
+      "cached": false
+    },
+    {
+      "file": "data/turbine_1L/B02802.txt",
+      "archive_entry": "1WT_rand_100_2D/instantaneous/B02802.txt",
+      "compressed_bytes": 12091666,
+      "bytes": 43798553,
+      "crc32": 4254639919,
+      "sha256": "7d2d7c8a1507e7f4617099f2bdd83514811ecb3d5975fbe2828c82ab9e2d69e4",
+      "byte_offset": 33751435119,
+      "cached": false
+    },
+    {
+      "file": "data/turbine_1L/B02807.txt",
+      "archive_entry": "1WT_rand_100_2D/instantaneous/B02807.txt",
+      "compressed_bytes": 12091615,
+      "bytes": 43785641,
+      "crc32": 249268622,
+      "sha256": "d97d410d1c3c9db3f77c7f643e1a4f7b9bcc61e7067c7ff1c136de12a844d516",
+      "byte_offset": 33811870990,
+      "cached": false
+    },
+    {
+      "file": "data/turbine_1L/B02812.txt",
+      "archive_entry": "1WT_rand_100_2D/instantaneous/B02812.txt",
+      "compressed_bytes": 12098719,
+      "bytes": 43789290,
+      "crc32": 2229773816,
+      "sha256": "c0fa263bf75995d5192fe12f322ad6c0b7a4636e7388fa73ba9730f3bd4dff13",
+      "byte_offset": 33872354991,
+      "cached": false
+    },
+    {
+      "file": "data/turbine_1L/B02817.txt",
+      "archive_entry": "1WT_rand_100_2D/instantaneous/B02817.txt",
+      "compressed_bytes": 12094861,
+      "bytes": 43786144,
+      "crc32": 2191940272,
+      "sha256": "f28dd5cbe04074518405d8a0f4c9bae78e55ce6de13d8e7bde334a61309629fd",
+      "byte_offset": 33932822286,
+      "cached": false
+    },
+    {
+      "file": "data/turbine_1L/rotor_angle.txt",
+      "archive_entry": "1WT_rand_100_2D/rotor_angle.txt",
+      "compressed_bytes": 25599,
+      "bytes": 104501,
+      "crc32": 2998653396,
+      "sha256": "9f4d62a2fd7622503ca3bf3c8c70d26f48fe1b496ab167f2faafd4c0841edede",
+      "byte_offset": 211,
+      "cached": true
+    },
+    {
+      "file": "data/turbine_1L/scale_quantities.txt",
+      "archive_entry": "1WT_rand_100_2D/scale_quantities.txt",
+      "compressed_bytes": 19,
+      "bytes": 17,
+      "crc32": 120276810,
+      "sha256": "cd5dd62f00bb436d7b090010d5196ad0b3215e13c60e4c361af94d1931766155",
+      "byte_offset": 78,
+      "cached": true
+    }
+  ]
+}

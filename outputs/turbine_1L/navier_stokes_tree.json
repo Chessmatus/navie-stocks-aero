@@ -1,0 +1,167 @@
+{
+  "schema": "operator-dag-v1",
+  "edge_direction": "input_to_operation",
+  "matrix_convention": "Z[target,source]",
+  "order": [
+    "n01",
+    "n02",
+    "n03",
+    "n04",
+    "n05",
+    "n06",
+    "n07",
+    "n08",
+    "n09",
+    "n10",
+    "n11",
+    "n12",
+    "n13",
+    "n14",
+    "n15",
+    "n16"
+  ],
+  "graph": {
+    "output": "n16",
+    "representation": "expression_tree",
+    "equation": "original_incompressible_momentum_rhs"
+  },
+  "nodes": {
+    "n01": {
+      "label": "u",
+      "kind": "field",
+      "shape": "vector3",
+      "op": null,
+      "args": []
+    },
+    "n02": {
+      "label": "grad",
+      "kind": "operation",
+      "shape": "matrix3x3",
+      "op": "gradient",
+      "args": [
+        "n01"
+      ]
+    },
+    "n03": {
+      "label": "u",
+      "kind": "field",
+      "shape": "vector3",
+      "op": null,
+      "args": []
+    },
+    "n04": {
+      "label": "mv",
+      "kind": "operation",
+      "shape": "vector3",
+      "op": "matvec",
+      "args": [
+        "n02",
+        "n03"
+      ]
+    },
+    "n05": {
+      "label": "\u2212",
+      "kind": "operation",
+      "shape": "vector3",
+      "op": "negate",
+      "args": [
+        "n04"
+      ]
+    },
+    "n06": {
+      "label": "p",
+      "kind": "field",
+      "shape": "scalar",
+      "op": null,
+      "args": []
+    },
+    "n07": {
+      "label": "grad",
+      "kind": "operation",
+      "shape": "vector3",
+      "op": "gradient",
+      "args": [
+        "n06"
+      ]
+    },
+    "n08": {
+      "label": "\u03c1",
+      "kind": "parameter",
+      "shape": "scalar",
+      "op": null,
+      "args": []
+    },
+    "n09": {
+      "label": "\u00f7s",
+      "kind": "operation",
+      "shape": "vector3",
+      "op": "divide_scalar",
+      "args": [
+        "n07",
+        "n08"
+      ]
+    },
+    "n10": {
+      "label": "\u2212",
+      "kind": "operation",
+      "shape": "vector3",
+      "op": "negate",
+      "args": [
+        "n09"
+      ]
+    },
+    "n11": {
+      "label": "+",
+      "kind": "operation",
+      "shape": "vector3",
+      "op": "add",
+      "args": [
+        "n05",
+        "n10"
+      ]
+    },
+    "n12": {
+      "label": "\u03bd",
+      "kind": "parameter",
+      "shape": "scalar",
+      "op": null,
+      "args": []
+    },
+    "n13": {
+      "label": "u",
+      "kind": "field",
+      "shape": "vector3",
+      "op": null,
+      "args": []
+    },
+    "n14": {
+      "label": "\u0394",
+      "kind": "operation",
+      "shape": "vector3",
+      "op": "laplacian",
+      "args": [
+        "n13"
+      ]
+    },
+    "n15": {
+      "label": "\u00d7s",
+      "kind": "operation",
+      "shape": "vector3",
+      "op": "scale",
+      "args": [
+        "n12",
+        "n14"
+      ]
+    },
+    "n16": {
+      "label": "+",
+      "kind": "operation",
+      "shape": "vector3",
+      "op": "add",
+      "args": [
+        "n11",
+        "n15"
+      ]
+    }
+  }
+}

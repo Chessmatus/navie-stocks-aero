@@ -1,0 +1,506 @@
+\documentclass{beamer}
+% Оформление из предоставленного шаблона; содержание полностью заменено.
+\beamertemplatenavigationsymbolsempty
+\usecolortheme{beaver}
+\setbeamertemplate{blocks}[rounded=true,shadow=true]
+\setbeamertemplate{footline}[page number]
+\setbeamertemplate{itemize item}{\textendash}
+\setbeamertemplate{itemize subitem}{\textendash}
+\setbeamertemplate{itemize subsubitem}{\textendash}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T2A]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else
+  \usepackage{fontspec}
+  \setmainfont{cmunrm.otf}[BoldFont=cmunbx.otf,ItalicFont=cmunti.otf,BoldItalicFont=cmunbi.otf]
+  \setsansfont{cmunss.otf}[BoldFont=cmunsx.otf,ItalicFont=cmunsi.otf,BoldItalicFont=cmunso.otf]
+\fi
+\usepackage[english,russian]{babel}
+\usepackage{amssymb,amsfonts,amsmath}
+\usepackage{booktabs,array}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+\newcommand{\U}{\mathbf{u}}
+\newcommand{\Grad}{\operatorname{grad}}
+\newcommand{\Div}{\operatorname{div}}
+\newcommand{\src}[1]{\par\vspace{0.5em}{\scriptsize\color{gray}#1\par}}
+\definecolor{fieldblue}{HTML}{D8EAF9}
+\definecolor{paramorange}{HTML}{FFE0B3}
+\definecolor{opgreen}{HTML}{D9EDD9}
+\tikzset{dag/.style={draw=black!60,rounded corners=2pt,fill=opgreen,
+  minimum height=0.65cm,minimum width=1.35cm,inner sep=3pt,
+  align=center,font=\small},
+  field/.style={dag,fill=fieldblue},parameter/.style={dag,fill=paramorange},
+  edge/.style={-{Stealth[length=2mm]},draw=black!75,line width=0.55pt}}
+
+\title{Уравнения Навье--Стокса\protect\\в аэродинамике}
+\subtitle{Лабораторная работа №\,1: вычислительный эксперимент}
+\author{}
+\institute{Foundation models for spatial-time series}
+\date{10 октября 2026}
+
+
+% Общий список рёбер: вход/операция. Используется и в дереве, и в матрице.
+\newcommand{\TreeEdges}{1/2,2/4,3/4,4/5,6/7,7/9,8/9,9/10,5/11,10/11,13/14,12/15,14/15,11/16,15/16}
+\newcommand{\PaperSource}{\href{https://doi.org/10.1103/9pwb-ky8n}{Hillestad et al., Physical Review Fluids 11, 014701 (2026)}}
+\newcommand{\DataSource}{\href{https://doi.org/10.18710/SX0ZQT}{DataverseNO: doi:10.18710/SX0ZQT, V1 (2026)}}
+
+\begin{document}
+
+% 1
+\begin{frame}
+\thispagestyle{empty}
+\maketitle
+\vspace{-0.6cm}
+\begin{center}\small
+Вихревой след за моделью ветротурбины:\\
+эксперимент Hillestad et al. (2026)\\
+численное решение и подбор вязкости
+\end{center}
+\end{frame}
+
+% 2
+\begin{frame}{Базовое уравнение Навье--Стокса}
+\begin{block}{Несжимаемая ньютоновская жидкость}
+\[
+\frac{\partial\U}{\partial t}+(\U\cdot\nabla)\U
+=-\frac{1}{\rho}\nabla p+\nu\Delta\U,
+\qquad \nabla\cdot\U=0.
+\]
+\end{block}
+\[
+\U=\U(x,y,z,t)=(u,v,w),\qquad
+\mathbf{x}\in\Omega\subset\mathbb{R}^{3}.
+\]
+\small
+Плотность $\rho$ и кинематическая вязкость $\nu$ постоянны.
+Потенциал силы тяжести включён в модифицированное давление $p$.
+Система координат неподвижна относительно лаборатории.
+
+\medskip
+В выбранном эксперименте рабочая среда --- вода.
+Для решения нужны начальное поле скорости и граничные условия.
+\end{frame}
+
+% 3
+\begin{frame}{Библиотеки и хранение дерева}
+\begin{block}{NetworkX + SymPy}
+\small
+\texttt{NetworkX}: направленное дерево, атрибуты вершин,
+проверка ацикличности и матрица смежности.
+
+\medskip
+\texttt{SymPy}: символические выражения, производные
+и проверка тождеств.
+\end{block}
+\small
+Для вершины сохраняются:
+\begin{itemize}
+\item идентификатор и операция;
+\item тип результата: скаляр, вектор или матрица;
+\item упорядоченный список аргументов \texttt{args}.
+\end{itemize}
+Каждое вхождение поля получает отдельную вершину:
+получается дерево, являющееся частным случаем DAG.
+На следующем слайде построена правая часть уравнения скорости.
+\src{\href{https://networkx.org/documentation/stable/}{Документация NetworkX};
+\href{https://docs.sympy.org/latest/}{документация SymPy}.}
+\end{frame}
+
+% 4
+\begin{frame}{Дерево исходного уравнения Навье--Стокса}
+\small
+\[
+\partial_t\U=F=-(\Grad\U)\U-\frac{\Grad p}{\rho}+\nu\Delta\U.
+\]
+\begin{center}
+\begin{tikzpicture}[x=0.95cm,y=0.86cm,
+ dag/.append style={minimum width=1.12cm,minimum height=0.49cm,font=\small,inner sep=2pt}]
+\node[dag] (n16) at (0,0) {$16:\;+$};
+\node[dag] (n11) at (-2.2,-1) {$11:\;+$};
+\node[dag] (n15) at (3.6,-1) {$15:\;\times_s$};
+\node[dag] (n5) at (-4.1,-2) {$5:\;-$};
+\node[dag] (n10) at (-0.35,-2) {$10:\;-$};
+\node[parameter] (n12) at (2.5,-2) {$12:\;\nu$};
+\node[dag] (n14) at (4.7,-2) {$14:\;\Delta$};
+\node[dag] (n4) at (-4.1,-3) {$4:\;\mathrm{mv}$};
+\node[dag] (n9) at (-0.35,-3) {$9:\;\div_s$};
+\node[field] (n13) at (4.7,-3) {$13:\;\U$};
+\node[dag] (n2) at (-5,-4) {$2:\;\Grad$};
+\node[field] (n3) at (-3.2,-4) {$3:\;\U$};
+\node[dag] (n7) at (-1.3,-4) {$7:\;\Grad$};
+\node[parameter] (n8) at (0.6,-4) {$8:\;\rho$};
+\node[field] (n1) at (-5,-5) {$1:\;\U$};
+\node[field] (n6) at (-1.3,-5) {$6:\;p$};
+\foreach \s/\t in \TreeEdges {\draw[edge] (n\s)--(n\t);}
+\end{tikzpicture}
+\end{center}
+\vspace{-0.3em}
+\footnotesize
+$(\Grad\U)_{ij}=\partial_j u_i$, поэтому $(\Grad\U)\U=(\U\cdot\nabla)\U$.
+$\mathrm{mv}$ --- матрица на вектор; $\div_s$ --- деление вектора на скаляр;
+$\times_s$ --- умножение на скаляр; $-$ --- смена знака.
+\src{16 вершин, 15 рёбер. Стрелки: вход $\to$ операция.
+Условие $\Div\U=0$ учитывается солвером отдельно.}
+\end{frame}
+
+% 5
+\begin{frame}{Матрица смежности этого дерева}
+\small
+$Z_{ij}=1$, если вершина $j$ --- вход операции в вершине $i$.
+\begin{columns}[c,onlytextwidth]
+\begin{column}{0.53\textwidth}
+\centering
+\begin{tikzpicture}[x=0.27cm,y=0.27cm]
+\node[font=\scriptsize] at (8.5,1.5) {$j$: вход};
+\foreach \j in {1,...,16} {
+ \node[font=\tiny] at (\j,0.6) {\j};
+ \node[font=\tiny] at (0,-\j+0.5) {\j};
+ \foreach \i in {1,...,16} {
+  \filldraw[fill=opgreen!35!white,draw=white,line width=0.35pt]
+    (\j-0.5,-\i+1) rectangle ++(1,-1);
+  \node[font=\tiny,text=black!40] at (\j,-\i+0.5) {0};
+ }
+}
+\foreach \s/\t in \TreeEdges {
+ \filldraw[fill=black!70,draw=white,line width=0.35pt]
+   (\s-0.5,-\t+1) rectangle ++(1,-1);
+ \node[font=\tiny,text=white] at (\s,-\t+0.5) {1};
+}
+\node[font=\scriptsize] at (8.5,-16.5) {$i$: операция (строка)};
+\end{tikzpicture}
+\end{column}
+\begin{column}{0.45\textwidth}
+\footnotesize
+\begin{tabular}{@{}rl@{}}
+\toprule
+Вершина & Содержимое \\
+\midrule
+1, 3, 13 & Поле $\U$ \\
+2 & Матрица $\Grad\U$ \\
+4, 5 & $(\Grad\U)\U$, затем минус \\
+6, 7 & Поле $p$, затем $\Grad p$ \\
+8 & Плотность $\rho$ \\
+9, 10 & $\Grad p/\rho$, затем минус \\
+11 & Сумма результатов 5 и 10 \\
+12 & Вязкость $\nu$ \\
+14, 15 & $\Delta\U$, затем $\nu\Delta\U$ \\
+16 & Итоговая сумма $F$ \\
+\bottomrule
+\end{tabular}
+\medskip
+
+Топологический порядок вершин:
+все входы предшествуют операции.
+\end{column}
+\end{columns}
+\medskip
+\footnotesize
+В NetworkX при рёбрах «вход $\to$ операция» матрица
+$Z=A^{\mathsf T}$. Порядок аргументов хранится отдельно:
+$\texttt{args}(4)=(2,3)$, $\texttt{args}(9)=(7,8)$.
+\end{frame}
+
+% 6
+\begin{frame}{Физическая постановка эксперимента}
+\small
+\begin{enumerate}
+\item В водном канале NTNU активная решётка создаёт турбулентный
+набегающий поток.
+\item Поток приводит во вращение свободно вращающийся ротор
+с двумя лопастями. Ротор --- лопасти вместе со ступицей.
+\item За ротором, вниз по потоку, отслеживаются частицы-трассеры
+и восстанавливается скорость воды.
+\end{enumerate}
+\medskip
+Координата $x$ направлена вдоль основного потока;
+$y,z$ задают поперечные направления. Начало $x$ --- плоскость ротора.
+\begin{block}{Связь с аэродинамикой}
+Это гидродинамическая модель ветротурбины.
+Перенос выводов на течение воздуха требует сопоставления
+$Re$, быстроходности и геометрии.
+\end{block}
+\src{Статья: \PaperSource. Данные установки: README архива.}
+\end{frame}
+
+% 7
+\begin{frame}{Экспериментальные данные для расчёта}
+\small
+\begin{block}{Какие данные доступны}
+\begin{itemize}
+\item Трёхмерные поля скорости $\U=(u,v,w)$ в последовательные моменты времени.
+\item Пространственные координаты точек измерения и временная шкала.
+\item Угол поворота ротора, характерные длина и скорость потока.
+\end{itemize}
+\end{block}
+\begin{block}{Какие данные нужны для нашей задачи}
+\begin{itemize}
+\item Первое поле скорости и скорости на границе во всём временном окне
+--- для начальных и граничных условий.
+\item Скорости во внутренних точках --- для подбора вязкости
+и проверки численного решения.
+\end{itemize}
+\end{block}
+\footnotesize
+Давление не измерено; оно определяется при решении уравнения.
+Скорости получены методом PTV/Shake-the-Box и перенесены на сетку методом VIC\#.
+\src{\DataSource.}
+\end{frame}
+
+% 8
+\begin{frame}{Задача: решение Навье--Стокса и подбор вязкости}
+\small
+\textbf{Цель:} численно воспроизвести измеренное течение в трёхмерной
+подобласти следа и подобрать кинематическую вязкость $\nu$.
+\begin{block}{Прямая задача при заданном $\nu>0$}
+\[
+\begin{cases}
+\partial_t\U_\nu+(\U_\nu\cdot\nabla)\U_\nu
+=-\rho^{-1}\nabla p_\nu+\nu\Delta\U_\nu,\\[0.3em]
+\nabla\cdot\U_\nu=0,
+\end{cases}
+\quad (\mathbf x,t)\in\Omega\times[t_0,t_1].
+\]
+\end{block}
+\begin{itemize}
+\item $\Omega$ --- часть измеряемого объёма, не пересекающая лопасти и опору.
+Выбрано: $x\in[20,100]$ мм, $y,z\in[-24,24]$ мм.
+\item Неизвестные поля: скорость $\U_\nu$ и давление $p_\nu$.
+Плотность $\rho$ постоянна.
+\item При каждом пробном $\nu$ решается одна и та же начально-краевая задача;
+её решение сравнивается с экспериментом.
+\end{itemize}
+\footnotesize
+Это постановка лабораторной по данным случая 1L;
+авторы статьи исследовали динамику вихрей, а не подбирали $\nu$ этим способом.
+\end{frame}
+
+% 9
+\begin{frame}{Начальные и граничные условия}
+\small
+\begin{block}{Данные задают условия задачи}
+\[
+\U_\nu(\mathbf x,t_0)=\U_0(\mathbf x),\qquad
+\U_\nu|_{\partial\Omega}=\mathbf g(\mathbf x,t).
+\]
+\end{block}
+\begin{itemize}
+\item $\U_0$ получается из первого кадра окна;
+$\mathbf g$ --- из измерений на границе для всего окна.
+Они одинаковы при всех пробных $\nu$.
+\item Перед расчётом: перевод мм в м, интерполяция на расчётную сетку
+и согласование данных с несжимаемостью.
+\end{itemize}
+\[
+\nabla\cdot\U_0=0,\qquad
+\U_0|_{\partial\Omega}=\mathbf g(\cdot,t_0),\qquad
+\int_{\partial\Omega}\mathbf g\cdot\mathbf n\,dS=0.
+\]
+Давление вычисляется солвером. При заданной скорости на всей границе
+его постоянный уровень фиксируется условием
+\[
+\int_\Omega p_\nu(\mathbf x,t)\,dV=0.
+\]
+\footnotesize
+Границы подобласти проходят в жидкости; условие нулевой скорости на них
+не применяется. Коррекция измерений должна согласовать начальные и граничные поля.
+\end{frame}
+
+% 10
+\begin{frame}{Обратная задача и оптимизатор}
+\small
+Для сравнения используются точки $\mathbf x_j\in\Omega_{\mathrm{int}}$,
+лежащие внутри объёма. $H_j$ переносит расчётное поле в точку измерения.
+\[
+\begin{aligned}
+\nu^*&=\arg\min_{\nu>0}J(\nu),\\[0.3em]
+J(\nu)&=\sum_{n\in\mathcal T_{\mathrm{fit}}}\sum_j
+\left\|\frac{H_j\U_\nu(t_n)-\U_{\mathrm{exp}}(\mathbf x_j,t_n)}{U_\infty}\right\|^2.
+\end{aligned}
+\]
+\begin{block}{Выбор: SciPy least\_squares, метод TRF}
+Оптимизатор получает вектор разностей скоростей.
+Каждая оценка целевой функции требует численного решения PDE.
+\end{block}
+\[
+\nu=\nu_{\mathrm{ref}}e^\eta,\qquad
+\eta\ \longrightarrow\ \nu\ \longrightarrow\
+\operatorname{SolveNS}(\nu;\U_0,\mathbf g)\ \longrightarrow\ J(\nu).
+\]
+\footnotesize
+Оптимизируется один безразмерный параметр $\eta$; $\nu_{\mathrm{ref}}>0$ ---
+опорная вязкость. Поиск: $\nu/\nu_{\mathrm{ref}}\in[0.5,2]$. Это исследовательский диапазон, без измеренной температуры воды.
+Граничные точки и начальный кадр не входят в функцию ошибки.
+\src{\href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html}{SciPy: least\_squares и Trust Region Reflective (TRF)}.}
+\end{frame}
+
+% 11
+\begin{frame}{Реализованный солвер: трёхмерная сетка MAC}
+\small
+\textbf{Пространство:} скорости на гранях ячеек, давление в центрах.
+Основная сетка: $36\times24\times24$; шаг около $2$ мм.
+Перенос --- противопоточная схема первого порядка;
+диффузия --- центральная схема второго порядка.
+\medskip
+
+\textbf{Время:} SSP-RK3 с проекцией на каждой стадии:
+\[
+\Delta_h q=\frac{\nabla_h\cdot\U^*}{\alpha\Delta t},\qquad
+\U^{\mathrm{new}}=\U^*-\alpha\Delta t\nabla_h q.
+\]
+\begin{itemize}
+\item Задача Пуассона: DCT-II, нулевой нормальный градиент поправки,
+нулевое среднее; границы согласованы по потоку.
+\item Адаптивный шаг: ограничение переноса CFL $0.35$,
+диффузии и ближайшего момента измерения.
+\item Реализация: NumPy/SciPy, файл \texttt{lab01/solver.py}.
+\end{itemize}
+\footnotesize
+Центральный перенос оказался неустойчивым на сгущённой сетке.
+Противопоточная схема устойчива, но вносит численную диффузию.
+FEniCSx отсутствует в окружении; фактический расчёт выполнен MAC-солвером.
+\src{\href{https://doi.org/10.1063/1.1761178}{Harlow \& Welch (1965): MAC};
+\href{https://doi.org/10.1090/S0025-5718-98-00913-2}{Gottlieb \& Shu (1998): SSP-RK}.}
+\end{frame}
+
+% 12
+\begin{frame}{Аппроксимация, ошибка и графики сравнения}
+\small
+Аппроксимация данных --- поле $\U_{\nu^*}$, полученное численным
+решением PDE при подобранной вязкости.
+\[
+E_{\mathrm{val}}=
+\left[
+\frac{\displaystyle\sum_{n\in\mathcal T_{\mathrm{val}}}\sum_j
+ \|H_j\U_{\nu^*}(t_n)-\U_{\mathrm{exp}}(\mathbf x_j,t_n)\|^2}
+{\displaystyle\sum_{n\in\mathcal T_{\mathrm{val}}}\sum_j
+ \|\U_{\mathrm{exp}}(\mathbf x_j,t_n)\|^2}
+\right]^{1/2}.
+\]
+Подбор: $t=0$--$0.09$ с; контроль: $t=0.10$--$0.17$ с.
+Окна не пересекаются. В контрольном окне $\nu^*$
+фиксировано; начальное поле и границы задаются по его измерениям.
+\medskip
+
+\textbf{Графики построены в ноутбуке}
+\begin{enumerate}
+\item Компонента скорости во времени: измерения и расчёт на одной оси.
+\item Одно сечение объёма: поле измерений, расчёт и карта ошибки.
+\item $J(\nu)$: выраженность минимума и чувствительность к вязкости.
+\end{enumerate}
+\footnotesize
+Начальный кадр исключается из оценки. При известных измеренных границах
+проверяется воспроизведение течения; самостоятельный прогноз здесь не заявляется.
+\end{frame}
+
+% 13
+\begin{frame}{Параметры и безразмерное уравнение}
+\small
+Масштабы: $x^*=x/D$, $t^*=tU_\infty/D$,
+$\U^*=\U/U_\infty$, $p^*=p/(\rho U_\infty^2)$.
+\begin{block}{Исходное уравнение в безразмерных переменных}
+\[
+\begin{gathered}
+\partial_{t^*}\U^*+(\U^*\cdot\nabla^*)\U^*
+=-\nabla^*p^*+\frac{1}{Re_D}\Delta^*\U^*,\\[0.3em]
+\nabla^*\cdot\U^*=0.
+\end{gathered}
+\]
+\end{block}
+\[
+\nu_{\mathrm{ref}}=\frac{U_\infty D}{Re_{D,\mathrm{ref}}}
+\approx9\cdot10^{-7}\ \text{м}^2/\text{с},\qquad
+\frac{D}{U_\infty}=0.1125\ \text{с}.
+\]
+\begin{itemize}
+\item Подбирается $\nu$; коэффициент $1/Re_D=\nu/(U_\infty D)$ меняется вместе с ним.
+\item $I$ и угол ротора характеризуют условия течения; они не заменяют $\nu$.
+\item Малый $1/Re_D$ сам по себе не обосновывает удаление вязкого члена.
+\end{itemize}
+\src{Масштабы из README случая 1L. $Re_{D,\mathrm{ref}}\approx2\cdot10^4$ задаёт опорную оценку, а не результат подбора.}
+\end{frame}
+
+% 14
+\begin{frame}{Надёжность определения вязкости}
+\small
+\begin{itemize}
+\item При $Re_D\approx2\cdot10^4$ чувствительность скорости к $\nu$
+оказалась слабой: размах $J(\nu)$ на всём диапазоне --- $0.135\%$.
+Минимум на верхней границе; надёжная оценка вязкости не получена.
+\item Выполнены расчёты на трёх сетках и с вдвое меньшим ограничением
+шага по времени; сравниваются одинаковые 539 внутренних точек.
+\item Шум, обработка измерений и численная диффузия могут сдвинуть
+минимум. Подобранное число нельзя автоматически считать точной
+молекулярной вязкостью воды.
+\end{itemize}
+\medskip
+Проверки качества самого решения:
+\[
+\|\nabla\cdot\U_{\nu^*}\|_{L^2(\Omega)},\qquad
+\left|\int_{\partial\Omega}\U_{\nu^*}\cdot\mathbf n\,dS\right|.
+\]
+\footnotesize
+Параметр оценивается по мгновенным полям. При фильтрации или осреднении
+нужно учитывать, что точные уравнения для такого поля содержат дополнительные напряжения.
+\end{frame}
+
+% 15
+\begin{frame}{Вычислительный эксперимент выполнен}
+\small
+Загружены и проверены 18 кадров случая 1L: 2732, 2737, \ldots, 2817.
+Шаг выбранных данных --- $0.01$ с, длительность --- $0.17$ с.
+Полный архив не скачивался; сохранены CRC32 и SHA-256 файлов.
+\medskip
+
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Сетка / CFL & Ошибка подбора & Ошибка контроля \\
+\midrule
+$24\times16\times16$ / $0.35$ & $25.83\%$ & $24.75\%$ \\
+$36\times24\times24$ / $0.35$ & $25.50\%$ & $24.46\%$ \\
+$48\times32\times32$ / $0.35$ & $25.35\%$ & $24.36\%$ \\
+$36\times24\times24$ / $0.175$ & $25.50\%$ & $24.46\%$ \\
+\bottomrule
+\end{tabular}
+\medskip
+
+\begin{itemize}
+\item Подбор TRF: $\nu^*=1.8\cdot10^{-6}$ м$^2$/с, верхняя граница поиска.
+\item Основная сетка: контрольный RMSE $0.03318$ м/с;
+максимум RMS дискретной дивергенции $8.8\cdot10^{-15}$ с$^{-1}$.
+\item Построены временные кривые, сечение поля, карта ошибки и $J(\nu)$.
+\end{itemize}
+\footnotesize
+Контроль использует собственное начальное поле и известные измеренные границы.
+Численный эксперимент выполнен; точная молекулярная вязкость не определена.
+\end{frame}
+
+% 16
+\begin{frame}{Источники}
+\small
+\begin{enumerate}
+\item Hillestad J. N. et al.
+\emph{Volumetric three-dimensional experimental measurement of
+vortex dynamics in a rotating wake}.
+Physical Review Fluids \textbf{11}, 014701 (2026).\\
+\href{https://doi.org/10.1103/9pwb-ky8n}{doi:10.1103/9pwb-ky8n}.
+\smallskip
+\item Hillestad et al. \emph{Volumetric three-dimensional experimental
+measurement of a model wind turbine wake}.
+DataverseNO, V1 (2026), случай 1L и \texttt{00\_README.txt}.\\
+\href{https://doi.org/10.18710/SX0ZQT}{doi:10.18710/SX0ZQT}.
+\smallskip
+\item Harlow F. H., Welch J. E. (1965): разнесённая сетка MAC.\\
+\href{https://doi.org/10.1063/1.1761178}{doi:10.1063/1.1761178}.\\
+Gottlieb S., Shu C.-W. (1998): SSP/TVD Runge--Kutta.\\
+\href{https://doi.org/10.1090/S0025-5718-98-00913-2}{doi:10.1090/S0025-5718-98-00913-2}.
+\smallskip
+\item SciPy. \emph{scipy.optimize.least\_squares}:
+нелинейный метод наименьших квадратов, алгоритм TRF.\\
+\href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html}{Документация scipy.optimize.least\_squares}.
+\end{enumerate}
+\end{frame}
+
+\end{document}

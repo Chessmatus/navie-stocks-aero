@@ -1,0 +1,8 @@
+name: lab01-fenicsx
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - fenics-dolfinx=0.11.0
+  - mpich=5.0.1
+  - scipy

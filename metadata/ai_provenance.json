@@ -1,0 +1,418 @@
+{
+  "date_local": "2026-10-10",
+  "timezone": "Europe/Moscow",
+  "tool": "Codex",
+  "project": ".",
+  "user_prompt": "Мы с тобой будем выполнять лабораторную работу по курсу Foundation models for spatial-time series. В папке есть описание, задание и пример графиков для первой лабораторной работы. Нужно было выбрать уравнение из списка для исследования и я выбрал 2. Navier-Stockes Equation in Aerorodynamics. Одни из основных задач подготовки -- это пункты про нахождение вариации данного уравнения из некоторой статьи (с прикрепленными реальными данными) и указанием источника, где ты его нашел и выбор библиотеки для работы с графами, т.к. уравнение нужно будет представить в виде DAG-графа и далее в виде матрицы смежности (с тебя описание способов того, как можно представлять уравнения таким образом и есть ли разные способы это делать). Остальные инструкции есть в списке.",
+  "clarification": "Только экспериментальные измерения",
+  "skill_used": "/Users/chessmatus/.codex/plugins/cache/openai-primary-runtime/pdf/26.1007.11041/skills/pdf/SKILL.md",
+  "ai_created": [
+    "lab01_preparation.ipynb",
+    "make_preparation.py",
+    "execute_preparation.py",
+    "lab01/",
+    "tests/",
+    "metadata/data_manifest.json",
+    "requirements.txt",
+    "outputs/",
+    "fetch_experiment.py",
+    "run_experiment.py",
+    "lab01/solver.py",
+    "lab01/experiment.py",
+    "lab01/calibration.py",
+    "lab01/plotting.py",
+    "lab01/verification.py",
+    "tests/test_navier_stokes.py",
+    "environments/fenicsx.yml",
+    "environments/fenicsx-osx-arm64.lock",
+    "docs/fenicsx.md",
+    "lab01/fenics_solver.py",
+    "lab01/fenics_comparison.py",
+    "run_fenics_experiment.py"
+  ],
+  "methods": [
+    "Primary-source paper abstract and complete dataset README inspection",
+    "HTTP range ZIP64 extraction of actual measurement frames; CRC32, file sizes and SHA256 verification",
+    "Original incompressible velocity-pressure Navier-Stokes, one typed 16-node expression tree and adjacency matrix",
+    "3D staggered MAC solver: first-order upwind advection, centered diffusion, projected SSP-RK3, DCT-II pressure Poisson",
+    "Inverse log-viscosity calibration with SciPy least_squares TRF; separate conditional validation window",
+    "Analytical 3D PDE verification, three spatial grids, halved CFL and common physical observation points",
+    "Executed Jupyter notebook with real measurement/PDE comparison plots",
+    "Actual isolated Conda/FEniCSx 0.11.0 P2/P1 IPCS computation; translated Beltrami verification, viscosity fitting, grid and time-step comparisons"
+  ],
+  "limitations": [
+    "Short 18-frame subset of one processed experimental case; no DNS or independent raw-PTV validation",
+    "Measured boundary velocities are prescribed throughout each window; validation resets the measured initial field and is conditional reproduction, not autonomous forecasting",
+    "First-order advection has significant numerical diffusion and small turbulence scales are unresolved",
+    "Viscosity optimum at the upper search bound; weak objective sensitivity does not establish molecular viscosity",
+    "Factor-two parameter bounds are exploratory; water temperature was not provided",
+    "2026 paper abstract and dataset README verified; no verbatim numbered equation claimed from inaccessible full text",
+    "FEniCSx IPCS strong divergence is significant and grid convergence not established; a higher-order library does not automatically reduce mismatch to processed experimental data"
+  ],
+  "presentation": {
+    "user_prompt": "Сделай презентацию (учитывая шаблон. текст в примере произвольный, не нужно на него ни коем образом опираться) на счет того, что уже сделано. В начале, покажи уравнение и опиши ее компоненты, далее, то, что было выбрано с графиками и описанием",
+    "template": "/Users/chessmatus/.codex/attachments/0ec3e412-3998-4f8a-8f78-3a3f911f088e/Pasted text.txt",
+    "output": "navier_stokes_preparation.tex",
+    "format": "standalone Beamer, 4:3, beaver theme",
+    "methods": [
+      "Existing Beamer template preserved; dash list markers",
+      "Hillestad et al. 2026 experimental case 1L in a water channel",
+      "Initial-boundary-value incompressible Navier-Stokes problem in a 3D fluid subdomain",
+      "One expression tree with 16 nodes and 15 edges; common edge list for adjacency matrix",
+      "Inverse viscosity estimation: SciPy least_squares TRF; nu=nu_ref*exp(eta)",
+      "Interior-data fitting and separate time-window validation with measured boundary conditions",
+      "Actual 3D MAC/SciPy solver and completed real-data results; 16 frames after requested slide removal and reordering"
+    ],
+    "limitations": [
+      "Short 18-frame subset of one processed experimental case; no DNS or independent raw-PTV validation",
+      "Measured boundary velocities are prescribed throughout each window; validation resets the measured initial field and is conditional reproduction, not autonomous forecasting",
+      "First-order advection has significant numerical diffusion and small turbulence scales are unresolved",
+      "Viscosity optimum at the upper search bound; weak objective sensitivity does not establish molecular viscosity",
+      "Factor-two parameter bounds are exploratory; water temperature was not provided",
+      "2026 paper abstract and dataset README verified; no verbatim numbered equation claimed from inaccessible full text"
+    ],
+    "verification": {
+      "desktop_compiler": "success",
+      "frames": 16,
+      "tree_and_matrix_share_edge_list": true,
+      "tree_topology_and_argument_order": "checked: 16 nodes, 15 edges; ordered matrix-vector product and vector/scalar division",
+      "separate_pdf_export": "not_requested",
+      "visual_review": "editor preview available; no independent page render inspected"
+    }
+  },
+  "revisions": [
+    {
+      "request": "Оставить один экспериментальный набор; представить уравнение в 3D с учётом времени в презентации и ноутбуке; оставить только построение дерева",
+      "dataset": "cylinder_3d",
+      "equation_representation": "expression_tree_11_nodes_10_edges",
+      "three_dimensional_representation": "explicit x,y,z,t component equations and time-dependent translated ABC exact solution",
+      "analytic_figure_status": "verification only, not experimental data",
+      "modified": [
+        "navier_stokes_preparation.tex",
+        "lab01_preparation.ipynb",
+        "make_preparation.py",
+        "lab01/graphs.py",
+        "lab01/visualization.py",
+        "tests/test_tree_and_3d.py",
+        "data_manifest.json"
+      ],
+      "verification": {
+        "pytest": "7 passed",
+        "notebook": "all 5 code cells executed without errors",
+        "matrix_matches_slides": true,
+        "latex": "built-in compiler success"
+      }
+    },
+    {
+      "request": "Убрать временно 3D-визуализацию из презентации и ноутбука",
+      "removed": "analytic 3D vector field slide and notebook section",
+      "preserved": "3D+t component equations, tree, matrix, existing execution outputs of remaining cells"
+    },
+    {
+      "date_local": "2026-10-10",
+      "request": "Преобразовать презентацию с учётом новой статьи",
+      "modified": [
+        "navier_stokes_preparation.tex"
+      ],
+      "article_doi": "10.1103/9pwb-ky8n",
+      "dataset_doi": "10.18710/SX0ZQT",
+      "selected_case": "1L: 1WT_rand_100_2D.zip, one turbine, 5% inflow turbulence",
+      "mathematical_source_doi": "10.1103/PhysRevFluids.9.L052701",
+      "equation": "viscous rotational Navier-Stokes; B=p/rho+|u|^2/2 treated as a composite input field in the tree",
+      "notebook_migrated": false,
+      "verification": {
+        "desktop_compiler": "success",
+        "frames": 19,
+        "tree_and_matrix_share_edge_list": true,
+        "tree_topology_and_argument_order": "checked",
+        "separate_pdf_export": "not_requested",
+        "visual_review": "editor preview available; no independent page render inspected"
+      }
+    },
+    {
+      "date_local": "2026-10-10",
+      "request": "Обновить презентацию под численное решение Навье-Стокса и подбор вязкости",
+      "modified": [
+        "navier_stokes_preparation.tex"
+      ],
+      "replaced": "Abstract data-driven forecasting map with forward PDE and inverse viscosity problem",
+      "initial_boundary_data": "Same corrected experimental initial and boundary velocity data for all trial viscosities; pressure mean fixed to zero",
+      "fitting": "Interior velocity measurements excluding boundary points and initial frame",
+      "solver": "FEniCSx/IPCS, proposed; not implemented for this experiment",
+      "optimizer": "scipy.optimize.least_squares TRF on eta, nu=nu_ref*exp(eta)",
+      "notebook_modified": false,
+      "verification": {
+        "desktop_compiler": "success",
+        "frames": 24,
+        "tree_and_matrix_share_edge_list": true,
+        "tree_topology_and_argument_order": "checked",
+        "separate_pdf_export": "not_requested",
+        "visual_review": "editor preview available; no independent page render inspected"
+      }
+    },
+    {
+      "date_local": "2026-10-10",
+      "request": "Убрать компонентную запись Навье-Стокса и оценить необходимость слайдов о завихренности и форме Лэмба",
+      "modified": [
+        "navier_stokes_preparation.tex"
+      ],
+      "removed_frames": [
+        "Уравнение в трёх координатах и времени",
+        "Завихренность в следе турбины",
+        "Эволюция завихренности в 3D"
+      ],
+      "retained": "One compact Lamb-form slide with vorticity definition, needed for the existing expression tree",
+      "scientific_scope": "Solver computes velocity and pressure; a separate vorticity transport equation is not solved",
+      "verification": {
+        "desktop_compiler": "success",
+        "frames": 21,
+        "tree_and_matrix_unchanged": true
+      }
+    },
+    {
+      "date_local": "2026-10-10",
+      "request": "Использовать исходную форму Навье-Стокса для дерева и солвера; убрать форму Лэмба",
+      "modified": [
+        "navier_stokes_preparation.tex"
+      ],
+      "equation": "du/dt = -(grad u)u - grad(p)/rho + nu*laplacian(u)",
+      "tree_nodes": 16,
+      "tree_edges": 15,
+      "matrix_shape": [
+        16,
+        16
+      ],
+      "argument_order": {
+        "4": [
+          2,
+          3
+        ],
+        "9": [
+          7,
+          8
+        ],
+        "15": [
+          12,
+          14
+        ]
+      },
+      "removed": "Lamb-form slide and its 2024 mathematical source; vorticity macros and rotational dimensionless equation",
+      "preserved": "2026 experimental case 1L, inverse viscosity estimation, FEniCSx/IPCS, SciPy/TRF, original Beamer template",
+      "notebook_modified": false,
+      "verification": {
+        "desktop_compiler": "success",
+        "frames": 20,
+        "tree_and_matrix_share_edge_list": true,
+        "tree_topology_and_argument_order": "checked: 16 nodes, 15 edges; ordered matrix-vector product and vector/scalar division",
+        "separate_pdf_export": "not_requested",
+        "visual_review": "editor preview available; no independent page render inspected"
+      }
+    },
+    {
+      "date_local": "2026-10-10",
+      "request": "Объединить слайды с источниками в один",
+      "modified": [
+        "navier_stokes_preparation.tex"
+      ],
+      "change": "Merged article, dataset, FEniCSx and SciPy references into one numbered-list slide; all four links retained",
+      "verification": {
+        "desktop_compiler": "success",
+        "frames": 19
+      }
+    },
+    {
+      "date_local": "2026-10-10",
+      "request": "Обновить ноутбук и выполнить вычислительный эксперимент сейчас; не помечать его следующим этапом",
+      "modified": [
+        "lab01_preparation.ipynb",
+        "make_preparation.py",
+        "navier_stokes_preparation.tex",
+        "lab01/",
+        "tests/test_navier_stokes.py",
+        "data_manifest.json"
+      ],
+      "implemented": "Actual real-data 3D PDE solution, positive viscosity fit, conditional validation, errors, plots, one original-momentum tree/matrix/dictionary",
+      "verification": {
+        "pytest": "10 passed",
+        "notebook": "all 8 code cells executed without errors",
+        "latex": "built-in desktop compiler success",
+        "visual_review": "time series, measured/PDE/error slice, viscosity profile, expression tree and matrix inspected as PNGs"
+      }
+    },
+    {
+      "date_local": "2026-10-10",
+      "request": "Удалить исходные слайды 3, 4, 6; обобщить слайд о данных; перенести библиотеки, дерево и матрицу сразу после уравнения",
+      "modified": [
+        "navier_stokes_preparation.tex",
+        "lab01_preparation.ipynb",
+        "make_preparation.py"
+      ],
+      "new_order_original_slide_numbers": [
+        1,
+        2,
+        13,
+        14,
+        15,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        16,
+        17,
+        18,
+        19
+      ],
+      "parameter_table": "Preserved in notebook with definitions of Re, turbulence intensity and tip-speed ratio",
+      "verification": {
+        "desktop_compiler": "success",
+        "frames": 16,
+        "notebook_existing_executed_outputs": "preserved; markdown edit only"
+      }
+    },
+    {
+      "date_local": "2026-10-10",
+      "request": "Попробовать FEniCSx через conda",
+      "installed": "Local micromamba, isolated .fenicsx, DOLFINx 0.11.0 / MPICH 5.0.1 / PETSc 3.25.6 / Python 3.12",
+      "modified": [
+        "make_preparation.py",
+        "lab01_preparation.ipynb",
+        "execute_preparation.py",
+        "data_manifest.json",
+        ".gitignore"
+      ],
+      "new_files": [
+        "environment-fenicsx.yml",
+        "fenicsx-osx-arm64.lock",
+        "FENICSX.md",
+        "lab01/fenics_solver.py",
+        "lab01/fenics_comparison.py",
+        "run_fenics_experiment.py"
+      ],
+      "preserved": "Original MAC implementation, results, original Python environment and open LaTeX presentation",
+      "experiment_report": "outputs/turbine_1L/fenicsx/primary.json",
+      "runtime_fix": "Initial computations completed and saved results but automatic MPI provider failed on VPN interface in MPI_Finalize (exit 143). FI_PROVIDER=tcp fixes initialization/finalization; local constant-flow check exits 0. Primary run repeated with fixed provider.",
+      "verification": {
+        "pytest": "10 passed",
+        "constant_flow_max_absolute_error_m_per_s": 5.194375485295666e-11,
+        "constant_flow_process_exit_code": 0,
+        "notebook": "9 code cells executed; no errors",
+        "figure_review": "time series and common-point z=0 slice inspected as PNGs",
+        "primary_process_exit_code": 0
+      },
+      "result": {
+        "nu_fit": 1.7999999999959183e-06,
+        "validation_relative_l2": 0.28160396248434816,
+        "validation_rmse_m_per_s": 0.0382027605639187,
+        "fit_at_bound": true,
+        "solver_accuracy": "Improved on the tested analytical fields, worse than MAC against the real measurements; strong divergence and unresolved grid dependence remain"
+      }
+    },
+    {
+      "date_local": "2026-10-11",
+      "request": "Добавить все файлы в GitHub и организовать репозиторий",
+      "repository": "https://github.com/Chessmatus/navie-stocks-aero",
+      "data_policy": "User selected compact experimental crop in Git; original full-volume selected frames fetched by script",
+      "organization": "docs/references, docs/fenicsx.md, environments, metadata; former output variants in outputs/legacy",
+      "preserved": "Executed notebook, open TeX source and CLI entry points stay at repository root; existing numerical results unchanged",
+      "added": [
+        "README.md",
+        "data/README.md",
+        "outputs/README.md",
+        "docs/references/README.md",
+        ".gitattributes",
+        "pytest.ini",
+        ".github/workflows/tests.yml"
+      ],
+      "excluded": "Installed environments, caches, temporary output, ZIP byte-range scratch files, full experimental frames and intermediate solver checkpoints",
+      "verification": {
+        "tests": "10 passed",
+        "compact_data_sha256": "verified against published manifest",
+        "file_limit": "Every candidate file is below 100 MiB",
+        "credential_pattern_scan": "No matches",
+        "clean_copy": "10 tests passed; all 9 notebook code cells executed sequentially from an isolated copy without full-volume text frames, .venv or .fenicsx; dependencies supplied by the existing Python environment",
+        "data_line_endings": "Original archive text files marked -text to preserve CRC32 and SHA-256"
+      }
+    }
+  ],
+  "experiment": {
+    "status": "executed",
+    "paper_doi": "10.1103/9pwb-ky8n",
+    "dataset_doi": "10.18710/SX0ZQT",
+    "case": "1L",
+    "frames": [
+      2732,
+      2737,
+      2742,
+      2747,
+      2752,
+      2757,
+      2762,
+      2767,
+      2772,
+      2777,
+      2782,
+      2787,
+      2792,
+      2797,
+      2802,
+      2807,
+      2812,
+      2817
+    ],
+    "fit_frames": [
+      2732,
+      2737,
+      2742,
+      2747,
+      2752,
+      2757,
+      2762,
+      2767,
+      2772,
+      2777
+    ],
+    "validation_frames": [
+      2782,
+      2787,
+      2792,
+      2797,
+      2802,
+      2807,
+      2812,
+      2817
+    ],
+    "domain_bounds_m": [
+      [
+        0.02,
+        0.1
+      ],
+      [
+        -0.024,
+        0.024
+      ],
+      [
+        -0.024,
+        0.024
+      ]
+    ],
+    "observation_points": 539,
+    "report": "outputs/turbine_1L/experiment_summary.json",
+    "primary_result": {
+      "nu_fit": 1.7999999999884824e-06,
+      "nu_fit_at_bound": true,
+      "validation_relative_l2": 0.24461071548947222,
+      "validation_rmse_m_per_s": 0.03318420846344642
+    },
+    "verification": {
+      "pytest": "10 passed",
+      "notebook": "all 9 code cells executed without errors",
+      "latex": "built-in desktop compiler success",
+      "visual_review": "time series, measured/PDE/error slice, viscosity profile, expression tree and matrix inspected as PNGs"
+    },
+    "discarded_scheme": "Centered convection became unstable on the 36x24x24 grid; switched to documented first-order upwind convection"
+  },
+  "repository": "https://github.com/Chessmatus/navie-stocks-aero"
+}

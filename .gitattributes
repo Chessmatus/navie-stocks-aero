@@ -1,0 +1,13 @@
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.tex text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.csv text eol=lf
+*.ipynb text eol=lf
+*.npz binary
+*.pdf binary
+*.png binary
+# Preserve archive CRC32/SHA-256 for original experimental text files.
+data/turbine_1L/*.txt -text

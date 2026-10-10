@@ -1,0 +1,85 @@
+{
+  "schema": "operator-dag-v1",
+  "edge_direction": "input_to_operation",
+  "matrix_convention": "Z[target,source]",
+  "order": [
+    "n0",
+    "n1",
+    "n2",
+    "n3",
+    "n4",
+    "n5",
+    "n6"
+  ],
+  "graph": {
+    "output": "n6"
+  },
+  "nodes": {
+    "n0": {
+      "label": "x",
+      "kind": "field",
+      "shape": "scalar",
+      "op": null,
+      "sympy_srepr": "Symbol('x')",
+      "args": []
+    },
+    "n1": {
+      "label": "x",
+      "kind": "field",
+      "shape": "scalar",
+      "op": null,
+      "sympy_srepr": "Symbol('x')",
+      "args": []
+    },
+    "n2": {
+      "label": "log",
+      "kind": "operation",
+      "shape": "scalar",
+      "op": "log",
+      "sympy_srepr": "log(Symbol('x'))",
+      "args": [
+        "n1"
+      ]
+    },
+    "n3": {
+      "label": "Mul",
+      "kind": "operation",
+      "shape": "scalar",
+      "op": "Mul",
+      "sympy_srepr": "Mul(Symbol('x'), log(Symbol('x')))",
+      "args": [
+        "n0",
+        "n2"
+      ]
+    },
+    "n4": {
+      "label": "x",
+      "kind": "field",
+      "shape": "scalar",
+      "op": null,
+      "sympy_srepr": "Symbol('x')",
+      "args": []
+    },
+    "n5": {
+      "label": "sin",
+      "kind": "operation",
+      "shape": "scalar",
+      "op": "sin",
+      "sympy_srepr": "sin(Symbol('x'))",
+      "args": [
+        "n4"
+      ]
+    },
+    "n6": {
+      "label": "Add",
+      "kind": "operation",
+      "shape": "scalar",
+      "op": "Add",
+      "sympy_srepr": "Add(Mul(Symbol('x'), log(Symbol('x'))), sin(Symbol('x')))",
+      "args": [
+        "n3",
+        "n5"
+      ]
+    }
+  }
+}

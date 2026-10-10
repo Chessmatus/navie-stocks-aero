@@ -1,0 +1,136 @@
+{
+  "kind": "analytical_solver_verification_not_experimental_data",
+  "exact_solution": "u=(.25,0,0)+A*exp(-nu*k^2*t)*(sin(kz)+cos(ky),sin(k(x-.25t))+cos(kz),sin(ky)+cos(k(x-.25t))); A=.04; p/rho=-|u-(.25,0,0)|^2/2",
+  "boundary_policy": "Exact analytical velocity at every integrator stage; no measurement interpolation",
+  "roi_bounds_m": [
+    [
+      0.035,
+      0.085
+    ],
+    [
+      -0.015,
+      0.015
+    ],
+    [
+      -0.015,
+      0.015
+    ]
+  ],
+  "norm_policy": "Final-time cell-center L2 over fixed physical ROI; discrete points differ across grids",
+  "results": [
+    {
+      "wavelength_m": 0.032,
+      "grid": [
+        36,
+        24,
+        24
+      ],
+      "nu": 9e-07,
+      "t_end_s": 0.09,
+      "relative_total_velocity_error": 0.08817860935899013,
+      "relative_fluctuation_error": 0.3311386904347205,
+      "component_relative_errors": [
+        0.01691361254024549,
+        0.4081339180202825,
+        0.3885043499787431
+      ],
+      "divergence_rms_max": 7.76081068923932e-15,
+      "steps": 63
+    },
+    {
+      "wavelength_m": 0.032,
+      "grid": [
+        72,
+        48,
+        48
+      ],
+      "nu": 9e-07,
+      "t_end_s": 0.09,
+      "relative_total_velocity_error": 0.053893050383393384,
+      "relative_fluctuation_error": 0.20507601195461644,
+      "component_relative_errors": [
+        0.009387183380284825,
+        0.2585119243595776,
+        0.23823821196457737
+      ],
+      "divergence_rms_max": 1.5681580444149577e-14,
+      "steps": 126
+    },
+    {
+      "wavelength_m": 0.016,
+      "grid": [
+        36,
+        24,
+        24
+      ],
+      "nu": 9e-07,
+      "t_end_s": 0.09,
+      "relative_total_velocity_error": 0.16036365583269574,
+      "relative_fluctuation_error": 0.607484596784049,
+      "component_relative_errors": [
+        0.04059667037287322,
+        0.7188640209106906,
+        0.7229903505008825
+      ],
+      "divergence_rms_max": 8.225239595403103e-15,
+      "steps": 63
+    },
+    {
+      "wavelength_m": 0.016,
+      "grid": [
+        72,
+        48,
+        48
+      ],
+      "nu": 9e-07,
+      "t_end_s": 0.09,
+      "relative_total_velocity_error": 0.13489852518340775,
+      "relative_fluctuation_error": 0.5055926786099806,
+      "component_relative_errors": [
+        0.025126438356500514,
+        0.6172568786486831,
+        0.6001131210798579
+      ],
+      "divergence_rms_max": 1.6396915796330896e-14,
+      "steps": 126
+    },
+    {
+      "wavelength_m": 0.008,
+      "grid": [
+        36,
+        24,
+        24
+      ],
+      "nu": 9e-07,
+      "t_end_s": 0.09,
+      "relative_total_velocity_error": 0.1805097112529035,
+      "relative_fluctuation_error": 0.7081236390394332,
+      "component_relative_errors": [
+        0.08978423190235597,
+        0.7632880268880824,
+        0.7519866667325046
+      ],
+      "divergence_rms_max": 8.118579775341986e-15,
+      "steps": 63
+    },
+    {
+      "wavelength_m": 0.008,
+      "grid": [
+        72,
+        48,
+        48
+      ],
+      "nu": 9e-07,
+      "t_end_s": 0.09,
+      "relative_total_velocity_error": 0.16945130063316372,
+      "relative_fluctuation_error": 0.6583267067531982,
+      "component_relative_errors": [
+        0.061556466874478105,
+        0.7628322400088009,
+        0.744071695170476
+      ],
+      "divergence_rms_max": 1.6204444735973955e-14,
+      "steps": 125
+    }
+  ]
+}

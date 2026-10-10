@@ -1,0 +1,118 @@
+{
+  "status": "real_data_subset_downloaded_and_numerical_experiment_executed",
+  "required_provenance": "experimental_measurements_only",
+  "sources": [
+    {
+      "id": "turbine_1L",
+      "case": "1L",
+      "title": "Volumetric three-dimensional experimental measurement of a model wind turbine wake",
+      "paper": "https://doi.org/10.1103/9pwb-ky8n",
+      "dataset": "https://doi.org/10.18710/SX0ZQT",
+      "version": 1,
+      "license": "CC0",
+      "archive": "1WT_rand_100_2D.zip",
+      "archive_bytes": 65984746642,
+      "file_urls": [
+        "https://dataverse.no/api/access/datafile/:persistentId?persistentId=doi:10.18710/SX0ZQT/FWZUIM"
+      ],
+      "kind": "experimental_water_3d_time_resolved_PTV_STB_with_VIC_Eulerian_processing",
+      "reynolds_number_approximate": 20000,
+      "reference_length_m": 0.045,
+      "reference_velocity_m_per_s": 0.4,
+      "turbulence_intensity": 0.05,
+      "acquisition_hz": 500,
+      "total_frames": 5457,
+      "raw_coordinate_unit": "mm",
+      "velocity_unit": "m/s",
+      "original_grid_shape_xyz": [
+        81,
+        63,
+        78
+      ],
+      "original_grid_spacing_mm_approximate": 1.600749,
+      "original_columns": [
+        "x",
+        "y",
+        "z",
+        "u",
+        "v",
+        "w"
+      ],
+      "subset_frame_ids": [
+        2732,
+        2737,
+        2742,
+        2747,
+        2752,
+        2757,
+        2762,
+        2767,
+        2772,
+        2777,
+        2782,
+        2787,
+        2792,
+        2797,
+        2802,
+        2807,
+        2812,
+        2817
+      ],
+      "subset_interval_s": 0.01,
+      "subset_duration_s": 0.17,
+      "coordinate_conversion_to_m": 0.001,
+      "subset_download_method": "HTTP byte ranges + raw DEFLATE; every entry checked against ZIP CRC32",
+      "subset_provenance": "data/turbine_1L/subset_provenance.json",
+      "local_readme": "data/turbine_1L/00_README.txt",
+      "full_archive_downloaded": false,
+      "verification": "Actual frame headers, rectangular grid, finite values, coordinate equality, ZIP CRC32, lengths and SHA256 inspected; processed measurements are not independent raw-particle validation."
+    }
+  ],
+  "calculation": {
+    "domain_bounds_m": [
+      [
+        0.02,
+        0.1
+      ],
+      [
+        -0.024,
+        0.024
+      ],
+      [
+        -0.024,
+        0.024
+      ]
+    ],
+    "solver": "MAC/SciPy; upwind convection, centered diffusion, projected SSP-RK3/DCT",
+    "optimizer": "scipy.optimize.least_squares / TRF / log viscosity",
+    "report": "outputs/turbine_1L/experiment_summary.json",
+    "validation": "Later non-overlapping window with its own measured initial field and measured time-dependent boundaries",
+    "fenicsx_comparison": {
+      "solver": "DOLFINx 0.11.0, tetrahedral P2/P1, IPCS, semi-implicit CN/AB2",
+      "environment": ".fenicsx",
+      "environment_specification": "environments/fenicsx.yml",
+      "explicit_conda_lock": "environments/fenicsx-osx-arm64.lock",
+      "report": "outputs/turbine_1L/fenicsx/primary.json",
+      "analytical_verification": "outputs/turbine_1L/fenicsx/verification.json",
+      "discretization_comparison": "outputs/turbine_1L/fenicsx/discretization_comparison.json",
+      "same_experimental_case_and_measurement_subset": true,
+      "limitations": "Conditional reproduction; differing initial projections; nonzero strong divergence; no grid-convergence or reliable molecular-viscosity identification established"
+    }
+  },
+  "scope": "One experimental case only. Analytical fields are used solely to verify the numerical solver; no synthetic field visualization.",
+  "published_crop": {
+    "path": "data/turbine_1L/measurement_crop.npz",
+    "bytes": 23850470,
+    "sha256": "8721b3e5fb3311f665685f546a2160606ad0048fb35e6439fd6691005288df89",
+    "velocity_shape": [
+      18,
+      53,
+      33,
+      33,
+      3
+    ],
+    "columns": "x, y, z in m; velocity[...,0:3] in m/s",
+    "full_selected_frames_in_git": false,
+    "full_frames_reproduction": "fetch_experiment.py --frames 2732 2737 2742 2747 2752 2757 2762 2767 2772 2777 2782 2787 2792 2797 2802 2807 2812 2817"
+  }
+}

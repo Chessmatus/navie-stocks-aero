@@ -1,0 +1,201 @@
+{
+  "kind": "exact translated Beltrami solution, not experimental data",
+  "nu": 9e-07,
+  "speed": 0.25,
+  "amplitude": 0.04,
+  "end_time_s": 0.09,
+  "comparison": "same 539 fixed physical interior points",
+  "fenics_initial_pressure": "exact analytical pressure",
+  "results": [
+    {
+      "solver": "MAC upwind",
+      "grid": [
+        36,
+        24,
+        24
+      ],
+      "wavelength_m": 0.032,
+      "velocity": {
+        "rmse_m_per_s": 0.012983948412343942,
+        "component_rmse_m_per_s": [
+          0.004816287542034806,
+          0.01555502434499646,
+          0.015511071563958239
+        ],
+        "relative_l2": 0.08783573781564928,
+        "observation_vectors": 539
+      },
+      "relative_fluctuation_error": 0.3243658382179445
+    },
+    {
+      "solver": "FEniCSx P2/P1 IPCS",
+      "grid": [
+        12,
+        8,
+        8
+      ],
+      "dt_s": 0.001,
+      "wavelength_m": 0.032,
+      "velocity": {
+        "rmse_m_per_s": 0.005708339545676606,
+        "component_rmse_m_per_s": [
+          0.0037839607708727825,
+          0.006453893221609525,
+          0.006464079538090836
+        ],
+        "relative_l2": 0.038616621059590135,
+        "observation_vectors": 539
+      },
+      "relative_fluctuation_error": 0.14260610738453885,
+      "divergence_rms_max": 8.051903049321655,
+      "seconds": 194.07762162500148,
+      "velocity_dofs": 21675,
+      "pressure_dofs": 1053
+    },
+    {
+      "solver": "FEniCSx P2/P1 IPCS",
+      "grid": [
+        18,
+        12,
+        12
+      ],
+      "dt_s": 0.001,
+      "wavelength_m": 0.032,
+      "velocity": {
+        "rmse_m_per_s": 0.002438254608671748,
+        "component_rmse_m_per_s": [
+          0.0013737186659096533,
+          0.002656929069039897,
+          0.002981422740764759
+        ],
+        "relative_l2": 0.01649466600864503,
+        "observation_vectors": 539
+      },
+      "relative_fluctuation_error": 0.06091263418596733,
+      "divergence_rms_max": 5.628408746813613,
+      "seconds": 188.69088520899822,
+      "velocity_dofs": 69375,
+      "pressure_dofs": 3211
+    },
+    {
+      "solver": "FEniCSx P2/P1 IPCS",
+      "grid": [
+        18,
+        12,
+        12
+      ],
+      "dt_s": 0.0005,
+      "wavelength_m": 0.032,
+      "velocity": {
+        "rmse_m_per_s": 0.0024395935526112713,
+        "component_rmse_m_per_s": [
+          0.0013721870256565537,
+          0.002661786430302451,
+          0.002981081325946178
+        ],
+        "relative_l2": 0.016503723894974124,
+        "observation_vectors": 539
+      },
+      "relative_fluctuation_error": 0.060946083769982735,
+      "divergence_rms_max": 5.628476318545296,
+      "seconds": 132.65717383300216,
+      "velocity_dofs": 69375,
+      "pressure_dofs": 3211
+    },
+    {
+      "solver": "MAC upwind",
+      "grid": [
+        36,
+        24,
+        24
+      ],
+      "wavelength_m": 0.016,
+      "velocity": {
+        "rmse_m_per_s": 0.024092443393962947,
+        "component_rmse_m_per_s": [
+          0.011050092064120288,
+          0.028467285838378063,
+          0.028440228347263192
+        ],
+        "relative_l2": 0.15881439183147766,
+        "observation_vectors": 539
+      },
+      "relative_fluctuation_error": 0.6116194833013663
+    },
+    {
+      "solver": "FEniCSx P2/P1 IPCS",
+      "grid": [
+        12,
+        8,
+        8
+      ],
+      "dt_s": 0.001,
+      "wavelength_m": 0.016,
+      "velocity": {
+        "rmse_m_per_s": 0.028895902553538497,
+        "component_rmse_m_per_s": [
+          0.02915056520279744,
+          0.02709152294810504,
+          0.03035149890632308
+        ],
+        "relative_l2": 0.19047819747547007,
+        "observation_vectors": 539
+      },
+      "relative_fluctuation_error": 0.733561835149954,
+      "divergence_rms_max": 29.06507620320671,
+      "seconds": 20.68720641699838,
+      "velocity_dofs": 21675,
+      "pressure_dofs": 1053
+    },
+    {
+      "solver": "FEniCSx P2/P1 IPCS",
+      "grid": [
+        18,
+        12,
+        12
+      ],
+      "dt_s": 0.001,
+      "wavelength_m": 0.016,
+      "velocity": {
+        "rmse_m_per_s": 0.017204369271604094,
+        "component_rmse_m_per_s": [
+          0.015589517887633632,
+          0.01830018679689299,
+          0.01760798288649555
+        ],
+        "relative_l2": 0.11340906349908134,
+        "observation_vectors": 539
+      },
+      "relative_fluctuation_error": 0.436756341910141,
+      "divergence_rms_max": 31.434950415992972,
+      "seconds": 37.47219595799834,
+      "velocity_dofs": 69375,
+      "pressure_dofs": 3211
+    },
+    {
+      "solver": "FEniCSx P2/P1 IPCS",
+      "grid": [
+        18,
+        12,
+        12
+      ],
+      "dt_s": 0.0005,
+      "wavelength_m": 0.016,
+      "velocity": {
+        "rmse_m_per_s": 0.017217889084967308,
+        "component_rmse_m_per_s": [
+          0.015582526111715997,
+          0.018340775694195465,
+          0.017611585406760152
+        ],
+        "relative_l2": 0.11349818442807319,
+        "observation_vectors": 539
+      },
+      "relative_fluctuation_error": 0.4370995607828939,
+      "divergence_rms_max": 31.452021202839635,
+      "seconds": 87.05162850000124,
+      "velocity_dofs": 69375,
+      "pressure_dofs": 3211
+    }
+  ]
+}
