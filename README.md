@@ -5,7 +5,8 @@
 и сравниваем рассчитанную скорость с экспериментальными измерениями.
 
 Основные материалы: [выполненный ноутбук](lab01_preparation.ipynb),
-[презентация Beamer](navier_stokes_preparation.tex),
+[презентация PDF](navier_stokes_preparation.pdf)
+([исходник Beamer](navier_stokes_preparation.tex)),
 [сравнение с FEniCSx и инструкция запуска](docs/fenicsx.md).
 
 ## Постановка
@@ -40,6 +41,7 @@ environments/                  # спецификация Conda и lock-файл
 metadata/                      # описание набора данных и история работы с ИИ
 lab01_preparation.ipynb         # выполненный основной ноутбук
 navier_stokes_preparation.tex   # исходник текущей презентации
+navier_stokes_preparation.pdf   # готовая презентация для просмотра
 *.py                           # команды запуска, загрузки и генерации ноутбука
 ```
 
