@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-21",
+  "source_files_verified": 43,
+  "tests_passed": 16,
+  "notebook_code_cells": 19,
+  "embedded_figures": 15,
+  "bootstrap_replicates": 1000,
+  "code_sha256": {
+    "lab02/run.py": "0a3a50df4100806d1e0b82d6ba2fbe7b47ef85e68c0c4e07065b78d89af39878",
+    "lab02/plotting.py": "98a6057ff093bf12d60e9a43ac76694b50d5e505d142fc975d7387cd580309f9",
+    "lab02/__init__.py": "3b7f74a9ad6f2068af8751bc18e2f6eec69dbe3ec9440ec28cb43ec7c8b03073",
+    "lab02/execute_notebook.py": "33cd94a79a75c6730d28bf265f79d87ca3e1ae7f41415fbed52c0fc3457ed5da",
+    "lab02/model.py": "edc47fefd58620d08cbbf14c50ec48383000881ba9d87732fd9f121e9e50d1ff",
+    "lab02/experiment.py": "44b50e0ce3c71f3073b0c6fdb6698740363a74d62c08358e948fd3eb4f14998c",
+    "lab02/upstream.py": "7d5d1c6470309b69a4e959b01ba35037cba2ed2d9eccf826d21b3f5056d121d9",
+    "lab02/statistics.py": "24cc5fe6d77a39fc253324eb84641bcdaab29834c3f5428a2016b160afb15aac",
+    "lab02/build_deliverables.py": "871467f3fc61213c242484a34a894dbd77353fcaada4878b35ab77e9f03dbb96",
+    "lab02/build_notebook.py": "2b64ac2350f73d38dc9dd1420c889875d2e7f1db714469c8857810e1c9a77a5c",
+    "lab02/data.py": "be0e8c81070f17ac617752030e5c54f00fce9af168bf9356b2b453a1066c15a0",
+    "tests/test_lab02_microwave.py": "b36db434b4495f48b71b3737aad2cfa2f96a2633f923a28f49d4eb50b6c32e34"
+  }
+}

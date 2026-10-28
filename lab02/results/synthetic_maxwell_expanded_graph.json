@@ -1,0 +1,326 @@
+{
+  "schema": 1,
+  "nodes": [
+    {
+      "kind": "parameter",
+      "shape": "scalar",
+      "args": [],
+      "name": "n",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "parameter",
+      "shape": "scalar",
+      "args": [],
+      "name": "a",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "field",
+      "shape": "scalar",
+      "args": [],
+      "name": "sqrt_f_over_f0",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "field",
+      "shape": "scalar",
+      "args": [],
+      "name": "omega_over_c",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "mul",
+      "shape": "scalar",
+      "args": [
+        1,
+        2
+      ],
+      "name": "",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "mul",
+      "shape": "scalar",
+      "args": [
+        0,
+        3
+      ],
+      "name": "",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "add",
+      "shape": "scalar",
+      "args": [
+        5,
+        4
+      ],
+      "name": "",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "mul",
+      "shape": "scalar",
+      "args": [
+        6,
+        6
+      ],
+      "name": "",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "mul",
+      "shape": "scalar",
+      "args": [
+        4,
+        4
+      ],
+      "name": "",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "sub",
+      "shape": "scalar",
+      "args": [
+        7,
+        8
+      ],
+      "name": "",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "mul",
+      "shape": "scalar",
+      "args": [
+        3,
+        3
+      ],
+      "name": "",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "div",
+      "shape": "scalar",
+      "args": [
+        9,
+        10
+      ],
+      "name": "",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "constant",
+      "shape": "scalar",
+      "args": [],
+      "name": "",
+      "value": 599584916.0,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "mul",
+      "shape": "scalar",
+      "args": [
+        4,
+        6
+      ],
+      "name": "",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "mul",
+      "shape": "scalar",
+      "args": [
+        12,
+        13
+      ],
+      "name": "",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "div",
+      "shape": "scalar",
+      "args": [
+        14,
+        3
+      ],
+      "name": "",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "field",
+      "shape": "vector",
+      "args": [],
+      "name": "e",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "field",
+      "shape": "vector",
+      "args": [],
+      "name": "h",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "constant",
+      "shape": "scalar",
+      "args": [],
+      "name": "",
+      "value": 299792458.0,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "div",
+      "shape": "scalar",
+      "args": [
+        18,
+        11
+      ],
+      "name": "",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "curl",
+      "shape": "vector",
+      "args": [
+        17
+      ],
+      "name": "",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "scale",
+      "shape": "vector",
+      "args": [
+        19,
+        20
+      ],
+      "name": "",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "div",
+      "shape": "scalar",
+      "args": [
+        15,
+        11
+      ],
+      "name": "",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "scale",
+      "shape": "vector",
+      "args": [
+        22,
+        16
+      ],
+      "name": "",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "sub",
+      "shape": "vector",
+      "args": [
+        21,
+        23
+      ],
+      "name": "",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "curl",
+      "shape": "vector",
+      "args": [
+        16
+      ],
+      "name": "",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "scale",
+      "shape": "vector",
+      "args": [
+        18,
+        25
+      ],
+      "name": "",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "neg",
+      "shape": "vector",
+      "args": [
+        26
+      ],
+      "name": "",
+      "value": null,
+      "axis": "",
+      "order": 1
+    }
+  ],
+  "roots": {
+    "alpha": 4,
+    "beta": 6,
+    "epsilon_r_effective": 11,
+    "sigma_over_epsilon0": 15,
+    "e_rhs": 24,
+    "h_rhs": 27
+  },
+  "parameter_order": [
+    "n",
+    "a"
+  ]
+}

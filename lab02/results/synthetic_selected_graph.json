@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "nodes": [
+    {
+      "kind": "parameter",
+      "shape": "scalar",
+      "args": [],
+      "name": "n",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "parameter",
+      "shape": "scalar",
+      "args": [],
+      "name": "a",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "field",
+      "shape": "scalar",
+      "args": [],
+      "name": "sqrt_f_over_f0",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "field",
+      "shape": "scalar",
+      "args": [],
+      "name": "omega_over_c",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "mul",
+      "shape": "scalar",
+      "args": [
+        1,
+        2
+      ],
+      "name": "",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "mul",
+      "shape": "scalar",
+      "args": [
+        0,
+        3
+      ],
+      "name": "",
+      "value": null,
+      "axis": "",
+      "order": 1
+    },
+    {
+      "kind": "add",
+      "shape": "scalar",
+      "args": [
+        5,
+        4
+      ],
+      "name": "",
+      "value": null,
+      "axis": "",
+      "order": 1
+    }
+  ],
+  "roots": {
+    "alpha": 4,
+    "beta": 6
+  },
+  "parameter_order": [
+    "n",
+    "a"
+  ]
+}

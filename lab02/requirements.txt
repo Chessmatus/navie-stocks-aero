@@ -1,0 +1,3 @@
+-r ../requirements.txt
+fdtd==0.3.5
+scikit-rf==2.2.0

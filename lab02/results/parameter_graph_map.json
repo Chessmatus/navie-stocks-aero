@@ -1,0 +1,40 @@
+{
+  "original_material_nodes": {
+    "epsilon_r": 2,
+    "mu_r": 3,
+    "c": 4,
+    "gamma": 8
+  },
+  "substitution": {
+    "epsilon_r": "(beta^2-alpha^2)/k0^2",
+    "gamma": "2*c*alpha*beta/k0",
+    "mu_r": "1"
+  },
+  "parameters": {
+    "n": {
+      "null": 1,
+      "affected": [
+        "epsilon_r",
+        "gamma"
+      ],
+      "observation_path": "k0*n -> beta"
+    },
+    "a": {
+      "null": 0,
+      "affected": [
+        "epsilon_r",
+        "gamma"
+      ],
+      "observation_path": "a*sqrt(u) -> alpha and beta"
+    },
+    "b": {
+      "null": 0,
+      "affected": [
+        "epsilon_r",
+        "gamma"
+      ],
+      "observation_path": "b*u -> alpha"
+    }
+  },
+  "interpretation": "Refine original material nodes; curl couplings retained. Original gamma means sigma/epsilon0 [1/s], not propagation gamma [1/m]."
+}

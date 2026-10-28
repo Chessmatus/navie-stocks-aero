@@ -7,7 +7,11 @@
 *.csv text eol=lf
 *.ipynb text eol=lf
 *.npz binary
+*.npy binary
 *.pdf binary
 *.png binary
 # Preserve archive CRC32/SHA-256 for original experimental text files.
 data/turbine_1L/*.txt -text
+# Keep the byte-exact third-party sources verified by lab02/sources.json.
+lab02/vendor/** -text
+lab02/data/measurements/** -text

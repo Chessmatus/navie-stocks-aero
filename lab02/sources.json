@@ -1,0 +1,231 @@
+{
+  "student": {
+    "repository": "https://github.com/gkarpeev/maxwell",
+    "commit": "b88901cc688be82a7de1716ef428026a33e4c7db",
+    "note": "No repository-wide license was found at this revision; retained as attributed educational source, no new license assigned."
+  },
+  "experiment": {
+    "repository": "https://github.com/ZiadHatab/two-port-single-line-propagation-constant",
+    "commit": "8785259053c0b9ccb5ae9d4d29c20f36e243f066",
+    "article_doi": "10.3390/s23094548",
+    "data_doi": "10.3217/6bd26-5cp67",
+    "license": "BSD-3-Clause, see vendor/hatab/LICENSE"
+  },
+  "files": [
+    {
+      "path": "data/measurements/ENA/line_000mm.s2p",
+      "bytes": 22419,
+      "sha256": "531f829fe816f4e9eb0ec9e5d65391355296c7cfd5d478c122f9b5947aba1992"
+    },
+    {
+      "path": "data/measurements/ENA/line_021mm.s2p",
+      "bytes": 22464,
+      "sha256": "85e18806b20f419ca6eb4f606c6cbfc33fcb00e5498294031baabac96fb3c762"
+    },
+    {
+      "path": "data/measurements/ENA/line_066mm.s2p",
+      "bytes": 22503,
+      "sha256": "471741a88f036e1669585d1b8bf2ff120f96e5487dffe7ec47bb9449c480ce0b"
+    },
+    {
+      "path": "data/measurements/ENA/line_081mm.s2p",
+      "bytes": 22443,
+      "sha256": "fa21f9852de284502521fff0b9603d77c6cd932e1e0fa57af2bf54515a1608b1"
+    },
+    {
+      "path": "data/measurements/ENA/line_084mm.s2p",
+      "bytes": 22484,
+      "sha256": "415f2035e0254c41796a056a75f7466ba7f27060699b600a44ff2bbc43530479"
+    },
+    {
+      "path": "data/measurements/ENA/line_093mm.s2p",
+      "bytes": 22474,
+      "sha256": "dc2d3a259685af2d464538fe420c71b06374181e746d978e497eb0abb86fc5ff"
+    },
+    {
+      "path": "data/measurements/ENA/line_117mm.s2p",
+      "bytes": 22474,
+      "sha256": "32ee450e1d0e2592bcf805786226c308204bd9161c99b25273654dd73de653b8"
+    },
+    {
+      "path": "data/measurements/ENA/line_123mm.s2p",
+      "bytes": 22469,
+      "sha256": "2318574894c968317bcf8009d0b1fefc54de85ad146c7ee1f04cdae6fefacd84"
+    },
+    {
+      "path": "data/measurements/ENA/line_171mm.s2p",
+      "bytes": 22455,
+      "sha256": "03e21aa18324cbb04a9b6a8e7ecc7605bcbe02330c1c40d75a485b24c2f5dfe6"
+    },
+    {
+      "path": "data/measurements/ENA/line_192mm.s2p",
+      "bytes": 22426,
+      "sha256": "41939f789d30da69c0f87934ef784b3d8730c8cf3dee3f5adc5383aee0b95d1b"
+    },
+    {
+      "path": "data/measurements/VectorStar/line_000mm.s2p",
+      "bytes": 39111,
+      "sha256": "c281da093cbe0523e24a7aab487a41467ba1912ed01747b936f6a8b2de787e3d"
+    },
+    {
+      "path": "data/measurements/VectorStar/line_021mm.s2p",
+      "bytes": 39081,
+      "sha256": "59b2133b0c27f569255a6439faea1c1835497379508eda33ff20667934ad4f75"
+    },
+    {
+      "path": "data/measurements/VectorStar/line_066mm.s2p",
+      "bytes": 39167,
+      "sha256": "7d5b2fc48ebf8ec5b3198cf664b2f0e6d39205f74c89acd8d399b1541bdd8f95"
+    },
+    {
+      "path": "data/measurements/VectorStar/line_081mm.s2p",
+      "bytes": 39159,
+      "sha256": "99334a6830eb94c06a0e1d64d909b97afd15474efdf81f83f3c3b09c45965163"
+    },
+    {
+      "path": "data/measurements/VectorStar/line_084mm.s2p",
+      "bytes": 39151,
+      "sha256": "84a42f0f4de8ba0053bef22dc19b2c20e505fd7dd6944c3c3636d45a5b5f0e27"
+    },
+    {
+      "path": "data/measurements/VectorStar/line_093mm.s2p",
+      "bytes": 39126,
+      "sha256": "68b8d8c641037f21ed8d7bbfaa4effb9b81ffad41dce64e98ccfa24479b870fb"
+    },
+    {
+      "path": "data/measurements/VectorStar/line_117mm.s2p",
+      "bytes": 39132,
+      "sha256": "fd5bd303b93b9e4d76b8f8228e18fe3ddc6374c3955f3e0961c71ad8bee3b4cb"
+    },
+    {
+      "path": "data/measurements/VectorStar/line_123mm.s2p",
+      "bytes": 39110,
+      "sha256": "68f80e233c98d21dc4a62085d96fdc5ea5d9548ec8576d83bc24db96cbf5571c"
+    },
+    {
+      "path": "data/measurements/VectorStar/line_171mm.s2p",
+      "bytes": 39113,
+      "sha256": "e95c22aa05f27049dedcb8c105cfb4363d54f1b3572cd2c713755d223cf035a1"
+    },
+    {
+      "path": "data/measurements/VectorStar/line_192mm.s2p",
+      "bytes": 39164,
+      "sha256": "0e76b599de45c4fe8a24202185de4388afca8c015c4331ee07fda4f4f1e9ce8b"
+    },
+    {
+      "path": "data/measurements/ZNA/line_000mm.s2p",
+      "bytes": 32421,
+      "sha256": "457d2b71c3a0ca5b2b40fe810f2919a951b151f1336eefd846be3dde33e5a0b5"
+    },
+    {
+      "path": "data/measurements/ZNA/line_021mm.s2p",
+      "bytes": 32491,
+      "sha256": "10f7281e8a507146029a9ed767b4cc4460aa3d8aa9f952a343f102196e92f6d9"
+    },
+    {
+      "path": "data/measurements/ZNA/line_066mm.s2p",
+      "bytes": 32451,
+      "sha256": "9a5ffed0d59fdd4e86c4f454ffa85a02ed7bd6f49d171e03b16d964cbdb84a67"
+    },
+    {
+      "path": "data/measurements/ZNA/line_081mm.s2p",
+      "bytes": 32446,
+      "sha256": "5cb2cbbacf5db731e5b2bd64e7950eb475831ee38551a66aa279e0c176cd612d"
+    },
+    {
+      "path": "data/measurements/ZNA/line_084mm.s2p",
+      "bytes": 32461,
+      "sha256": "f6219c45b646baf66bd03aa7737596eb8f6d5cb396cc2b9cb5eb0be7b740a940"
+    },
+    {
+      "path": "data/measurements/ZNA/line_093mm.s2p",
+      "bytes": 32432,
+      "sha256": "558c18e9229a122185caf82647c6434d08fe89e1b3f9c1a1eeab46434d23b700"
+    },
+    {
+      "path": "data/measurements/ZNA/line_117mm.s2p",
+      "bytes": 32424,
+      "sha256": "d662c09e43870d9e66acbf2994a55e47c1c5e5f5c58ce2290a9ef039eceb7ec7"
+    },
+    {
+      "path": "data/measurements/ZNA/line_123mm.s2p",
+      "bytes": 32424,
+      "sha256": "bb52741ae96df3942eae4e399a1e208f9238099cd4a33c6ae1df0e6d88a59931"
+    },
+    {
+      "path": "data/measurements/ZNA/line_171mm.s2p",
+      "bytes": 32440,
+      "sha256": "8726407272a046377b4de355da3ff055f2e3663967a82c920628c0bcecb2f313"
+    },
+    {
+      "path": "data/measurements/ZNA/line_192mm.s2p",
+      "bytes": 32445,
+      "sha256": "8899c3f14a0ddcd29d8ffb0dbaf8f216a3b7e131943a0de072e08d311d9bf47d"
+    },
+    {
+      "path": "vendor/hatab/LICENSE",
+      "bytes": 1496,
+      "sha256": "836b0bb329a6bc032924e0bccc3820eb237e6fc3574c363b62e01f46a894ef6a"
+    },
+    {
+      "path": "vendor/hatab/README.md",
+      "bytes": 6234,
+      "sha256": "4f71826f318a770007ba512fabf19dc422567e3e1cb5d4489b62c4eeb449761d"
+    },
+    {
+      "path": "vendor/hatab/example.py",
+      "bytes": 6803,
+      "sha256": "cf1acddf755aa69e487c8f5961bfe3a804478dbedbb209548c85ed44b92831fb"
+    },
+    {
+      "path": "vendor/hatab/multinetwork.py",
+      "bytes": 9556,
+      "sha256": "9d75bfb1b262eb2be695f5b050cdc8bdf31b46c1de75a5140def7a46bf37fcf1"
+    },
+    {
+      "path": "vendor/student_maxwell/README.md",
+      "bytes": 10329,
+      "sha256": "911d0d039280f71267f258e0aeba187e6dfccbea6621cf85f9c994b0d1bba3b9"
+    },
+    {
+      "path": "vendor/student_maxwell/analytic_benchmark.py",
+      "bytes": 4894,
+      "sha256": "05b410777088b0449e4fd916747036c4d0a86fd583bfe7a72cc8e7ffbb3db365"
+    },
+    {
+      "path": "vendor/student_maxwell/inference.py",
+      "bytes": 3397,
+      "sha256": "cb86707bef9b0498c67a16e446112ede884802e366d96c09a9539405e76074a6"
+    },
+    {
+      "path": "vendor/student_maxwell/maxwell_fdtd.py",
+      "bytes": 5119,
+      "sha256": "6d3cdba5bcd9febee703a6697f30f75d9e907ae1f9505198fcb7b6b9393994da"
+    },
+    {
+      "path": "vendor/student_maxwell/maxwell_symbolic.py",
+      "bytes": 1621,
+      "sha256": "747866208196ffa6c76de8f33dd4483040632faf2ba77270d642c7735123f102"
+    },
+    {
+      "path": "vendor/student_maxwell/sources/README.md",
+      "bytes": 8687,
+      "sha256": "a8455417871fad95e7e27d1d17c0ae721aa99967517cad73e677564f0acb83f4"
+    },
+    {
+      "path": "vendor/student_maxwell/sources/fdtd-LICENSE",
+      "bytes": 1086,
+      "sha256": "bc3ab04ba5464bee43c427b6ed8d62982a9e735e702c7b3d92364fe9243d0191"
+    },
+    {
+      "path": "vendor/student_maxwell/sources/pdearena-LICENSE",
+      "bytes": 1141,
+      "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+    },
+    {
+      "path": "vendor/student_maxwell/symbolic_core.py",
+      "bytes": 10439,
+      "sha256": "fc1b8448667c0da74633902880afa53d76418c911c37498d5aaa9397f0e70e87"
+    }
+  ]
+}
