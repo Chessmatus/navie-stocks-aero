@@ -198,7 +198,7 @@
 
 ```math
 E_y(x,t)=
-\operatorname{Re}
+\Re
 \left\{
 E_0 e^{-\gamma(f)x}e^{i\omega t}
 \right\},
