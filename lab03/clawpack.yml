@@ -1,0 +1,6 @@
+name: lab03-clawpack
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - clawpack=5.9.0

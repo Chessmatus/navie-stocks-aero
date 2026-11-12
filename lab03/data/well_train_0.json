@@ -1,0 +1,8 @@
+{
+  "url": "https://huggingface.co/datasets/polymathic-ai/acoustic_scattering_maze/resolve/8df383a3223f40f7ce66fe77b4ff4d7006dbc272/data/train/acoustic_scattering_maze_chunk_0.hdf5",
+  "revision": "8df383a3223f40f7ce66fe77b4ff4d7006dbc272",
+  "sample": 0,
+  "stop": 101,
+  "sha256": "3b5c65b558f53d65b4cc11b0078206ba09ab3bd3d992b7335e7383db576a2084",
+  "note": "Published simulation, 2D+time; spatial coordinates of solver are [-1,1]^2."
+}

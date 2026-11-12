@@ -1,0 +1,151 @@
+\documentclass{beamer}
+\beamertemplatenavigationsymbolsempty
+\usecolortheme{beaver}
+\setbeamertemplate{footline}[page number]
+\setbeamertemplate{itemize item}{\textendash}
+\usepackage{fontspec}
+\setmainfont{cmunrm.otf}[BoldFont=cmunbx.otf,ItalicFont=cmunti.otf,BoldItalicFont=cmunbi.otf]
+\setsansfont{cmunss.otf}[BoldFont=cmunsx.otf,ItalicFont=cmunsi.otf,BoldItalicFont=cmunso.otf]
+\usepackage[english,russian]{babel}
+\usepackage{amsmath,amssymb,booktabs,graphicx}
+\graphicspath{{figures/}{lab03/figures/}}
+\title{The Well: acoustic scattering maze}
+\subtitle{Лабораторная № 3\\Семплирование с отклонением, метод № 4}
+\author{}\institute{Foundation models for spatial-time series}\date{12 ноября 2026}
+\begin{document}
+\begin{frame}\maketitle\end{frame}
+\begin{frame}{Уравнение акустики}\small
+\[p_t=-K(u_x+v_y),\quad u_t=-\rho^{-1}p_x,\quad v_t=-\rho^{-1}p_y.\]
+Для статических материалов:
+\[\boxed{p_{tt}=K\partial_x(\rho^{-1}p_x)+K\partial_y(\rho^{-1}p_y).}\]
+\begin{itemize}
+\item Давление меняется при сжатии; градиент давления ускоряет среду.
+\item $\rho(x,y)$ задаёт лабиринт и остаётся внутри производной.
+\item Известны $p_0$ и $p_t(0)=0$; интегрируем PDE из начального поля.
+\end{itemize}
+\medskip Данные --- вычислительные, две пространственные координаты и время.
+\end{frame}
+\begin{frame}{Дерево и матрица смежности}
+\centering\includegraphics[width=.62\textwidth]{analytic_tree_short.png}
+\includegraphics[width=.34\textwidth]{analytic_adjacency.png}
+\small\[F_x=K\partial_x(\rho^{-1}p_x),\quad F_y=K\partial_y(\rho^{-1}p_y).\]
+NetworkX сохраняет операции и порядок аргументов.\\\medskip
+\footnotesize Дерево сокращено; матрица относится к полной развёртке из 22 вершин.
+Временная структурная модель: $z_{n+1}=\Phi_G(z_n;\rho,K)+\epsilon_n$.
+\end{frame}
+\begin{frame}{Данные и новый тест}
+\centering\includegraphics[width=\textwidth]{well_data.png}
+\small\begin{itemize}
+\item The Well: train/sample 0, validation/sample 0; новый test/sample 1.
+\item По 101 кадру, $256\times256$, времена и границы из HDF5/генератора.
+\item Старый test/sample 0 считается разработочным после анализа ошибки.
+\end{itemize}
+\scriptsize\href{https://huggingface.co/datasets/polymathic-ai/acoustic_scattering_maze}{The Well: данные и генератор}.
+\end{frame}
+\begin{frame}{Аналитический benchmark}\small
+\[p=\sum_{i,j=1}^{32}A_{ij}\sin(\pi ix)\sin(\pi jy)
+\cos\!\left(0.1\pi t\sqrt{i^2+j^2}\right).\]
+\begin{itemize}
+\item CNO/RPB: опубликованные случаи 0/1 --- обучение/валидация.
+\item DST-I воспроизводит архивные конечные поля до $3\cdot10^{-15}$.
+\item Новый тест: независимые коэффициенты, seed 55001.
+\item Отдельный опыт: 1\% шума в обучающем $p_{tt}$.
+\item Прямое решение: синусный Galerkin и DOP853; эталон --- точная формула.
+\end{itemize}
+\scriptsize\href{https://zenodo.org/records/10406879}{Архив CNO/RPB};
+\href{https://arxiv.org/html/2302.01178v2}{Raonić et al., C.3.2}.
+Новый seed --- наша реализация опубликованного семейства.
+\end{frame}
+\begin{frame}{Bootstrap как диагностика}\small
+Шесть членов задают 64 графа. МНК подбирает коэффициенты на обучении.
+\begin{itemize}
+\item 1000 реплик, блоки 4/8/12 полных кадров, 95\%-е интервалы.
+\item Refit при удалении, изменение ошибки и $W_1/SD_0$.
+\item Ненулевой интервал может отражать систематическую численную ошибку.
+\end{itemize}
+\[B(G)=\frac16\sum_{j\notin G}b_j\in[0,1].\]
+Здесь $b_j=1$, если прежняя диагностика советует сохранить ветвь.
+\medskip
+
+Диагностика даёт мягкий штраф. Она больше не запрещает удаление.
+\end{frame}
+\begin{frame}{Критерий по прямому решению}\small
+\[J(G)=E_p+0.1E_m+0.02N+0.5E_{\rm int}+0.01B.\]
+\begin{itemize}
+\item $E_p$ --- ошибка давления после интегрирования PDE на валидации.
+\item $E_m$ --- ошибка дифференциальных моментов; $N$ --- число ветвей.
+\item $E_{\rm int}$ --- ошибка давления при физических интервенциях.
+\item Веса и новый тест зафиксированы до итоговой оценки.
+\end{itemize}
+\medskip
+Фильтр проверяет математическую допустимость, устойчивость и грубую
+валидационную ошибку $\le50\%$.
+\medskip
+
+\footnotesize Исходная структура и граф с затуханием проходят фильтр и сравниваются по одному J.
+\end{frame}
+\begin{frame}{Интервенции и семплирование}\small
+\begin{itemize}
+\item Амплитуда $p_0\mapsto1.5p_0$, обмен осей со средой; новое поле CNO.
+\item Для кубического члена --- отдельный расчёт с исходным $P_0$.
+\end{itemize}
+\begin{enumerate}
+\item Предложить $G\sim\mathrm{Uniform}\{0,\ldots,63\}$.
+\item Проверить $I(G)=1$ и сгенерировать независимое $U\sim\mathcal U(0,1)$.
+\item Принять при $U\le e^{-J(G)/T}$.
+\end{enumerate}
+\[P(G\mid accept)=\frac{q(G)I(G)e^{-J(G)/T}}{\sum_Hq(H)I(H)e^{-J(H)/T}}.\]
+\footnotesize Из $J\ge0$ следует корректная огибающая. 3 раунда по 5000 предложений;
+между раундами снижаем T по принятым оценкам. Разные T не образуют один posterior.
+\end{frame}
+\begin{frame}{Сравнение на одной валидации}
+\centering\includegraphics[width=\textwidth]{criterion_comparison.png}\par
+\small Обе структуры допустимы. Ошибка прямого решения позволяет
+сравнить численный эффект с более простой физической моделью.
+\medskip
+
+\footnotesize Старые 23.3\% и новый тест не смешиваются в одно сравнение.
+\end{frame}
+\begin{frame}{Выборка графов}
+\centering\includegraphics[width=\textwidth]{well_sequence.png}\par
+\includegraphics[width=.72\textwidth]{well_distribution.png}\par
+\footnotesize Полный журнал предложений и отказов; отдельный аудит 100\,000 предложений.
+Минимум проверяется перебором в семействе из 64 масок.
+\end{frame}
+\begin{frame}{Выбранные структуры}
+\centering\includegraphics[width=.96\textwidth]{selected_branches.png}\par
+\small The Well: маска 3; точный CNO: 3; CNO с шумом: 3.
+\medskip
+
+\footnotesize Bootstrap характеризует разброс оценок, но не делает численный член обязательным.
+Ограниченный мягкий штраф не заменяет проверку давления.
+\end{frame}
+\begin{frame}{Итоговая проверка на новых данных}
+\centering\includegraphics[width=\textwidth]{well_approximation.png}\par
+\small\begin{tabular}{lc}\toprule
+The Well sample 1, Clawpack & Ошибка давления\\\midrule
+Выбранный граф & 6.90\%\\
+Известные точные коэффициенты & 5.37\%\\\bottomrule
+\end{tabular}
+\medskip
+
+\footnotesize Новая траектория не участвовала в подборе коэффициентов, графа или весов.
+\end{frame}
+\begin{frame}{Выводы и источники}\footnotesize
+\begin{itemize}
+\item Исходная модель участвует в отборе; статистическое вето устранено.
+\item Критерий проверяет прямое решение на валидации; итоговый тест заменён.
+\item Ограничения: малая выборка, шесть членов, зависимые интервенции,
+численные ошибки и учебные веса. Физических измерений нет.
+\end{itemize}
+\begin{enumerate}
+\item \href{https://polymathic-ai.org/the_well/datasets/acoustic_scattering_maze/}{The Well},
+\href{https://huggingface.co/datasets/polymathic-ai/acoustic_scattering_maze}{данные и генератор}.
+\item \href{https://zenodo.org/records/10406879}{CNO/RPB};
+\href{https://arxiv.org/html/2302.01178v2}{Raonić et al., C.3.2}.
+\item \href{https://math.nyu.edu/~goodman/teaching/MonteCarlo07/notes/SimpleSampling.pdf}{Goodman: rejection sampling}.
+\item \href{https://www.clawpack.org/gallery/pyclaw/gallery/acoustics_2d_interface.html}{Clawpack: variable-coefficient acoustics}.
+\item Работа Ф. Соболевского; диагностика нашей лабораторной № 2.
+\end{enumerate}
+\end{frame}
+\end{document}

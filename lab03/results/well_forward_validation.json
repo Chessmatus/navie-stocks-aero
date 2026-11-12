@@ -1,0 +1,551 @@
+{
+  "signature": "9d472674da2032c7057547b2c69b6865a6132e380bb56113c724c6bf5590eb92",
+  "solver_version": "clawpack-5.9-mc-ssprk-source-v2.1",
+  "input": "well_valid_0.npz",
+  "records": {
+    "0": {
+      "success": false,
+      "failure": "Validation pressure error necessarily exceeds 0.5",
+      "parameters": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "1": {
+      "success": false,
+      "failure": "Validation pressure error necessarily exceeds 0.5",
+      "parameters": [
+        1.2754543467758042,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "2": {
+      "success": false,
+      "failure": "Validation pressure error necessarily exceeds 0.5",
+      "parameters": [
+        0.0,
+        1.2485218995705114,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "3": {
+      "success": true,
+      "pressure_error": 0.08367436332212405,
+      "amplitude_error": 0.08367436332212405,
+      "swap_error": 0.08357854102987015,
+      "intervention_error": 0.0836264521759971,
+      "parameters": [
+        1.0029436230093474,
+        1.0029613636330716,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "seconds": 3.550709832998109
+    },
+    "7": {
+      "success": true,
+      "pressure_error": 0.08348221257924583,
+      "amplitude_error": 0.08348221257924583,
+      "swap_error": 0.08388391299488387,
+      "intervention_error": 0.08368306278706486,
+      "parameters": [
+        1.0029422069940288,
+        1.0029565118897377,
+        0.0007350808201667256,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "seconds": 12.306988208001712
+    },
+    "8": {
+      "success": false,
+      "failure": "Validation pressure error necessarily exceeds 0.5",
+      "parameters": [
+        0.0,
+        0.0,
+        0.0,
+        -0.10924155606054563,
+        0.0,
+        0.0
+      ]
+    },
+    "9": {
+      "success": false,
+      "failure": "Validation pressure error necessarily exceeds 0.5",
+      "parameters": [
+        1.2755827207991783,
+        0.0,
+        0.0,
+        0.24485649360952022,
+        0.0,
+        0.0
+      ]
+    },
+    "10": {
+      "success": false,
+      "failure": "Validation pressure error necessarily exceeds 0.5",
+      "parameters": [
+        0.0,
+        1.2487031465714604,
+        0.0,
+        0.314115744430588,
+        0.0,
+        0.0
+      ]
+    },
+    "11": {
+      "success": true,
+      "pressure_error": 0.23010320218443234,
+      "amplitude_error": 0.23010320218443234,
+      "swap_error": 0.23036315182800016,
+      "intervention_error": 0.23023317700621626,
+      "parameters": [
+        1.003144153648698,
+        1.0032061659863247,
+        0.0,
+        0.5093529373372055,
+        0.0,
+        0.0
+      ],
+      "seconds": 4.243384957997478
+    },
+    "15": {
+      "success": true,
+      "pressure_error": 0.23064336071431124,
+      "amplitude_error": 0.23064336071431124,
+      "swap_error": 0.22993189578278064,
+      "intervention_error": 0.23028762824854593,
+      "parameters": [
+        1.0031429557303015,
+        1.0032020990458212,
+        0.0006130292245429429,
+        0.5093097165038996,
+        0.0,
+        0.0
+      ],
+      "seconds": 12.404907083997387
+    },
+    "16": {
+      "success": false,
+      "failure": "Validation pressure error necessarily exceeds 0.5",
+      "parameters": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        527.93399525547,
+        0.0
+      ]
+    },
+    "17": {
+      "success": false,
+      "failure": "Validation pressure error necessarily exceeds 0.5",
+      "parameters": [
+        1.0355987333733563,
+        0.0,
+        0.0,
+        0.0,
+        245.6855751981082,
+        0.0
+      ]
+    },
+    "18": {
+      "success": false,
+      "failure": "Validation pressure error necessarily exceeds 0.5",
+      "parameters": [
+        0.0,
+        1.0302297454047897,
+        0.0,
+        0.0,
+        266.4980407779711,
+        0.0
+      ]
+    },
+    "19": {
+      "success": true,
+      "pressure_error": 0.08071365038904864,
+      "amplitude_error": 0.08071365038904864,
+      "swap_error": 0.08070333030823415,
+      "intervention_error": 0.08070849034864139,
+      "parameters": [
+        1.0028535725329868,
+        1.0028920576224307,
+        0.0,
+        0.0,
+        0.11152782653710713,
+        0.0
+      ],
+      "seconds": 12.930523917006212
+    },
+    "23": {
+      "success": true,
+      "pressure_error": 0.0800008312221571,
+      "amplitude_error": 0.0800008312221571,
+      "swap_error": 0.08107152029805934,
+      "intervention_error": 0.08053617576010821,
+      "parameters": [
+        1.0028500393343671,
+        1.0028855680901367,
+        0.0007367085610401231,
+        0.0,
+        0.11414608195216408,
+        0.0
+      ],
+      "seconds": 13.197061041995767
+    },
+    "24": {
+      "success": false,
+      "failure": "Validation pressure error necessarily exceeds 0.5",
+      "parameters": [
+        0.0,
+        0.0,
+        0.0,
+        -0.011437843142306704,
+        527.9328780291212,
+        0.0
+      ]
+    },
+    "25": {
+      "success": false,
+      "failure": "Validation pressure error necessarily exceeds 0.5",
+      "parameters": [
+        1.0357295200131167,
+        0.0,
+        0.0,
+        0.22378657215825107,
+        245.67178884507967,
+        0.0
+      ]
+    },
+    "26": {
+      "success": false,
+      "failure": "Validation pressure error necessarily exceeds 0.5",
+      "parameters": [
+        0.0,
+        1.0304113652781566,
+        0.0,
+        0.2894741813429571,
+        266.4802273401021,
+        0.0
+      ]
+    },
+    "27": {
+      "success": true,
+      "pressure_error": 0.23008499152136105,
+      "amplitude_error": 0.23008499152136105,
+      "swap_error": 0.2302699975538883,
+      "intervention_error": 0.23017749453762468,
+      "parameters": [
+        1.0031410725222403,
+        1.0032037944739698,
+        0.0,
+        0.509351984848957,
+        0.00381552135161858,
+        0.0
+      ],
+      "seconds": 13.51164808300382
+    },
+    "31": {
+      "success": true,
+      "pressure_error": 0.23008429828897345,
+      "amplitude_error": 0.23008429828897345,
+      "swap_error": 0.2297742809451029,
+      "intervention_error": 0.22992928961703818,
+      "parameters": [
+        1.003138107360605,
+        1.0031983668628792,
+        0.0006131152000493186,
+        0.5093082116868275,
+        0.0060037837839956275,
+        0.0
+      ],
+      "seconds": 12.849332084006164
+    },
+    "32": {
+      "success": false,
+      "failure": "Candidate source grows beyond the validation bound",
+      "parameters": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        17268.466437375373
+      ]
+    },
+    "33": {
+      "success": false,
+      "failure": "Validation pressure error necessarily exceeds 0.5",
+      "parameters": [
+        1.1967282324086332,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        4059.112976293796
+      ]
+    },
+    "34": {
+      "success": false,
+      "failure": "Validation pressure error necessarily exceeds 0.5",
+      "parameters": [
+        0.0,
+        1.1489361820396597,
+        0.0,
+        0.0,
+        0.0,
+        10146.914173066156
+      ]
+    },
+    "35": {
+      "success": true,
+      "pressure_error": 0.2284368698769866,
+      "amplitude_error": 0.5875512566951049,
+      "swap_error": 0.22802045661508633,
+      "intervention_error": 0.4077858566550956,
+      "parameters": [
+        1.0033786629469994,
+        1.003093104564383,
+        0.0,
+        0.0,
+        0.0,
+        -24.276207073838876
+      ],
+      "seconds": 19.520779124999535
+    },
+    "39": {
+      "success": true,
+      "pressure_error": 0.2279976768681796,
+      "amplitude_error": 0.5869588030069898,
+      "swap_error": 0.22823910503168926,
+      "intervention_error": 0.40759895401933954,
+      "parameters": [
+        1.0033767464970373,
+        1.0030881149110247,
+        0.0007328148758998499,
+        0.0,
+        0.0,
+        -24.248038119434927
+      ],
+      "seconds": 19.38563541599433
+    },
+    "40": {
+      "success": false,
+      "failure": "Candidate source grows beyond the validation bound",
+      "parameters": [
+        0.0,
+        0.0,
+        0.0,
+        0.6916145055760307,
+        0.0,
+        17302.873634121042
+      ]
+    },
+    "41": {
+      "success": false,
+      "failure": "Validation pressure error necessarily exceeds 0.5",
+      "parameters": [
+        1.196497348432879,
+        0.0,
+        0.0,
+        0.41184319361554445,
+        0.0,
+        4082.150274765677
+      ]
+    },
+    "42": {
+      "success": false,
+      "failure": "Validation pressure error necessarily exceeds 0.5",
+      "parameters": [
+        0.0,
+        1.1490072141917296,
+        0.0,
+        0.7516710640616611,
+        0.0,
+        10183.868844492235
+      ]
+    },
+    "43": {
+      "success": true,
+      "pressure_error": 0.22863530331796122,
+      "amplitude_error": 0.22990206485468975,
+      "swap_error": 0.22892232999878345,
+      "intervention_error": 0.2294121974267366,
+      "parameters": [
+        1.0030752472686992,
+        1.0031853543280822,
+        0.0,
+        0.5095048779245116,
+        0.0,
+        3.848469006261929
+      ],
+      "seconds": 19.398536916996818
+    },
+    "47": {
+      "success": true,
+      "pressure_error": 0.22866862016824768,
+      "amplitude_error": 0.22947283484080544,
+      "swap_error": 0.2288887357845278,
+      "intervention_error": 0.2291807853126666,
+      "parameters": [
+        1.0030736684838095,
+        1.003181170390859,
+        0.0006133542362694592,
+        0.5094624725980311,
+        0.0,
+        3.8697051923724435
+      ],
+      "seconds": 19.494268207999994
+    },
+    "48": {
+      "success": false,
+      "failure": "Validation pressure error necessarily exceeds 0.5",
+      "parameters": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        503.43642132167133,
+        1605.137356656747
+      ]
+    },
+    "49": {
+      "success": false,
+      "failure": "Candidate source grows beyond the validation bound",
+      "parameters": [
+        1.0573132959106972,
+        0.0,
+        0.0,
+        0.0,
+        293.87687451612555,
+        -3545.380076545476
+      ]
+    },
+    "50": {
+      "success": false,
+      "failure": "Validation pressure error necessarily exceeds 0.5",
+      "parameters": [
+        0.0,
+        1.0471516806430456,
+        0.0,
+        0.0,
+        186.06459972286697,
+        4988.818748958936
+      ]
+    },
+    "51": {
+      "success": true,
+      "pressure_error": 0.2307177713335515,
+      "amplitude_error": 0.9512522495188376,
+      "swap_error": 0.230297860389845,
+      "intervention_error": 0.5907750549543413,
+      "parameters": [
+        1.0031103873866103,
+        1.0027454796715998,
+        0.0,
+        0.0,
+        0.706749653216294,
+        -41.1492752375585
+      ],
+      "seconds": 19.46005325000442
+    },
+    "55": {
+      "success": true,
+      "pressure_error": 0.2306557476067779,
+      "amplitude_error": 0.9514132607889642,
+      "swap_error": 0.23072455845191894,
+      "intervention_error": 0.5910689096204416,
+      "parameters": [
+        1.0031071598922572,
+        1.0027387619822314,
+        0.0007413573413368788,
+        0.0,
+        0.7101446373197738,
+        -41.201830376282146
+      ],
+      "seconds": 19.674778874992626
+    },
+    "56": {
+      "success": false,
+      "failure": "Validation pressure error necessarily exceeds 0.5",
+      "parameters": [
+        0.0,
+        0.0,
+        0.0,
+        0.058544438821486924,
+        503.36266712294787,
+        1610.34459103984
+      ]
+    },
+    "57": {
+      "success": false,
+      "failure": "Candidate source grows beyond the validation bound",
+      "parameters": [
+        1.0573163579282203,
+        0.0,
+        0.0,
+        0.07490307010393145,
+        293.78190484552533,
+        -3538.7327399910264
+      ]
+    },
+    "58": {
+      "success": false,
+      "failure": "Validation pressure error necessarily exceeds 0.5",
+      "parameters": [
+        0.0,
+        1.0476339349694768,
+        0.0,
+        0.5133596078681693,
+        185.27170789352957,
+        5036.03783059063
+      ]
+    },
+    "59": {
+      "success": true,
+      "pressure_error": 0.2288442615911096,
+      "amplitude_error": 0.23116147360226832,
+      "swap_error": 0.22891194205219362,
+      "intervention_error": 0.23003670782723096,
+      "parameters": [
+        1.0031053304926285,
+        1.0032244258139127,
+        0.0,
+        0.5095997465728649,
+        -0.0794005838189112,
+        5.749329556569581
+      ],
+      "seconds": 19.429711458011298
+    },
+    "63": {
+      "success": true,
+      "pressure_error": 0.22886139916992126,
+      "amplitude_error": 0.2310909262705798,
+      "swap_error": 0.22850075716261475,
+      "intervention_error": 0.22979584171659728,
+      "parameters": [
+        1.003102664814166,
+        1.0032188335177492,
+        0.000612412241784916,
+        0.5095539711642055,
+        -0.07652547615489658,
+        5.701702667636743
+      ],
+      "seconds": 19.38086391700199
+    }
+  }
+}

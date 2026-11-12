@@ -1,0 +1,357 @@
+{
+  "signature": "e61573aeea8f05e138831000fe26bfbdcf8067f40de8669c7d8bb44a2c2d5f5f",
+  "records": {
+    "0": {
+      "success": false,
+      "failure": "Validation pressure error exceeds 0.5"
+    },
+    "1": {
+      "success": false,
+      "failure": "Validation pressure error exceeds 0.5"
+    },
+    "2": {
+      "success": false,
+      "failure": "Validation pressure error exceeds 0.5"
+    },
+    "3": {
+      "success": true,
+      "pressure_error": 0.00016392919903428322,
+      "intervention_error": 0.00014362202035838584,
+      "amplitude_error": 0.00016392919903428322,
+      "new_initial_error": 0.00012331484168248845,
+      "parameters": [
+        1.000114383015925,
+        0.9999531334652179,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
+    },
+    "7": {
+      "success": true,
+      "pressure_error": 0.00027892591218396466,
+      "intervention_error": 0.0002349987804072258,
+      "amplitude_error": 0.00027892591218396466,
+      "new_initial_error": 0.00019107164863048698,
+      "parameters": [
+        1.0001228522086378,
+        0.9999493212932268,
+        -0.0002705825422717996,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
+    },
+    "8": {
+      "success": false,
+      "failure": "Validation pressure error exceeds 0.5"
+    },
+    "9": {
+      "success": false,
+      "failure": "Validation pressure error exceeds 0.5"
+    },
+    "10": {
+      "success": false,
+      "failure": "Validation pressure error exceeds 0.5"
+    },
+    "11": {
+      "success": true,
+      "pressure_error": 0.0005547729000016066,
+      "intervention_error": 0.0005591978537556118,
+      "amplitude_error": 0.0005547729000016066,
+      "new_initial_error": 0.0005636228075096169,
+      "parameters": [
+        1.000115118781072,
+        0.9999539137655731,
+        0.0,
+        0.0003400341302508678,
+        0.0,
+        0.0
+      ],
+      "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
+    },
+    "15": {
+      "success": true,
+      "pressure_error": 0.0006012332484104542,
+      "intervention_error": 0.0005946985764705408,
+      "amplitude_error": 0.0006012332484104542,
+      "new_initial_error": 0.0005881639045306275,
+      "parameters": [
+        1.0001235879100305,
+        0.999950101600702,
+        -0.0002705809617272556,
+        0.0003400275292995283,
+        0.0,
+        0.0
+      ],
+      "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
+    },
+    "16": {
+      "success": false,
+      "failure": "Validation pressure error exceeds 0.5"
+    },
+    "17": {
+      "success": false,
+      "failure": "Validation pressure error exceeds 0.5"
+    },
+    "18": {
+      "success": false,
+      "failure": "Validation pressure error exceeds 0.5"
+    },
+    "19": {
+      "success": true,
+      "pressure_error": 0.0014295260470701746,
+      "intervention_error": 0.0010393572383096635,
+      "amplitude_error": 0.0014295260470701746,
+      "new_initial_error": 0.0006491884295491527,
+      "parameters": [
+        1.0001261711083989,
+        0.9999638097851324,
+        0.0,
+        0.0,
+        -0.0004570106114218286,
+        0.0
+      ],
+      "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
+    },
+    "23": {
+      "success": true,
+      "pressure_error": 0.0014025510317399045,
+      "intervention_error": 0.0010283171432926633,
+      "amplitude_error": 0.0014025510317399045,
+      "new_initial_error": 0.0006540832548454222,
+      "parameters": [
+        1.0001342302184306,
+        0.9999596566847895,
+        -0.0002698643388863593,
+        0.0,
+        -0.0004419836938505989,
+        0.0
+      ],
+      "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
+    },
+    "24": {
+      "success": false,
+      "failure": "Validation pressure error exceeds 0.5"
+    },
+    "25": {
+      "success": false,
+      "failure": "Validation pressure error exceeds 0.5"
+    },
+    "26": {
+      "success": false,
+      "failure": "Validation pressure error exceeds 0.5"
+    },
+    "27": {
+      "success": true,
+      "pressure_error": 0.0017419449700704723,
+      "intervention_error": 0.001350184857764086,
+      "amplitude_error": 0.0017419449700704723,
+      "new_initial_error": 0.0009584247454576997,
+      "parameters": [
+        1.0001261159933048,
+        0.9999638718181921,
+        0.0,
+        0.00033413200927056755,
+        -0.00042684422259583397,
+        0.0
+      ],
+      "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
+    },
+    "31": {
+      "success": true,
+      "pressure_error": 0.001713350586713904,
+      "intervention_error": 0.0013373530414152145,
+      "amplitude_error": 0.001713350586713904,
+      "new_initial_error": 0.0009613554961165247,
+      "parameters": [
+        1.0001341764885865,
+        0.9999597180242678,
+        -0.00026991183767504555,
+        0.0003343334950694322,
+        -0.00041179646943195807,
+        0.0
+      ],
+      "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
+    },
+    "32": {
+      "success": false,
+      "failure": "Validation pressure error exceeds 0.5"
+    },
+    "33": {
+      "success": false,
+      "failure": "Validation pressure error exceeds 0.5"
+    },
+    "34": {
+      "success": false,
+      "failure": "Validation pressure error exceeds 0.5"
+    },
+    "35": {
+      "success": true,
+      "pressure_error": 0.003367039955753995,
+      "intervention_error": 0.004946113093900335,
+      "amplitude_error": 0.007636544550699707,
+      "new_initial_error": 0.0022556816371009634,
+      "parameters": [
+        1.000134002866234,
+        0.9999699760308393,
+        0.0,
+        0.0,
+        0.0,
+        -0.0052085459580780286
+      ],
+      "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
+    },
+    "39": {
+      "success": true,
+      "pressure_error": 0.003375618068037144,
+      "intervention_error": 0.004951924844253857,
+      "amplitude_error": 0.007637820272466725,
+      "new_initial_error": 0.0022660294160409887,
+      "parameters": [
+        1.0001424554836473,
+        0.999966153171025,
+        -0.00027049608378449064,
+        0.0,
+        0.0,
+        -0.005204864066005225
+      ],
+      "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
+    },
+    "40": {
+      "success": false,
+      "failure": "Validation pressure error exceeds 0.5"
+    },
+    "41": {
+      "success": false,
+      "failure": "Validation pressure error exceeds 0.5"
+    },
+    "42": {
+      "success": false,
+      "failure": "Validation pressure error exceeds 0.5"
+    },
+    "43": {
+      "success": true,
+      "pressure_error": 0.0036707803417500465,
+      "intervention_error": 0.00511484976632014,
+      "amplitude_error": 0.007823632709567726,
+      "new_initial_error": 0.0024060668230725534,
+      "parameters": [
+        1.0001342310289814,
+        0.9999703150411237,
+        0.0,
+        0.0003273617342938985,
+        0.0,
+        -0.005081070496455184
+      ],
+      "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
+    },
+    "47": {
+      "success": true,
+      "pressure_error": 0.003678756501279984,
+      "intervention_error": 0.00512089357579642,
+      "amplitude_error": 0.007824849413806687,
+      "new_initial_error": 0.002416937737786152,
+      "parameters": [
+        1.000142683666816,
+        0.9999664921755677,
+        -0.00027049667962600517,
+        0.00032736432071887465,
+        0.0,
+        -0.005077387589137516
+      ],
+      "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
+    },
+    "48": {
+      "success": false,
+      "failure": "Validation pressure error exceeds 0.5"
+    },
+    "49": {
+      "success": false,
+      "failure": "Validation pressure error exceeds 0.5"
+    },
+    "50": {
+      "success": false,
+      "failure": "Validation pressure error exceeds 0.5"
+    },
+    "51": {
+      "success": true,
+      "pressure_error": 0.0029543080490002666,
+      "intervention_error": 0.006138954600613986,
+      "amplitude_error": 0.009788193601005392,
+      "new_initial_error": 0.0024897156002225804,
+      "parameters": [
+        1.0001239609954242,
+        0.9999603117194821,
+        0.0,
+        0.0,
+        0.000856689051481119,
+        -0.008408957200480889
+      ],
+      "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
+    },
+    "55": {
+      "success": true,
+      "pressure_error": 0.002953362157134118,
+      "intervention_error": 0.006193396312052815,
+      "amplitude_error": 0.009878145239385974,
+      "new_initial_error": 0.002508647384719657,
+      "parameters": [
+        1.000132047223023,
+        0.9999560746404714,
+        -0.00027188966085782255,
+        0.0,
+        0.0008916614828636187,
+        -0.008535906033767296
+      ],
+      "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
+    },
+    "56": {
+      "success": false,
+      "failure": "Validation pressure error exceeds 0.5"
+    },
+    "57": {
+      "success": false,
+      "failure": "Validation pressure error exceeds 0.5"
+    },
+    "58": {
+      "success": false,
+      "failure": "Validation pressure error exceeds 0.5"
+    },
+    "59": {
+      "success": true,
+      "pressure_error": 0.003243903436506687,
+      "intervention_error": 0.006322672703433909,
+      "amplitude_error": 0.0100321710375376,
+      "new_initial_error": 0.0026131743693302185,
+      "parameters": [
+        1.000123917243573,
+        0.999960390488277,
+        0.0,
+        0.00033133505922465473,
+        0.0008801228018574528,
+        -0.008367478110041564
+      ],
+      "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
+    },
+    "63": {
+      "success": true,
+      "pressure_error": 0.003241645695478296,
+      "intervention_error": 0.006376806263533722,
+      "amplitude_error": 0.010122069100075827,
+      "new_initial_error": 0.0026315434269916175,
+      "parameters": [
+        1.0001320045579105,
+        0.9999561528668897,
+        -0.00027192691404670033,
+        0.00033149561568077823,
+        0.0009151113804064952,
+        -0.00849442423761868
+      ],
+      "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
+    }
+  }
+}

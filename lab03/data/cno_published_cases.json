@@ -1,0 +1,13 @@
+{
+  "archive": "https://zenodo.org/records/10406879/files/data.zip",
+  "member": "data/WaveData_64x64_OUT.h5",
+  "cases": [
+    0,
+    1,
+    2
+  ],
+  "member_sha256": "d623acfa643211f1d6eb0a79c4427701e75f624b8a31255822e9e0e0154cfe94",
+  "compact_sha256": "ea564ed109e256fd852080bb165778437e6315061c47f6c1c3cb3a8f61ca6b3c",
+  "normalization": "Original stored amplitudes; no additional min-max inverse transform.",
+  "status": "Published analytic PDE data, not physical measurements."
+}

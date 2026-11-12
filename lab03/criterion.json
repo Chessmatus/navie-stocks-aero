@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "moment_weight": 0.1,
+  "pressure_weight": 1.0,
+  "complexity_weight_per_branch": 0.02,
+  "intervention_weight": 0.5,
+  "bootstrap_weight": 0.01,
+  "fresh_well_test_sample": 1,
+  "fresh_analytic_test_seed": 55001,
+  "validation_well_sample": 0,
+  "validation_analytic_case": 1,
+  "note": "Frozen before evaluating the fresh test; bootstrap is a soft diagnostic, never a branch veto.",
+  "max_validation_pressure_error": 0.5
+}

@@ -1,0 +1,1330 @@
+[
+  {
+    "mask": 0,
+    "parameters": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "validation": 1.0,
+    "intervention": 1.0,
+    "complexity": 0,
+    "J": 1.5,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_0",
+      "required_branch_1",
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 1,
+    "parameters": [
+      1.4317180068227642,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "validation": 0.5309403377621148,
+    "intervention": 0.5299336941092115,
+    "complexity": 1,
+    "J": 0.8159071848167205,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_1",
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 2,
+    "parameters": [
+      0.0,
+      1.4160598625653162,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "validation": 0.5188686598326623,
+    "intervention": 0.5263589220047218,
+    "complexity": 1,
+    "J": 0.8020481208350232,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_0",
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 3,
+    "parameters": [
+      1.000114383015925,
+      0.9999531334652179,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "validation": 5.936270418308901e-05,
+    "intervention": 6.021910665322737e-05,
+    "complexity": 2,
+    "J": 0.0400894722575097,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 4,
+    "parameters": [
+      0.0,
+      0.0,
+      0.06263016404741684,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "validation": 1.000067874915136,
+    "intervention": 1.0001705705703088,
+    "complexity": 1,
+    "J": 1.5201531602002905,
+    "gate": false,
+    "physical_tensor": false,
+    "gate_failures": [
+      "nonpositive_spatial_tensor",
+      "required_branch_0",
+      "required_branch_1"
+    ]
+  },
+  {
+    "mask": 5,
+    "parameters": [
+      1.4325148441264204,
+      0.0,
+      -0.03159694941306524,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "validation": 0.5310210017550812,
+    "intervention": 0.5300418285641064,
+    "complexity": 2,
+    "J": 0.8360419160371344,
+    "gate": false,
+    "physical_tensor": false,
+    "gate_failures": [
+      "nonpositive_spatial_tensor",
+      "required_branch_1"
+    ]
+  },
+  {
+    "mask": 6,
+    "parameters": [
+      0.0,
+      1.4161309926707017,
+      0.06671554417176488,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "validation": 0.5191461664839399,
+    "intervention": 0.5267882391936284,
+    "complexity": 2,
+    "J": 0.822540286080754,
+    "gate": false,
+    "physical_tensor": false,
+    "gate_failures": [
+      "nonpositive_spatial_tensor",
+      "required_branch_0"
+    ]
+  },
+  {
+    "mask": 7,
+    "parameters": [
+      1.0001228522086378,
+      0.9999493212932268,
+      -0.0002705825422717996,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "validation": 0.0001179022709151817,
+    "intervention": 0.00011835838962143677,
+    "complexity": 3,
+    "J": 0.060177081465725896,
+    "gate": true,
+    "physical_tensor": true,
+    "gate_failures": []
+  },
+  {
+    "mask": 8,
+    "parameters": [
+      0.0,
+      0.0,
+      0.0,
+      -0.08838297075877888,
+      0.0,
+      0.0
+    ],
+    "validation": 0.9998818702688027,
+    "intervention": 0.9998161369546491,
+    "complexity": 1,
+    "J": 1.5197899387461271,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_0",
+      "required_branch_1",
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 9,
+    "parameters": [
+      1.4316345787547922,
+      0.0,
+      0.0,
+      -0.026449199776297817,
+      0.0,
+      0.0
+    ],
+    "validation": 0.5309163649925123,
+    "intervention": 0.5299057782154198,
+    "complexity": 2,
+    "J": 0.8358692541002222,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_1",
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 10,
+    "parameters": [
+      0.0,
+      1.4159831386563393,
+      0.0,
+      -0.024013452988734574,
+      0.0,
+      0.0
+    ],
+    "validation": 0.5188575278827838,
+    "intervention": 0.5263315239572712,
+    "complexity": 2,
+    "J": 0.8220232898614195,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_0",
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 11,
+    "parameters": [
+      1.000115118781072,
+      0.9999539137655731,
+      0.0,
+      0.0003400341302508678,
+      0.0,
+      0.0
+    ],
+    "validation": 8.100370751772974e-05,
+    "intervention": 8.962947503474891e-05,
+    "complexity": 3,
+    "J": 0.060125818445035104,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 12,
+    "parameters": [
+      0.0,
+      0.0,
+      0.06261776621405461,
+      -0.08833675976145047,
+      0.0,
+      0.0
+    ],
+    "validation": 0.9999498235055859,
+    "intervention": 0.9999875437110051,
+    "complexity": 2,
+    "J": 1.5399435953610885,
+    "gate": false,
+    "physical_tensor": false,
+    "gate_failures": [
+      "nonpositive_spatial_tensor",
+      "required_branch_0",
+      "required_branch_1"
+    ]
+  },
+  {
+    "mask": 13,
+    "parameters": [
+      1.432431406409266,
+      0.0,
+      -0.03159517160682724,
+      -0.02643804508656175,
+      0.0,
+      0.0
+    ],
+    "validation": 0.5309970033552323,
+    "intervention": 0.530013698767195,
+    "complexity": 3,
+    "J": 0.8560038527388298,
+    "gate": false,
+    "physical_tensor": false,
+    "gate_failures": [
+      "nonpositive_spatial_tensor",
+      "required_branch_1"
+    ]
+  },
+  {
+    "mask": 14,
+    "parameters": [
+      0.0,
+      1.4160544325954678,
+      0.06671196044361903,
+      -0.023960979567522207,
+      0.0,
+      0.0
+    ],
+    "validation": 0.5191350533779965,
+    "intervention": 0.5267612936221174,
+    "complexity": 3,
+    "J": 0.8425157001890551,
+    "gate": false,
+    "physical_tensor": false,
+    "gate_failures": [
+      "nonpositive_spatial_tensor",
+      "required_branch_0"
+    ]
+  },
+  {
+    "mask": 15,
+    "parameters": [
+      1.0001235879100305,
+      0.999950101600702,
+      -0.0002705809617272556,
+      0.0003400275292995283,
+      0.0,
+      0.0
+    ],
+    "validation": 0.00013015976978161012,
+    "intervention": 0.00013608713048569095,
+    "complexity": 4,
+    "J": 0.08019820333502445,
+    "gate": true,
+    "physical_tensor": true,
+    "gate_failures": []
+  },
+  {
+    "mask": 16,
+    "parameters": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      5.515659842140524,
+      0.0
+    ],
+    "validation": 0.9643379319016175,
+    "intervention": 1.0217484603114473,
+    "complexity": 1,
+    "J": 1.4952121620573413,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_0",
+      "required_branch_1",
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 17,
+    "parameters": [
+      1.370396380789135,
+      0.0,
+      0.0,
+      0.0,
+      1.70921029300067,
+      0.0
+    ],
+    "validation": 0.5224063512353185,
+    "intervention": 0.5329434311673139,
+    "complexity": 2,
+    "J": 0.8288780668189755,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_1",
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 18,
+    "parameters": [
+      0.0,
+      1.3544597555602713,
+      0.0,
+      0.0,
+      1.8068255671985542,
+      0.0
+    ],
+    "validation": 0.5186025991712314,
+    "intervention": 0.5364212203790534,
+    "complexity": 2,
+    "J": 0.8268132093607581,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_0",
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 19,
+    "parameters": [
+      1.0001261711083989,
+      0.9999638097851324,
+      0.0,
+      0.0,
+      -0.0004570106114218286,
+      0.0
+    ],
+    "validation": 7.036206653453061e-05,
+    "intervention": 7.859529137902475e-05,
+    "complexity": 3,
+    "J": 0.06010965971222404,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 20,
+    "parameters": [
+      0.0,
+      0.0,
+      0.04471385370491714,
+      0.0,
+      5.511345282105662,
+      0.0
+    ],
+    "validation": 0.9643011023840653,
+    "intervention": 1.021702318048856,
+    "complexity": 2,
+    "J": 1.5151522614084934,
+    "gate": false,
+    "physical_tensor": false,
+    "gate_failures": [
+      "nonpositive_spatial_tensor",
+      "required_branch_0",
+      "required_branch_1"
+    ]
+  },
+  {
+    "mask": 21,
+    "parameters": [
+      1.3711968016479537,
+      0.0,
+      -0.033123079950117096,
+      0.0,
+      1.7101831577615003,
+      0.0
+    ],
+    "validation": 0.5225025247062685,
+    "intervention": 0.533071842728405,
+    "complexity": 3,
+    "J": 0.849038446070471,
+    "gate": false,
+    "physical_tensor": false,
+    "gate_failures": [
+      "nonpositive_spatial_tensor",
+      "required_branch_1"
+    ]
+  },
+  {
+    "mask": 22,
+    "parameters": [
+      0.0,
+      1.3547513182139637,
+      0.060686463961914426,
+      0.0,
+      1.8001713988547754,
+      0.0
+    ],
+    "validation": 0.5187522456727913,
+    "intervention": 0.5366369197783617,
+    "complexity": 3,
+    "J": 0.8470707055619722,
+    "gate": false,
+    "physical_tensor": false,
+    "gate_failures": [
+      "nonpositive_spatial_tensor",
+      "required_branch_0"
+    ]
+  },
+  {
+    "mask": 23,
+    "parameters": [
+      1.0001342302184306,
+      0.9999596566847895,
+      -0.0002698643388863593,
+      0.0,
+      -0.0004419836938505989,
+      0.0
+    ],
+    "validation": 0.00012328467395973064,
+    "intervention": 0.00012835494037751605,
+    "complexity": 4,
+    "J": 0.0801874621441485,
+    "gate": true,
+    "physical_tensor": true,
+    "gate_failures": []
+  },
+  {
+    "mask": 24,
+    "parameters": [
+      0.0,
+      0.0,
+      0.0,
+      -0.00011904317308798553,
+      5.515649088608506,
+      0.0
+    ],
+    "validation": 0.9643380804753248,
+    "intervention": 1.021748485073482,
+    "complexity": 2,
+    "J": 1.5152123230120658,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_0",
+      "required_branch_1",
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 25,
+    "parameters": [
+      1.3703965490893233,
+      0.0,
+      0.0,
+      -0.0017493859176627474,
+      1.7090517981730935,
+      0.0
+    ],
+    "validation": 0.5224075666411372,
+    "intervention": 0.5329438464362602,
+    "complexity": 3,
+    "J": 0.8488794898592673,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_1",
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 26,
+    "parameters": [
+      0.0,
+      1.354460023472211,
+      0.0,
+      0.002106431388316912,
+      1.8070151139478454,
+      0.0
+    ],
+    "validation": 0.5186009777273278,
+    "intervention": 0.536421359917329,
+    "complexity": 3,
+    "J": 0.8468116576859923,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_0",
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 27,
+    "parameters": [
+      1.0001261159933048,
+      0.9999638718181921,
+      0.0,
+      0.00033413200927056755,
+      -0.00042684422259583397,
+      0.0
+    ],
+    "validation": 8.911634069556943e-05,
+    "intervention": 0.0001019438241977439,
+    "complexity": 4,
+    "J": 0.08014008825279444,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 28,
+    "parameters": [
+      0.0,
+      0.0,
+      0.044713877496659615,
+      -0.00015514075565539406,
+      5.511331265473458,
+      0.0
+    ],
+    "validation": 0.9643012960723805,
+    "intervention": 1.0217023511660592,
+    "complexity": 3,
+    "J": 1.5351524716554101,
+    "gate": false,
+    "physical_tensor": false,
+    "gate_failures": [
+      "nonpositive_spatial_tensor",
+      "required_branch_0",
+      "required_branch_1"
+    ]
+  },
+  {
+    "mask": 29,
+    "parameters": [
+      1.3711969612988133,
+      0.0,
+      -0.033122824688966136,
+      -0.0017235980498598181,
+      1.710026991824247,
+      0.0
+    ],
+    "validation": 0.5225037185731721,
+    "intervention": 0.5330722360946395,
+    "complexity": 4,
+    "J": 0.8690398366204919,
+    "gate": false,
+    "physical_tensor": false,
+    "gate_failures": [
+      "nonpositive_spatial_tensor",
+      "required_branch_1"
+    ]
+  },
+  {
+    "mask": 30,
+    "parameters": [
+      0.0,
+      1.3547515784541544,
+      0.060686151436338105,
+      0.0020579184099176495,
+      1.8003566144426335,
+      0.0
+    ],
+    "validation": 0.5187506595464733,
+    "intervention": 0.5366370245504607,
+    "complexity": 4,
+    "J": 0.8670691718217036,
+    "gate": false,
+    "physical_tensor": false,
+    "gate_failures": [
+      "nonpositive_spatial_tensor",
+      "required_branch_0"
+    ]
+  },
+  {
+    "mask": 31,
+    "parameters": [
+      1.0001341764885865,
+      0.9999597180242678,
+      -0.00026991183767504555,
+      0.0003343334950694322,
+      -0.00041179646943195807,
+      0.0
+    ],
+    "validation": 0.00013489553614035756,
+    "intervention": 0.0001442119880529974,
+    "complexity": 5,
+    "J": 0.10020700153016687,
+    "gate": true,
+    "physical_tensor": true,
+    "gate_failures": []
+  },
+  {
+    "mask": 32,
+    "parameters": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      20.183013639589895
+    ],
+    "validation": 1.0150436023852207,
+    "intervention": 1.274067854317103,
+    "complexity": 1,
+    "J": 1.6720775295437722,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_0",
+      "required_branch_1",
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 33,
+    "parameters": [
+      1.401883667350502,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      5.778966094541756
+    ],
+    "validation": 0.5298575705924212,
+    "intervention": 0.5749905273618804,
+    "complexity": 2,
+    "J": 0.8573528342733614,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_1",
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 34,
+    "parameters": [
+      0.0,
+      1.3850767791593508,
+      0.0,
+      0.0,
+      0.0,
+      6.453631161497142
+    ],
+    "validation": 0.5273672503186786,
+    "intervention": 0.5897422454642139,
+    "complexity": 2,
+    "J": 0.8622383730507857,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_0",
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 35,
+    "parameters": [
+      1.000134002866234,
+      0.9999699760308393,
+      0.0,
+      0.0,
+      0.0,
+      -0.0052085459580780286
+    ],
+    "validation": 0.00013035186947913722,
+    "intervention": 0.000253266714309497,
+    "complexity": 3,
+    "J": 0.060256985226633884,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 36,
+    "parameters": [
+      0.0,
+      0.0,
+      0.05748591142360026,
+      0.0,
+      0.0,
+      20.171827183918246
+    ],
+    "validation": 1.015077895815022,
+    "intervention": 1.2738811314238176,
+    "complexity": 2,
+    "J": 1.692018461526931,
+    "gate": false,
+    "physical_tensor": false,
+    "gate_failures": [
+      "nonpositive_spatial_tensor",
+      "required_branch_0",
+      "required_branch_1"
+    ]
+  },
+  {
+    "mask": 37,
+    "parameters": [
+      1.4026791077218599,
+      0.0,
+      -0.03110765292398395,
+      0.0,
+      0.0,
+      5.776846504460119
+    ],
+    "validation": 0.529919145751517,
+    "intervention": 0.5750569783465518,
+    "complexity": 3,
+    "J": 0.8774476349247928,
+    "gate": false,
+    "physical_tensor": false,
+    "gate_failures": [
+      "nonpositive_spatial_tensor",
+      "required_branch_1"
+    ]
+  },
+  {
+    "mask": 38,
+    "parameters": [
+      0.0,
+      1.385213268291424,
+      0.06498410424265198,
+      0.0,
+      0.0,
+      6.439632667293919
+    ],
+    "validation": 0.5275966725573605,
+    "intervention": 0.5898454803714557,
+    "complexity": 3,
+    "J": 0.8825194127430883,
+    "gate": false,
+    "physical_tensor": false,
+    "gate_failures": [
+      "nonpositive_spatial_tensor",
+      "required_branch_0"
+    ]
+  },
+  {
+    "mask": 39,
+    "parameters": [
+      1.0001424554836473,
+      0.999966153171025,
+      -0.00027049608378449064,
+      0.0,
+      0.0,
+      -0.005204864066005225
+    ],
+    "validation": 0.00016572289895430865,
+    "intervention": 0.0002761032812128032,
+    "complexity": 4,
+    "J": 0.08030377453956071,
+    "gate": true,
+    "physical_tensor": true,
+    "gate_failures": []
+  },
+  {
+    "mask": 40,
+    "parameters": [
+      0.0,
+      0.0,
+      0.0,
+      -0.031836135062202064,
+      0.0,
+      20.170061783452685
+    ],
+    "validation": 1.0150588197622243,
+    "intervention": 1.2738489251424483,
+    "complexity": 2,
+    "J": 1.6919832823334486,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_0",
+      "required_branch_1",
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 41,
+    "parameters": [
+      1.4018708137705982,
+      0.0,
+      0.0,
+      -0.011548256708680418,
+      0.0,
+      5.774399999016874
+    ],
+    "validation": 0.5298613968574339,
+    "intervention": 0.5749410606610409,
+    "complexity": 3,
+    "J": 0.8773319271879545,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_1",
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 42,
+    "parameters": [
+      0.0,
+      1.385067215692879,
+      0.0,
+      -0.007334190023320002,
+      0.0,
+      6.450742198425066
+    ],
+    "validation": 0.5273696201236476,
+    "intervention": 0.5897054762073101,
+    "complexity": 3,
+    "J": 0.8822223582273025,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_0",
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 43,
+    "parameters": [
+      1.0001342310289814,
+      0.9999703150411237,
+      0.0,
+      0.0003273617342938985,
+      0.0,
+      -0.005081070496455184
+    ],
+    "validation": 0.00014121538381608526,
+    "intervention": 0.00025921468042658033,
+    "complexity": 4,
+    "J": 0.08027082272402938,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 44,
+    "parameters": [
+      0.0,
+      0.0,
+      0.05748474665646177,
+      -0.031825060157403606,
+      0.0,
+      20.158880060028643
+    ],
+    "validation": 1.0150930889491798,
+    "intervention": 1.273662511532503,
+    "complexity": 3,
+    "J": 1.7119243447154315,
+    "gate": false,
+    "physical_tensor": false,
+    "gate_failures": [
+      "nonpositive_spatial_tensor",
+      "required_branch_0",
+      "required_branch_1"
+    ]
+  },
+  {
+    "mask": 45,
+    "parameters": [
+      1.4026662503213267,
+      0.0,
+      -0.031107263300655427,
+      -0.011542738216404133,
+      0.0,
+      5.772282617454268
+    ],
+    "validation": 0.5299229635692948,
+    "intervention": 0.5750074673772477,
+    "complexity": 4,
+    "J": 0.8974266972579186,
+    "gate": false,
+    "physical_tensor": false,
+    "gate_failures": [
+      "nonpositive_spatial_tensor",
+      "required_branch_1"
+    ]
+  },
+  {
+    "mask": 46,
+    "parameters": [
+      0.0,
+      1.3852037236277317,
+      0.06498378469931881,
+      -0.0073192555319232955,
+      0.0,
+      6.436749655804355
+    ],
+    "validation": 0.5275990240414805,
+    "intervention": 0.5898089459761363,
+    "complexity": 4,
+    "J": 0.9025034970295487,
+    "gate": false,
+    "physical_tensor": false,
+    "gate_failures": [
+      "nonpositive_spatial_tensor",
+      "required_branch_0"
+    ]
+  },
+  {
+    "mask": 47,
+    "parameters": [
+      1.000142683666816,
+      0.9999664921755677,
+      -0.00027049667962600517,
+      0.00032736432071887465,
+      0.0,
+      -0.005077387589137516
+    ],
+    "validation": 0.00017439709072944966,
+    "intervention": 0.00028121467325571995,
+    "complexity": 5,
+    "J": 0.10031500442735732,
+    "gate": true,
+    "physical_tensor": true,
+    "gate_failures": []
+  },
+  {
+    "mask": 48,
+    "parameters": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      6.194189340491264,
+      -4.395842461555436
+    ],
+    "validation": 0.9595360877148318,
+    "intervention": 0.9976854844217596,
+    "complexity": 2,
+    "J": 1.4983788299257117,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_0",
+      "required_branch_1",
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 49,
+    "parameters": [
+      1.3696645480520544,
+      0.0,
+      0.0,
+      0.0,
+      1.9822274728600449,
+      -1.7555682255946172
+    ],
+    "validation": 0.5219425527708704,
+    "intervention": 0.528368382719938,
+    "complexity": 3,
+    "J": 0.8461267441308393,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_1",
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 50,
+    "parameters": [
+      0.0,
+      1.3539171359470608,
+      0.0,
+      0.0,
+      1.9728144891905937,
+      -1.0657306917106728
+    ],
+    "validation": 0.5175504678723047,
+    "intervention": 0.5319964793165726,
+    "complexity": 3,
+    "J": 0.843548707530591,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_0",
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 51,
+    "parameters": [
+      1.0001239609954242,
+      0.9999603117194821,
+      0.0,
+      0.0,
+      0.000856689051481119,
+      -0.008408957200480889
+    ],
+    "validation": 0.00015422503389928433,
+    "intervention": 0.0003360786310355667,
+    "complexity": 4,
+    "J": 0.08032226434941707,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 52,
+    "parameters": [
+      0.0,
+      0.0,
+      0.04363401466222754,
+      0.0,
+      6.186706241264273,
+      -4.374640095435341
+    ],
+    "validation": 0.959508834504961,
+    "intervention": 0.9977267672167459,
+    "complexity": 3,
+    "J": 1.518372218113334,
+    "gate": false,
+    "physical_tensor": false,
+    "gate_failures": [
+      "nonpositive_spatial_tensor",
+      "required_branch_0",
+      "required_branch_1"
+    ]
+  },
+  {
+    "mask": 53,
+    "parameters": [
+      1.3704683858400677,
+      0.0,
+      -0.03351871439482736,
+      0.0,
+      1.98550388518592,
+      -1.770305886989184
+    ],
+    "validation": 0.5220456629358122,
+    "intervention": 0.5284855566055636,
+    "complexity": 4,
+    "J": 0.866288441238594,
+    "gate": false,
+    "physical_tensor": false,
+    "gate_failures": [
+      "nonpositive_spatial_tensor",
+      "required_branch_1"
+    ]
+  },
+  {
+    "mask": 54,
+    "parameters": [
+      0.0,
+      1.354222772555554,
+      0.06042459979215035,
+      0.0,
+      1.9614989126712878,
+      -1.0356178023293128
+    ],
+    "validation": 0.517720840446007,
+    "intervention": 0.5323199411925895,
+    "complexity": 4,
+    "J": 0.8638808110423017,
+    "gate": false,
+    "physical_tensor": false,
+    "gate_failures": [
+      "nonpositive_spatial_tensor",
+      "required_branch_0"
+    ]
+  },
+  {
+    "mask": 55,
+    "parameters": [
+      1.000132047223023,
+      0.9999560746404714,
+      -0.00027188966085782255,
+      0.0,
+      0.0008916614828636187,
+      -0.008535906033767296
+    ],
+    "validation": 0.00018651495178136302,
+    "intervention": 0.00035806074364441736,
+    "complexity": 5,
+    "J": 0.10036554532360357,
+    "gate": true,
+    "physical_tensor": true,
+    "gate_failures": []
+  },
+  {
+    "mask": 56,
+    "parameters": [
+      0.0,
+      0.0,
+      0.0,
+      -0.001586852155598636,
+      6.19407657815745,
+      -4.396040592054505
+    ],
+    "validation": 0.9595374376794709,
+    "intervention": 0.9976847534332111,
+    "complexity": 3,
+    "J": 1.5183798143960763,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_0",
+      "required_branch_1",
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 57,
+    "parameters": [
+      1.3696646512313797,
+      0.0,
+      0.0,
+      -0.0023347851179608805,
+      1.9820612448231267,
+      -1.755859542286911
+    ],
+    "validation": 0.5219436439853353,
+    "intervention": 0.5283682940608244,
+    "complexity": 4,
+    "J": 0.8661277910157474,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_1",
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 58,
+    "parameters": [
+      0.0,
+      1.3539174701507528,
+      0.0,
+      0.0017497727009078616,
+      1.9729377867091036,
+      -1.0655113973370478
+    ],
+    "validation": 0.517549543860921,
+    "intervention": 0.5319974700406656,
+    "complexity": 4,
+    "J": 0.8635482788812537,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_0",
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 59,
+    "parameters": [
+      1.000123917243573,
+      0.999960390488277,
+      0.0,
+      0.00033133505922465473,
+      0.0008801228018574528,
+      -0.008367478110041564
+    ],
+    "validation": 0.00016425279554478067,
+    "intervention": 0.0003424039985103198,
+    "complexity": 5,
+    "J": 0.10033545479479995,
+    "gate": false,
+    "physical_tensor": true,
+    "gate_failures": [
+      "required_branch_2"
+    ]
+  },
+  {
+    "mask": 60,
+    "parameters": [
+      0.0,
+      0.0,
+      0.04363421258147839,
+      -0.0016149999340339042,
+      6.1865914447957895,
+      -4.374841644225865
+    ],
+    "validation": 0.9595102105101424,
+    "intervention": 0.9977260311869092,
+    "complexity": 4,
+    "J": 1.538373226103597,
+    "gate": false,
+    "physical_tensor": false,
+    "gate_failures": [
+      "nonpositive_spatial_tensor",
+      "required_branch_0",
+      "required_branch_1"
+    ]
+  },
+  {
+    "mask": 61,
+    "parameters": [
+      1.3704684814126589,
+      0.0,
+      -0.03351843624189125,
+      -0.002313601823318348,
+      1.9853391381318737,
+      -1.7705944382918666
+    ],
+    "validation": 0.5220467373412091,
+    "intervention": 0.5284854526747137,
+    "complexity": 5,
+    "J": 0.8862894636785659,
+    "gate": false,
+    "physical_tensor": false,
+    "gate_failures": [
+      "nonpositive_spatial_tensor",
+      "required_branch_1"
+    ]
+  },
+  {
+    "mask": 62,
+    "parameters": [
+      0.0,
+      1.3542230984176902,
+      0.06042439408125307,
+      0.0017115470245358205,
+      1.9616195551452196,
+      -1.0354034011953757
+    ],
+    "validation": 0.517719930942259,
+    "intervention": 0.5323208878964426,
+    "complexity": 5,
+    "J": 0.8838803748904802,
+    "gate": false,
+    "physical_tensor": false,
+    "gate_failures": [
+      "nonpositive_spatial_tensor",
+      "required_branch_0"
+    ]
+  },
+  {
+    "mask": 63,
+    "parameters": [
+      1.0001320045579105,
+      0.9999561528668897,
+      -0.00027192691404670033,
+      0.00033149561568077823,
+      0.0009151113804064952,
+      -0.00849442423761868
+    ],
+    "validation": 0.00019491188181463496,
+    "intervention": 0.00036373173226963133,
+    "complexity": 6,
+    "J": 0.12037677774794946,
+    "gate": true,
+    "physical_tensor": true,
+    "gate_failures": []
+  }
+]

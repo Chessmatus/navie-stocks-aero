@@ -1,0 +1,47 @@
+{
+  "criterion_version": 2,
+  "criterion_sha256": "ce034d360275f0f1e0ca50d28d853d507870b1a31f7ad216c1d47cfe158f622b",
+  "well": {
+    "revision": "8df383a3223f40f7ce66fe77b4ff4d7006dbc272",
+    "train": [
+      0,
+      0
+    ],
+    "valid": [
+      16,
+      0
+    ],
+    "fresh_test": [
+      18,
+      1
+    ],
+    "old_test": [
+      18,
+      0
+    ],
+    "url": "https://huggingface.co/datasets/polymathic-ai/acoustic_scattering_maze",
+    "license": "CC-BY-4.0"
+  },
+  "cno": {
+    "archive": "https://zenodo.org/records/10406879",
+    "train_case": 0,
+    "validation_case": 1,
+    "fresh_test_seed": 55001
+  },
+  "sha256": {
+    "data/analytic_coefficients.npz": "638cbd9fd028a0c326e392548407cad50514d041bc666b5286b5cb539bcb1de4",
+    "data/cno_published_cases.json": "992b47cdd773629ae5ff6bd62f9bd658c3dfa565c221ac814ff810052b1603ef",
+    "data/cno_published_cases.npz": "ea564ed109e256fd852080bb165778437e6315061c47f6c1c3cb3a8f61ca6b3c",
+    "data/well_test_0.json": "bcc4ee475478e8566d4b1ae59b1e93ad034e0d50ca423e7c416f740f33dac484",
+    "data/well_test_0.npz": "72c94cfcff1092ddbc3e7e3d0c27c99e5f569aa41bdba254d25717fc6b42cd3a",
+    "data/well_test_1.json": "30915d7019974564a1a1a5db4698027b106f4b76754f7e75bf3f8fbf6c50e399",
+    "data/well_test_1.npz": "abddfb55f1bea3e9a3f06c1e56e9dfbac8177339f53475af79a32ae6bec67bd4",
+    "data/well_train_0.json": "8248c9b8558e6a16435f8178c525a24d886a5cddb2784ae1dcb6cf9358f654d6",
+    "data/well_train_0.npz": "3b5c65b558f53d65b4cc11b0078206ba09ab3bd3d992b7335e7383db576a2084",
+    "data/well_valid_0.json": "7c2d1eddbeb80104f926624a5e8d6f7045722c07bab744ace65864866b739fa1",
+    "data/well_valid_0.npz": "615bd46995811b977ff8aca5e09738cba30652b9377eca4115ea5ea925aee8ea",
+    "vendor/acoustics_2d_interface_maze.py": "57a67c6fa2223ad556352a5a580b2ee88de622d283bf7dc040ff9cf18d35e3b2",
+    "vendor/lab1_sobolevsky.ipynb": "eaafdbf29e1a8b58481168a32b46e80ab3cad8d8c2addef8b46b5773488b61f7",
+    "vendor/the_well_README.md": "b5e1bb113e88ae307402dfee4600ad48b1f946b9d309db3efbbc563a79024eae"
+  }
+}
