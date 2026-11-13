@@ -51,7 +51,8 @@ def draw_tree(mask,ax,expanded=True,title=None,brief=False):
 
 def make_figures():
     r=json.loads((ROOT/'results/report.json').read_text())
-    with np.load(ROOT/'data/well_test_1.npz') as d:rho=d['rho'];p=d['p'];t=d['t']
+    sample=r['evaluation']['well_test_sample']
+    with np.load(ROOT/'data'/f'well_test_{sample}.npz') as d:rho=d['rho'];p=d['p'];t=d['t']
     fig,ax=plt.subplots(1,3,figsize=(11.5,3.4),layout='constrained')
     for a,z,title,cmap in zip(ax,[np.log10(rho),p[0],p[-1]],['Density log10(rho)','Initial pressure',f'Published pressure, t={t[-1]:.2f}'],['Greys','RdBu_r','RdBu_r']):
         im=a.imshow(z.T,origin='lower',extent=[-1,1,-1,1],cmap=cmap)
@@ -70,7 +71,7 @@ def make_figures():
         with np.load(ROOT/'results'/f'{name}_sampling.npz') as d:
             accepted=d['r0_proposal'][d['r0_accepted']]
             unique=list(dict.fromkeys(accepted.tolist()))
-            choices=[63]+unique[:2]+[mask]
+            choices=unique[:3]+[mask]
             fig,axes=plt.subplots(1,4,figsize=(13,3.6),layout='constrained')
             for ax,m in zip(axes,choices):draw_tree(m,ax,False,title=f'Mask {m}: {bits(m).sum()} branches',brief=True)
             save(fig,f'{name}_sequence')
@@ -93,8 +94,8 @@ def make_figures():
     save(fig,'sampling_rounds')
     with np.load(ROOT/'results/well_rollout.npz') as d:
         ref=d['reference'];times=d['times'];central=d['selected']
-    with np.load(ROOT/'results/clawpack_test1_original.npz') as d:original=d['p']
-    with np.load(ROOT/'results/clawpack_test1_selected.npz') as d:selected=d['p']
+    with np.load(ROOT/'results'/f'clawpack_test{sample}_original.npz') as d:original=d['p']
+    with np.load(ROOT/'results'/f'clawpack_test{sample}_selected.npz') as d:selected=d['p']
     fig,axes=plt.subplots(1,3,figsize=(11.5,3.5),layout='constrained')
     vmax=float(np.max(abs(ref[-1])))
     for ax,z,title in zip(axes,[ref[-1],selected[-1],selected[-1]-ref[-1]],
@@ -140,6 +141,28 @@ def make_figures():
     axes[1].bar(labels,[rows[i]['J'] for i in ids],color=[BLUE,RED])
     axes[1].set(ylabel='Corrected objective J',title='Both structures are admissible')
     save(fig,'criterion_comparison')
+    forward=json.loads((ROOT/'results/well_forward_validation.json').read_text())['records']
+    fig,axes=plt.subplots(2,2,figsize=(8.5,5.5),layout='constrained')
+    for row,index in enumerate(r['evaluation']['well_transfer_samples']):
+        with np.load(ROOT/'data'/f'well_valid_{index}.npz') as d:
+            fields=[np.log10(d['rho']),d['p'][0]]
+        for ax,z,title,cmap in zip(axes[row],fields,['Density log10(rho)','Initial pressure'],['Greys','RdBu_r']):
+            im=ax.imshow(z.T,origin='lower',extent=[-1,1,-1,1],cmap=cmap)
+            ax.set(title=f'Validation sample {index}: {title}',xlabel='x',ylabel='y')
+            fig.colorbar(im,ax=ax,shrink=.8)
+    save(fig,'transfer_data')
+    fig,ax=plt.subplots(figsize=(9,3.8),layout='constrained')
+    x=np.arange(3)
+    for offset,mask,label,color in [(-.18,3,'Original structure',BLUE),(.18,11,'With damping',RED)]:
+        row=forward[str(mask)]
+        values=[row['pressure_error']]+[z['pressure_error'] for z in row['transfer_errors']]
+        ax.bar(x+offset,np.array(values)*100,.36,label=label,color=color)
+    ax.set(xticks=x,xticklabels=['Base validation / sample 0','Transfer / sample 1','Transfer / sample 2'],
+        ylabel='Relative pressure L2 error, %',title='Fixed fitted coefficients; separate stored reference trajectories')
+    maximum=max([forward[str(i)]['pressure_error'] for i in (3,11)]+
+        [z['pressure_error'] for i in (3,11) for z in forward[str(i)]['transfer_errors']])
+    ax.set_ylim(0,maximum*100*1.3)
+    ax.legend();save(fig,'transfer_errors')
     print('Scientific figures generated',flush=True)
 
 

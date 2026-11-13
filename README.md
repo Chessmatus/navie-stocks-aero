@@ -9,6 +9,7 @@
 [презентация](lab03/presentation.pdf), семплирование графов с отклонением
 (метод № 4), данные The Well и аналитический benchmark CNO/RPB.
 [Переписка с Codex по лабораторной № 3](lab03/lab03_codex_session.md).
+[Сравнение трёх критериев выбора структуры](lab03/criterion_comparison_report.md).
 
 Лабораторная работа № 1 по курсу **Foundation models for spatial-time series**.
 Решаем трёхмерную начально-краевую задачу Навье–Стокса, подбираем вязкость

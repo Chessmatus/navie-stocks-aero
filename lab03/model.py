@@ -39,7 +39,7 @@ def flux_operators(p, rho, bulk, dx):
     return bulk*lx,bulk*ly,bulk*cross
 
 
-def well_features(path, sigma_t=1.4, sigma_x=2., stride=4):
+def well_features(path, sigma_t=1.4, sigma_x=2., stride=4, pressure_scale=None):
     """Smoothed space-time moment equations. Excludes filter boundaries.
 
     Convolution is applied to the complete flux before spatial smoothing,
@@ -50,13 +50,14 @@ def well_features(path, sigma_t=1.4, sigma_x=2., stride=4):
         p=d['p'].astype(float); rho=d['rho'].astype(float)
         bulk=float(np.median(rho*d['c']**2)); t=d['t'].astype(float)
     dt=float(np.median(np.diff(t))); dx=2/p.shape[-1]
+    pressure_scale=float(np.max(np.abs(p[0]))) if pressure_scale is None else float(pressure_scale)
     sig=(sigma_t,sigma_x,sigma_x)
     lhs=gaussian_filter(p,sig,order=(2,0,0),mode='nearest')/dt**2
     lx,ly,cross=flux_operators(p,rho,bulk,dx)
     fields=[gaussian_filter(z,sig,mode='nearest') for z in (lx,ly,cross)]
     fields += [-gaussian_filter(p,sig,order=(1,0,0),mode='nearest')/dt,
                -gaussian_filter(p,sig,mode='nearest'),
-               -gaussian_filter(p**3,sig,mode='nearest')/float(np.max(np.abs(p[0])))**2]
+               -gaussian_filter(p**3,sig,mode='nearest')/pressure_scale**2]
     margin_t=int(np.ceil(4*sigma_t))+1
     margin_x=int(np.ceil(4*sigma_x))+2
     sl=(slice(margin_t,-margin_t,2),slice(margin_x,-margin_x,stride),slice(margin_x,-margin_x,stride))
@@ -68,7 +69,8 @@ def well_features(path, sigma_t=1.4, sigma_x=2., stride=4):
     return {'X':X.reshape(-1,6),'y':y.ravel(),'group':frame.ravel(),
             'shape':X.shape[:-1], 'dt_group':dt*2,
             'source':Path(path).name,'sigma_t':sigma_t,'sigma_x':sigma_x,
-            'bulk':bulk,'dx':dx,'time_range':[float(t[margin_t]),float(t[-margin_t-1])]}
+            'bulk':bulk,'dx':dx,'pressure_scale':pressure_scale,
+            'time_range':[float(t[margin_t]),float(t[-margin_t-1])]}
 
 
 def fit(X,y,mask=63):

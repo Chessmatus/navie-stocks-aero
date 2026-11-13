@@ -35,12 +35,12 @@ def evaluate(A,x,t,c=.1):
     return dict(zip(('p','pt','ptt','xx','yy','xy'),out))
 
 
-def feature_set(seed,modes=24,decay=1.,noise=0.,A=None):
+def feature_set(seed,modes=24,decay=1.,noise=0.,A=None,pressure_scale=None):
     A=coefficients(seed,modes,decay) if A is None else A
     x=np.linspace(0,1,34)[1:-1]
     t=np.linspace(.1,4.9,45)
     z=evaluate(A,x,t)
-    P=np.max(np.abs(evaluate(A,x,[0.])['p']))
+    P=float(np.max(np.abs(evaluate(A,x,[0.])['p']))) if pressure_scale is None else float(pressure_scale)
     X=np.stack((.01*z['xx'],.01*z['yy'],.01*z['xy'],
                 -z['pt'],-z['p'],-z['p']**3/P**2),axis=-1)
     y=z['ptt']
@@ -56,20 +56,20 @@ def feature_set(seed,modes=24,decay=1.,noise=0.,A=None):
     group=np.broadcast_to(np.arange(shape[0])[:,None,None],shape)
     return {'X':X.reshape(-1,6),'y':y.ravel(),'group':group.ravel(),
         'shape':shape,'source':f'CNO_formula_seed_{seed}_K{modes}_r{decay}',
-        'A':A,'seed':seed,'modes':modes,'decay':decay,'dt_group':float(t[1]-t[0])}
+            'A':A,'seed':seed,'modes':modes,'decay':decay,'pressure_scale':P,'dt_group':float(t[1]-t[0])}
 
 
-def published_feature_set(case,noise=0.):
+def published_feature_set(case,noise=0.,pressure_scale=None):
     with np.load(ROOT/'data/cno_published_cases.npz') as d:A=d[f'case_{case}_A']
-    result=feature_set(4100+case,modes=32,decay=.85,noise=noise,A=A)
+    result=feature_set(4100+case,modes=32,decay=.85,noise=noise,A=A,pressure_scale=pressure_scale)
     result['source']=f'CNO_published_OOD_case_{case}'
     return result
 
 
 def save_coefficients():
-    seeds=[3101,3102,3103,3104,3105,55001]
+    seeds=[3101,3102,3103,3104,3105,3106,55001,55002]
     np.savez_compressed(ROOT/'data/analytic_coefficients.npz',
-        **{f'seed_{s}':coefficients(s,32 if s in (3105,55001) else 24,.85 if s in (3105,55001) else 1.) for s in seeds})
+        **{f'seed_{s}':coefficients(s,32 if s in (3105,55001,55002) else 24,.85 if s in (3105,55001,55002) else 1.) for s in seeds})
 
 
 def archive_audit():

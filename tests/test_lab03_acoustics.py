@@ -106,3 +106,69 @@ def test_modal_solver_against_independent_exact_formula():
     from lab03.modal_solver import solve_modes,exact_modes,relative_modal_error
     A=coefficients(99,8);t=np.linspace(0,5,31)
     assert relative_modal_error(solve_modes(A,t,[1,1,0,0,0,0]),exact_modes(A,t))<1e-8
+
+
+def test_transfer_score_uses_separate_references_and_fixed_coefficients(monkeypatch):
+    from lab03 import modal_solver as modal
+    fields=[coefficients(seed,4) for seed in (100,101,102)]
+    calls=[]
+    theta=[1.,1.,0.,0.,0.,0.]
+    def numerical(A,times,parameters,pressure_scale):
+        index=next(i for i,z in enumerate(fields) if np.array_equal(A,z))
+        calls.append((index,list(parameters),pressure_scale))
+        return modal.exact_modes(A,times)*[1.,1.1,1.3][index]
+    monkeypatch.setattr(modal,'solve_modes',numerical)
+    result=modal.validation_catalog([{'mask':3,'parameters':theta,'physical_tensor':True}],
+        fields[0],fields[1:],pressure_scale=17.)['3']
+    assert np.allclose(result['transfer_errors'],[.1,.3])
+    assert abs(result['intervention_error']-.2)<1e-12
+    assert calls==[(i,theta,17.) for i in range(3)]
+
+
+def test_feature_pressure_scale_is_fixed_across_initial_conditions(tmp_path):
+    from lab03.model import well_features
+    rng=np.random.default_rng(123)
+    p=rng.normal(size=(31,32,32));rho=np.full((32,32),3.)
+    results=[]
+    for amplitude in (1.,2.):
+        path=tmp_path/f'field_{amplitude}.npz'
+        np.savez(path,p=amplitude*p,rho=rho,c=np.sqrt(4/rho),t=np.arange(31)*.02)
+        results.append(well_features(path,pressure_scale=7.))
+    a,b=results
+    assert a['pressure_scale']==b['pressure_scale']==7.
+    assert np.allclose(b['X'][:,:5],2*a['X'][:,:5])
+    assert np.allclose(b['X'][:,5],8*a['X'][:,5])
+
+
+def test_three_criteria_isolate_complexity_and_statistical_gate():
+    from lab03.criterion_comparison import variant_catalog
+    config={'moment_weight':.1,'pressure_weight':1.,'intervention_weight':.5,
+        'bootstrap_weight':.01,'complexity_weight_per_branch':.02}
+    rows=[{'mask':m,'gate':True,'gate_failures':[],'complexity':int(bits(m).sum()),
+        'validation':.02,'validation_pressure':.1,'intervention_pressure':.2,
+        'bootstrap_risk':0.,'J':.202+.02*int(bits(m).sum())} for m in range(64)]
+    rule={'removable':[True]*6}
+    current=variant_catalog(rows,rule,config,'current')
+    unpenalized=variant_catalog(rows,rule,config,'no_complexity')
+    assert [r['J'] for r in current]==[r['J'] for r in rows]
+    assert unpenalized[3]['J']==unpenalized[63]['J']
+    assert all(r['gate'] for r in unpenalized)
+    rule['removable'][3]=False
+    hard=variant_catalog(rows,rule,config,'hard_filter')
+    assert not hard[3]['gate'] and 'required_branch_3' in hard[3]['gate_failures']
+    assert hard[11]['gate']
+    assert all(q['gate']==bool(bits(q['mask'])[3]) for q in hard)
+    assert rows[3]['gate'] and rows[3]['gate_failures']==[]
+
+
+def test_criterion_comparison_pairs_proposals_uniforms_and_temperatures():
+    from lab03.criterion_comparison import paired_sampling
+    a=[{'J':.1+i/100,'gate':True} for i in range(64)]
+    b=[{'J':.2+i/100,'gate':i%2==0} for i in range(64)]
+    ar,_=paired_sampling(a,[.4,.2,.1],123)
+    br,_=paired_sampling(b,[.4,.2,.1],123)
+    for x,y in zip(ar,br):
+        assert x['T']==y['T']
+        assert np.array_equal(x['proposal'],y['proposal'])
+        assert np.array_equal(x['uniform'],y['uniform'])
+        assert not np.array_equal(x['accepted'],y['accepted'])

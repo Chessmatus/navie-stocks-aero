@@ -1,5 +1,5 @@
 {
-  "signature": "e61573aeea8f05e138831000fe26bfbdcf8067f40de8669c7d8bb44a2c2d5f5f",
+  "signature": "349a768a67ccc8620dd41a52a5228663379541dc444219dcfb8d6ad7e440504c",
   "records": {
     "0": {
       "success": false,
@@ -15,10 +15,12 @@
     },
     "3": {
       "success": true,
-      "pressure_error": 0.00016392919903428322,
-      "intervention_error": 0.00014362202035838584,
-      "amplitude_error": 0.00016392919903428322,
-      "new_initial_error": 0.00012331484168248845,
+      "pressure_error": 0.00016392920648532612,
+      "intervention_error": 0.0001150388315382904,
+      "transfer_errors": [
+        0.00012331485682473667,
+        0.00010676280625184413
+      ],
       "parameters": [
         1.000114383015925,
         0.9999531334652179,
@@ -27,14 +29,17 @@
         0.0,
         0.0
       ],
+      "pressure_scale": 0.0004952019490939791,
       "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
     },
     "7": {
       "success": true,
-      "pressure_error": 0.00027892591218396466,
-      "intervention_error": 0.0002349987804072258,
-      "amplitude_error": 0.00027892591218396466,
-      "new_initial_error": 0.00019107164863048698,
+      "pressure_error": 0.0002789259172116416,
+      "intervention_error": 0.0001768537008409993,
+      "transfer_errors": [
+        0.00019107165727236402,
+        0.00016263574440963463
+      ],
       "parameters": [
         1.0001228522086378,
         0.9999493212932268,
@@ -43,6 +48,7 @@
         0.0,
         0.0
       ],
+      "pressure_scale": 0.0004952019490939791,
       "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
     },
     "8": {
@@ -59,10 +65,12 @@
     },
     "11": {
       "success": true,
-      "pressure_error": 0.0005547729000016066,
-      "intervention_error": 0.0005591978537556118,
-      "amplitude_error": 0.0005547729000016066,
-      "new_initial_error": 0.0005636228075096169,
+      "pressure_error": 0.0005547729019492846,
+      "intervention_error": 0.0005576947407918925,
+      "transfer_errors": [
+        0.0005636228098239965,
+        0.0005517666717597886
+      ],
       "parameters": [
         1.000115118781072,
         0.9999539137655731,
@@ -71,14 +79,17 @@
         0.0,
         0.0
       ],
+      "pressure_scale": 0.0004952019490939791,
       "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
     },
     "15": {
       "success": true,
-      "pressure_error": 0.0006012332484104542,
-      "intervention_error": 0.0005946985764705408,
-      "amplitude_error": 0.0006012332484104542,
-      "new_initial_error": 0.0005881639045306275,
+      "pressure_error": 0.0006012332505143091,
+      "intervention_error": 0.0005802004924228877,
+      "transfer_errors": [
+        0.0005881639063775603,
+        0.0005722370784682152
+      ],
       "parameters": [
         1.0001235879100305,
         0.999950101600702,
@@ -87,6 +98,7 @@
         0.0,
         0.0
       ],
+      "pressure_scale": 0.0004952019490939791,
       "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
     },
     "16": {
@@ -103,10 +115,12 @@
     },
     "19": {
       "success": true,
-      "pressure_error": 0.0014295260470701746,
-      "intervention_error": 0.0010393572383096635,
-      "amplitude_error": 0.0014295260470701746,
-      "new_initial_error": 0.0006491884295491527,
+      "pressure_error": 0.0014295260481021563,
+      "intervention_error": 0.0010428290978462817,
+      "transfer_errors": [
+        0.0006491884328132882,
+        0.0014364697628792755
+      ],
       "parameters": [
         1.0001261711083989,
         0.9999638097851324,
@@ -115,14 +129,17 @@
         -0.0004570106114218286,
         0.0
       ],
+      "pressure_scale": 0.0004952019490939791,
       "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
     },
     "23": {
       "success": true,
-      "pressure_error": 0.0014025510317399045,
-      "intervention_error": 0.0010283171432926633,
-      "amplitude_error": 0.0014025510317399045,
-      "new_initial_error": 0.0006540832548454222,
+      "pressure_error": 0.0014025510329133877,
+      "intervention_error": 0.0010274377334213052,
+      "transfer_errors": [
+        0.0006540832577430178,
+        0.0014007922090995928
+      ],
       "parameters": [
         1.0001342302184306,
         0.9999596566847895,
@@ -131,6 +148,7 @@
         -0.0004419836938505989,
         0.0
       ],
+      "pressure_scale": 0.0004952019490939791,
       "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
     },
     "24": {
@@ -147,10 +165,12 @@
     },
     "27": {
       "success": true,
-      "pressure_error": 0.0017419449700704723,
-      "intervention_error": 0.001350184857764086,
-      "amplitude_error": 0.0017419449700704723,
-      "new_initial_error": 0.0009584247454576997,
+      "pressure_error": 0.0017419449708283177,
+      "intervention_error": 0.0013622357175710146,
+      "transfer_errors": [
+        0.0009584247470746666,
+        0.0017660466880673627
+      ],
       "parameters": [
         1.0001261159933048,
         0.9999638718181921,
@@ -159,14 +179,17 @@
         -0.00042684422259583397,
         0.0
       ],
+      "pressure_scale": 0.0004952019490939791,
       "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
     },
     "31": {
       "success": true,
-      "pressure_error": 0.001713350586713904,
-      "intervention_error": 0.0013373530414152145,
-      "amplitude_error": 0.001713350586713904,
-      "new_initial_error": 0.0009613554961165247,
+      "pressure_error": 0.0017133505875860943,
+      "intervention_error": 0.0013463621114699737,
+      "transfer_errors": [
+        0.0009613554974929821,
+        0.0017313687254469654
+      ],
       "parameters": [
         1.0001341764885865,
         0.9999597180242678,
@@ -175,6 +198,7 @@
         -0.00041179646943195807,
         0.0
       ],
+      "pressure_scale": 0.0004952019490939791,
       "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
     },
     "32": {
@@ -191,10 +215,12 @@
     },
     "35": {
       "success": true,
-      "pressure_error": 0.003367039955753995,
-      "intervention_error": 0.004946113093900335,
-      "amplitude_error": 0.007636544550699707,
-      "new_initial_error": 0.0022556816371009634,
+      "pressure_error": 0.004515412645493214,
+      "intervention_error": 0.06194636550319514,
+      "transfer_errors": [
+        0.025261795690691986,
+        0.0986309353156983
+      ],
       "parameters": [
         1.000134002866234,
         0.9999699760308393,
@@ -203,14 +229,17 @@
         0.0,
         -0.0052085459580780286
       ],
+      "pressure_scale": 0.0004952019490939791,
       "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
     },
     "39": {
       "success": true,
-      "pressure_error": 0.003375618068037144,
-      "intervention_error": 0.004951924844253857,
-      "amplitude_error": 0.007637820272466725,
-      "new_initial_error": 0.0022660294160409887,
+      "pressure_error": 0.004521238418130442,
+      "intervention_error": 0.06190920865874969,
+      "transfer_errors": [
+        0.0252517180608382,
+        0.09856669925666117
+      ],
       "parameters": [
         1.0001424554836473,
         0.999966153171025,
@@ -219,6 +248,7 @@
         0.0,
         -0.005204864066005225
       ],
+      "pressure_scale": 0.0004952019490939791,
       "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
     },
     "40": {
@@ -235,10 +265,12 @@
     },
     "43": {
       "success": true,
-      "pressure_error": 0.0036707803417500465,
-      "intervention_error": 0.00511484976632014,
-      "amplitude_error": 0.007823632709567726,
-      "new_initial_error": 0.0024060668230725534,
+      "pressure_error": 0.00478620378769906,
+      "intervention_error": 0.06059572123729503,
+      "transfer_errors": [
+        0.024786123344325183,
+        0.09640531913026487
+      ],
       "parameters": [
         1.0001342310289814,
         0.9999703150411237,
@@ -247,14 +279,17 @@
         0.0,
         -0.005081070496455184
       ],
+      "pressure_scale": 0.0004952019490939791,
       "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
     },
     "47": {
       "success": true,
-      "pressure_error": 0.003678756501279984,
-      "intervention_error": 0.00512089357579642,
-      "amplitude_error": 0.007824849413806687,
-      "new_initial_error": 0.002416937737786152,
+      "pressure_error": 0.004791733854729104,
+      "intervention_error": 0.0605587418667291,
+      "transfer_errors": [
+        0.02477615627478086,
+        0.09634132745867734
+      ],
       "parameters": [
         1.000142683666816,
         0.9999664921755677,
@@ -263,6 +298,7 @@
         0.0,
         -0.005077387589137516
       ],
+      "pressure_scale": 0.0004952019490939791,
       "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
     },
     "48": {
@@ -279,10 +315,12 @@
     },
     "51": {
       "success": true,
-      "pressure_error": 0.0029543080490002666,
-      "intervention_error": 0.006138954600613986,
-      "amplitude_error": 0.009788193601005392,
-      "new_initial_error": 0.0024897156002225804,
+      "pressure_error": 0.004768773039107731,
+      "intervention_error": 0.10163016907405531,
+      "transfer_errors": [
+        0.039813276770298445,
+        0.16344706137781218
+      ],
       "parameters": [
         1.0001239609954242,
         0.9999603117194821,
@@ -291,14 +329,17 @@
         0.000856689051481119,
         -0.008408957200480889
       ],
+      "pressure_scale": 0.0004952019490939791,
       "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
     },
     "55": {
       "success": true,
-      "pressure_error": 0.002953362157134118,
-      "intervention_error": 0.006193396312052815,
-      "amplitude_error": 0.009878145239385974,
-      "new_initial_error": 0.002508647384719657,
+      "pressure_error": 0.0047879454628030295,
+      "intervention_error": 0.10327665493504434,
+      "transfer_errors": [
+        0.04040046738818142,
+        0.16615284248190726
+      ],
       "parameters": [
         1.000132047223023,
         0.9999560746404714,
@@ -307,11 +348,12 @@
         0.0008916614828636187,
         -0.008535906033767296
       ],
+      "pressure_scale": 0.0004952019490939791,
       "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
     },
     "56": {
       "success": false,
-      "failure": "Validation pressure error exceeds 0.5"
+      "failure": "Modal candidate grows beyond validation bound"
     },
     "57": {
       "success": false,
@@ -323,10 +365,12 @@
     },
     "59": {
       "success": true,
-      "pressure_error": 0.003243903436506687,
-      "intervention_error": 0.006322672703433909,
-      "amplitude_error": 0.0100321710375376,
-      "new_initial_error": 0.0026131743693302185,
+      "pressure_error": 0.005045351809916134,
+      "intervention_error": 0.10124466089365647,
+      "transfer_errors": [
+        0.039715875675147595,
+        0.16277344611216535
+      ],
       "parameters": [
         1.000123917243573,
         0.999960390488277,
@@ -335,14 +379,17 @@
         0.0008801228018574528,
         -0.008367478110041564
       ],
+      "pressure_scale": 0.0004952019490939791,
       "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
     },
     "63": {
       "success": true,
-      "pressure_error": 0.003241645695478296,
-      "intervention_error": 0.006376806263533722,
-      "amplitude_error": 0.010122069100075827,
-      "new_initial_error": 0.0026315434269916175,
+      "pressure_error": 0.005064124407541295,
+      "intervention_error": 0.10288861186210922,
+      "transfer_errors": [
+        0.040302764610871004,
+        0.16547445911334743
+      ],
       "parameters": [
         1.0001320045579105,
         0.9999561528668897,
@@ -351,6 +398,7 @@
         0.0009151113804064952,
         -0.00849442423761868
       ],
+      "pressure_scale": 0.0004952019490939791,
       "solver": "Sine-Galerkin, DOP853, rtol=1e-9"
     }
   }

@@ -57,6 +57,7 @@ def catalog(train,valid,interventions,rule,use_interventions=True,forward=None):
             'physical_tensor':bool(valid_tensor),'gate_failures':failures,
             'bootstrap_risk':float(risk),'validation_pressure':pressure,
             'intervention_pressure':None if f is None else f.get('intervention_error'),
+            'transfer_errors':None if f is None else f.get('transfer_errors'),
             'forward_verified':bool(f is not None and f.get('success'))})
     return records
 

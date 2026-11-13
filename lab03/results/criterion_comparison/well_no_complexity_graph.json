@@ -1,0 +1,492 @@
+{
+  "mask": 23,
+  "terms": [
+    "x_flux",
+    "y_flux",
+    "cross_flux",
+    "reaction"
+  ],
+  "parameters": [
+    1.0028500393343671,
+    1.0028855680901367,
+    0.0007367085610401231,
+    0.0,
+    0.11414608195216408,
+    0.0
+  ],
+  "node_order": [
+    "term_0_theta",
+    "term_0_expr_0",
+    "term_0_expr_1_0_0_0",
+    "term_0_expr_1_0_1_0",
+    "term_1_theta",
+    "term_1_expr_0",
+    "term_1_expr_1_0_0_0",
+    "term_1_expr_1_0_1_0",
+    "term_2_theta",
+    "term_2_expr_0",
+    "term_2_expr_1_0_0_0_0",
+    "term_2_expr_1_0_0_1_0",
+    "term_2_expr_1_1_0_0_0",
+    "term_2_expr_1_1_0_1_0",
+    "term_4_theta",
+    "term_4_expr_0",
+    "term_0_expr_1_0_0",
+    "term_0_expr_1_0_1",
+    "term_1_expr_1_0_0",
+    "term_1_expr_1_0_1",
+    "term_2_expr_1_0_0_0",
+    "term_2_expr_1_0_0_1",
+    "term_2_expr_1_1_0_0",
+    "term_2_expr_1_1_0_1",
+    "term_4_expr",
+    "term_0_expr_1_0",
+    "term_1_expr_1_0",
+    "term_2_expr_1_0_0",
+    "term_2_expr_1_1_0",
+    "term_4",
+    "term_0_expr_1",
+    "term_1_expr_1",
+    "term_2_expr_1_0",
+    "term_2_expr_1_1",
+    "term_0_expr",
+    "term_1_expr",
+    "term_2_expr_1",
+    "term_0",
+    "term_1",
+    "term_2_expr",
+    "term_2",
+    "sum",
+    "p_tt"
+  ],
+  "nodes": [
+    {
+      "id": "term_0_theta",
+      "label": "theta_1",
+      "kind": "parameter"
+    },
+    {
+      "id": "term_0_expr_0",
+      "label": "K",
+      "kind": "input"
+    },
+    {
+      "id": "term_0_expr_1_0_0_0",
+      "label": "rho",
+      "kind": "input"
+    },
+    {
+      "id": "term_0_expr_1_0_1_0",
+      "label": "p",
+      "kind": "input"
+    },
+    {
+      "id": "term_1_theta",
+      "label": "theta_2",
+      "kind": "parameter"
+    },
+    {
+      "id": "term_1_expr_0",
+      "label": "K",
+      "kind": "input"
+    },
+    {
+      "id": "term_1_expr_1_0_0_0",
+      "label": "rho",
+      "kind": "input"
+    },
+    {
+      "id": "term_1_expr_1_0_1_0",
+      "label": "p",
+      "kind": "input"
+    },
+    {
+      "id": "term_2_theta",
+      "label": "theta_3",
+      "kind": "parameter"
+    },
+    {
+      "id": "term_2_expr_0",
+      "label": "K/2",
+      "kind": "input"
+    },
+    {
+      "id": "term_2_expr_1_0_0_0_0",
+      "label": "rho",
+      "kind": "input"
+    },
+    {
+      "id": "term_2_expr_1_0_0_1_0",
+      "label": "p",
+      "kind": "input"
+    },
+    {
+      "id": "term_2_expr_1_1_0_0_0",
+      "label": "rho",
+      "kind": "input"
+    },
+    {
+      "id": "term_2_expr_1_1_0_1_0",
+      "label": "p",
+      "kind": "input"
+    },
+    {
+      "id": "term_4_theta",
+      "label": "theta_5",
+      "kind": "parameter"
+    },
+    {
+      "id": "term_4_expr_0",
+      "label": "p",
+      "kind": "input"
+    },
+    {
+      "id": "term_0_expr_1_0_0",
+      "label": "1/rho",
+      "kind": "operator"
+    },
+    {
+      "id": "term_0_expr_1_0_1",
+      "label": "d/dx",
+      "kind": "operator"
+    },
+    {
+      "id": "term_1_expr_1_0_0",
+      "label": "1/rho",
+      "kind": "operator"
+    },
+    {
+      "id": "term_1_expr_1_0_1",
+      "label": "d/dy",
+      "kind": "operator"
+    },
+    {
+      "id": "term_2_expr_1_0_0_0",
+      "label": "1/rho",
+      "kind": "operator"
+    },
+    {
+      "id": "term_2_expr_1_0_0_1",
+      "label": "d/dy",
+      "kind": "operator"
+    },
+    {
+      "id": "term_2_expr_1_1_0_0",
+      "label": "1/rho",
+      "kind": "operator"
+    },
+    {
+      "id": "term_2_expr_1_1_0_1",
+      "label": "d/dx",
+      "kind": "operator"
+    },
+    {
+      "id": "term_4_expr",
+      "label": "neg",
+      "kind": "operator"
+    },
+    {
+      "id": "term_0_expr_1_0",
+      "label": "*",
+      "kind": "operator"
+    },
+    {
+      "id": "term_1_expr_1_0",
+      "label": "*",
+      "kind": "operator"
+    },
+    {
+      "id": "term_2_expr_1_0_0",
+      "label": "*",
+      "kind": "operator"
+    },
+    {
+      "id": "term_2_expr_1_1_0",
+      "label": "*",
+      "kind": "operator"
+    },
+    {
+      "id": "term_4",
+      "label": "reaction",
+      "kind": "operator"
+    },
+    {
+      "id": "term_0_expr_1",
+      "label": "d/dx",
+      "kind": "operator"
+    },
+    {
+      "id": "term_1_expr_1",
+      "label": "d/dy",
+      "kind": "operator"
+    },
+    {
+      "id": "term_2_expr_1_0",
+      "label": "d/dx",
+      "kind": "operator"
+    },
+    {
+      "id": "term_2_expr_1_1",
+      "label": "d/dy",
+      "kind": "operator"
+    },
+    {
+      "id": "term_0_expr",
+      "label": "*",
+      "kind": "operator"
+    },
+    {
+      "id": "term_1_expr",
+      "label": "*",
+      "kind": "operator"
+    },
+    {
+      "id": "term_2_expr_1",
+      "label": "+",
+      "kind": "operator"
+    },
+    {
+      "id": "term_0",
+      "label": "x_flux",
+      "kind": "operator"
+    },
+    {
+      "id": "term_1",
+      "label": "y_flux",
+      "kind": "operator"
+    },
+    {
+      "id": "term_2_expr",
+      "label": "*",
+      "kind": "operator"
+    },
+    {
+      "id": "term_2",
+      "label": "cross_flux",
+      "kind": "operator"
+    },
+    {
+      "id": "sum",
+      "label": "+",
+      "kind": "operator"
+    },
+    {
+      "id": "p_tt",
+      "label": "p_tt",
+      "kind": "output"
+    }
+  ],
+  "edges": [
+    {
+      "source": "sum",
+      "target": "p_tt",
+      "position": 0
+    },
+    {
+      "source": "term_0",
+      "target": "sum",
+      "position": 0
+    },
+    {
+      "source": "term_0_theta",
+      "target": "term_0",
+      "position": 0
+    },
+    {
+      "source": "term_0_expr",
+      "target": "term_0",
+      "position": 1
+    },
+    {
+      "source": "term_0_expr_0",
+      "target": "term_0_expr",
+      "position": 0
+    },
+    {
+      "source": "term_0_expr_1",
+      "target": "term_0_expr",
+      "position": 1
+    },
+    {
+      "source": "term_0_expr_1_0",
+      "target": "term_0_expr_1",
+      "position": 0
+    },
+    {
+      "source": "term_0_expr_1_0_0",
+      "target": "term_0_expr_1_0",
+      "position": 0
+    },
+    {
+      "source": "term_0_expr_1_0_0_0",
+      "target": "term_0_expr_1_0_0",
+      "position": 0
+    },
+    {
+      "source": "term_0_expr_1_0_1",
+      "target": "term_0_expr_1_0",
+      "position": 1
+    },
+    {
+      "source": "term_0_expr_1_0_1_0",
+      "target": "term_0_expr_1_0_1",
+      "position": 0
+    },
+    {
+      "source": "term_1",
+      "target": "sum",
+      "position": 1
+    },
+    {
+      "source": "term_1_theta",
+      "target": "term_1",
+      "position": 0
+    },
+    {
+      "source": "term_1_expr",
+      "target": "term_1",
+      "position": 1
+    },
+    {
+      "source": "term_1_expr_0",
+      "target": "term_1_expr",
+      "position": 0
+    },
+    {
+      "source": "term_1_expr_1",
+      "target": "term_1_expr",
+      "position": 1
+    },
+    {
+      "source": "term_1_expr_1_0",
+      "target": "term_1_expr_1",
+      "position": 0
+    },
+    {
+      "source": "term_1_expr_1_0_0",
+      "target": "term_1_expr_1_0",
+      "position": 0
+    },
+    {
+      "source": "term_1_expr_1_0_0_0",
+      "target": "term_1_expr_1_0_0",
+      "position": 0
+    },
+    {
+      "source": "term_1_expr_1_0_1",
+      "target": "term_1_expr_1_0",
+      "position": 1
+    },
+    {
+      "source": "term_1_expr_1_0_1_0",
+      "target": "term_1_expr_1_0_1",
+      "position": 0
+    },
+    {
+      "source": "term_2",
+      "target": "sum",
+      "position": 2
+    },
+    {
+      "source": "term_2_theta",
+      "target": "term_2",
+      "position": 0
+    },
+    {
+      "source": "term_2_expr",
+      "target": "term_2",
+      "position": 1
+    },
+    {
+      "source": "term_2_expr_0",
+      "target": "term_2_expr",
+      "position": 0
+    },
+    {
+      "source": "term_2_expr_1",
+      "target": "term_2_expr",
+      "position": 1
+    },
+    {
+      "source": "term_2_expr_1_0",
+      "target": "term_2_expr_1",
+      "position": 0
+    },
+    {
+      "source": "term_2_expr_1_0_0",
+      "target": "term_2_expr_1_0",
+      "position": 0
+    },
+    {
+      "source": "term_2_expr_1_0_0_0",
+      "target": "term_2_expr_1_0_0",
+      "position": 0
+    },
+    {
+      "source": "term_2_expr_1_0_0_0_0",
+      "target": "term_2_expr_1_0_0_0",
+      "position": 0
+    },
+    {
+      "source": "term_2_expr_1_0_0_1",
+      "target": "term_2_expr_1_0_0",
+      "position": 1
+    },
+    {
+      "source": "term_2_expr_1_0_0_1_0",
+      "target": "term_2_expr_1_0_0_1",
+      "position": 0
+    },
+    {
+      "source": "term_2_expr_1_1",
+      "target": "term_2_expr_1",
+      "position": 1
+    },
+    {
+      "source": "term_2_expr_1_1_0",
+      "target": "term_2_expr_1_1",
+      "position": 0
+    },
+    {
+      "source": "term_2_expr_1_1_0_0",
+      "target": "term_2_expr_1_1_0",
+      "position": 0
+    },
+    {
+      "source": "term_2_expr_1_1_0_0_0",
+      "target": "term_2_expr_1_1_0_0",
+      "position": 0
+    },
+    {
+      "source": "term_2_expr_1_1_0_1",
+      "target": "term_2_expr_1_1_0",
+      "position": 1
+    },
+    {
+      "source": "term_2_expr_1_1_0_1_0",
+      "target": "term_2_expr_1_1_0_1",
+      "position": 0
+    },
+    {
+      "source": "term_4",
+      "target": "sum",
+      "position": 4
+    },
+    {
+      "source": "term_4_theta",
+      "target": "term_4",
+      "position": 0
+    },
+    {
+      "source": "term_4_expr",
+      "target": "term_4",
+      "position": 1
+    },
+    {
+      "source": "term_4_expr_0",
+      "target": "term_4_expr",
+      "position": 0
+    }
+  ],
+  "meaning": "Expression DAG, not a causal discovery proof. Time-unrolled solver is acyclic."
+}

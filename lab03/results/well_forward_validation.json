@@ -1,7 +1,18 @@
 {
-  "signature": "9d472674da2032c7057547b2c69b6865a6132e380bb56113c724c6bf5590eb92",
-  "solver_version": "clawpack-5.9-mc-ssprk-source-v2.1",
-  "input": "well_valid_0.npz",
+  "signature": "581020bf96f28e2af201418b7d271bd95185a6d988c28210e993db9a88358e89",
+  "criterion_version": 3,
+  "solver_version": "clawpack-5.9-mc-ssprk-source-v3.0-fixed-training-scale",
+  "inputs": {
+    "well_valid_0.npz": "615bd46995811b977ff8aca5e09738cba30652b9377eca4115ea5ea925aee8ea",
+    "well_valid_1.npz": "e6b8a2f6dbe391238305a4dd40227ceaab3331e889bb84044c4f784fc867a4ed",
+    "well_valid_2.npz": "819de4698ad8db8afaca5bf5e22e97b4e563d7d02f54f08be4d2b85addaa6b91"
+  },
+  "base_sample": 0,
+  "transfer_samples": [
+    1,
+    2
+  ],
+  "pressure_scale": 5.781529903411865,
   "records": {
     "0": {
       "success": false,
@@ -13,7 +24,8 @@
         0.0,
         0.0,
         0.0
-      ]
+      ],
+      "pressure_scale": 5.781529903411865
     },
     "1": {
       "success": false,
@@ -25,7 +37,8 @@
         0.0,
         0.0,
         0.0
-      ]
+      ],
+      "pressure_scale": 5.781529903411865
     },
     "2": {
       "success": false,
@@ -37,14 +50,23 @@
         0.0,
         0.0,
         0.0
-      ]
+      ],
+      "pressure_scale": 5.781529903411865
     },
     "3": {
       "success": true,
       "pressure_error": 0.08367436332212405,
-      "amplitude_error": 0.08367436332212405,
-      "swap_error": 0.08357854102987015,
-      "intervention_error": 0.0836264521759971,
+      "transfer_errors": [
+        {
+          "sample": 1,
+          "pressure_error": 0.07627629796865297
+        },
+        {
+          "sample": 2,
+          "pressure_error": 0.07938690958425942
+        }
+      ],
+      "intervention_error": 0.0778316037764562,
       "parameters": [
         1.0029436230093474,
         1.0029613636330716,
@@ -53,14 +75,24 @@
         0.0,
         0.0
       ],
-      "seconds": 3.550709832998109
+      "pressure_scale": 5.781529903411865,
+      "base_reused_from_v2": true,
+      "seconds": 3.7120142090134323
     },
     "7": {
       "success": true,
       "pressure_error": 0.08348221257924583,
-      "amplitude_error": 0.08348221257924583,
-      "swap_error": 0.08388391299488387,
-      "intervention_error": 0.08368306278706486,
+      "transfer_errors": [
+        {
+          "sample": 1,
+          "pressure_error": 0.07489526286245105
+        },
+        {
+          "sample": 2,
+          "pressure_error": 0.07747275731802403
+        }
+      ],
+      "intervention_error": 0.07618401009023754,
       "parameters": [
         1.0029422069940288,
         1.0029565118897377,
@@ -69,7 +101,9 @@
         0.0,
         0.0
       ],
-      "seconds": 12.306988208001712
+      "pressure_scale": 5.781529903411865,
+      "base_reused_from_v2": true,
+      "seconds": 13.206784833979327
     },
     "8": {
       "success": false,
@@ -81,7 +115,8 @@
         -0.10924155606054563,
         0.0,
         0.0
-      ]
+      ],
+      "pressure_scale": 5.781529903411865
     },
     "9": {
       "success": false,
@@ -93,7 +128,8 @@
         0.24485649360952022,
         0.0,
         0.0
-      ]
+      ],
+      "pressure_scale": 5.781529903411865
     },
     "10": {
       "success": false,
@@ -105,14 +141,23 @@
         0.314115744430588,
         0.0,
         0.0
-      ]
+      ],
+      "pressure_scale": 5.781529903411865
     },
     "11": {
       "success": true,
       "pressure_error": 0.23010320218443234,
-      "amplitude_error": 0.23010320218443234,
-      "swap_error": 0.23036315182800016,
-      "intervention_error": 0.23023317700621626,
+      "transfer_errors": [
+        {
+          "sample": 1,
+          "pressure_error": 0.23130876146915594
+        },
+        {
+          "sample": 2,
+          "pressure_error": 0.22775320607241115
+        }
+      ],
+      "intervention_error": 0.22953098377078354,
       "parameters": [
         1.003144153648698,
         1.0032061659863247,
@@ -121,14 +166,24 @@
         0.0,
         0.0
       ],
-      "seconds": 4.243384957997478
+      "pressure_scale": 5.781529903411865,
+      "base_reused_from_v2": true,
+      "seconds": 4.026321540994104
     },
     "15": {
       "success": true,
       "pressure_error": 0.23064336071431124,
-      "amplitude_error": 0.23064336071431124,
-      "swap_error": 0.22993189578278064,
-      "intervention_error": 0.23028762824854593,
+      "transfer_errors": [
+        {
+          "sample": 1,
+          "pressure_error": 0.23131498427839614
+        },
+        {
+          "sample": 2,
+          "pressure_error": 0.22786492415110984
+        }
+      ],
+      "intervention_error": 0.22958995421475298,
       "parameters": [
         1.0031429557303015,
         1.0032020990458212,
@@ -137,7 +192,9 @@
         0.0,
         0.0
       ],
-      "seconds": 12.404907083997387
+      "pressure_scale": 5.781529903411865,
+      "base_reused_from_v2": true,
+      "seconds": 13.29805620899424
     },
     "16": {
       "success": false,
@@ -149,7 +206,8 @@
         0.0,
         527.93399525547,
         0.0
-      ]
+      ],
+      "pressure_scale": 5.781529903411865
     },
     "17": {
       "success": false,
@@ -161,7 +219,8 @@
         0.0,
         245.6855751981082,
         0.0
-      ]
+      ],
+      "pressure_scale": 5.781529903411865
     },
     "18": {
       "success": false,
@@ -173,14 +232,23 @@
         0.0,
         266.4980407779711,
         0.0
-      ]
+      ],
+      "pressure_scale": 5.781529903411865
     },
     "19": {
       "success": true,
       "pressure_error": 0.08071365038904864,
-      "amplitude_error": 0.08071365038904864,
-      "swap_error": 0.08070333030823415,
-      "intervention_error": 0.08070849034864139,
+      "transfer_errors": [
+        {
+          "sample": 1,
+          "pressure_error": 0.07840145775431025
+        },
+        {
+          "sample": 2,
+          "pressure_error": 0.0748244496469982
+        }
+      ],
+      "intervention_error": 0.07661295370065423,
       "parameters": [
         1.0028535725329868,
         1.0028920576224307,
@@ -189,14 +257,24 @@
         0.11152782653710713,
         0.0
       ],
-      "seconds": 12.930523917006212
+      "pressure_scale": 5.781529903411865,
+      "base_reused_from_v2": true,
+      "seconds": 13.183542124985252
     },
     "23": {
       "success": true,
       "pressure_error": 0.0800008312221571,
-      "amplitude_error": 0.0800008312221571,
-      "swap_error": 0.08107152029805934,
-      "intervention_error": 0.08053617576010821,
+      "transfer_errors": [
+        {
+          "sample": 1,
+          "pressure_error": 0.0783959909603368
+        },
+        {
+          "sample": 2,
+          "pressure_error": 0.0743042622851515
+        }
+      ],
+      "intervention_error": 0.07635012662274415,
       "parameters": [
         1.0028500393343671,
         1.0028855680901367,
@@ -205,7 +283,9 @@
         0.11414608195216408,
         0.0
       ],
-      "seconds": 13.197061041995767
+      "pressure_scale": 5.781529903411865,
+      "base_reused_from_v2": true,
+      "seconds": 13.600701582996408
     },
     "24": {
       "success": false,
@@ -217,7 +297,8 @@
         -0.011437843142306704,
         527.9328780291212,
         0.0
-      ]
+      ],
+      "pressure_scale": 5.781529903411865
     },
     "25": {
       "success": false,
@@ -229,7 +310,8 @@
         0.22378657215825107,
         245.67178884507967,
         0.0
-      ]
+      ],
+      "pressure_scale": 5.781529903411865
     },
     "26": {
       "success": false,
@@ -241,14 +323,23 @@
         0.2894741813429571,
         266.4802273401021,
         0.0
-      ]
+      ],
+      "pressure_scale": 5.781529903411865
     },
     "27": {
       "success": true,
       "pressure_error": 0.23008499152136105,
-      "amplitude_error": 0.23008499152136105,
-      "swap_error": 0.2302699975538883,
-      "intervention_error": 0.23017749453762468,
+      "transfer_errors": [
+        {
+          "sample": 1,
+          "pressure_error": 0.23117873943286024
+        },
+        {
+          "sample": 2,
+          "pressure_error": 0.22813395727787278
+        }
+      ],
+      "intervention_error": 0.22965634835536652,
       "parameters": [
         1.0031410725222403,
         1.0032037944739698,
@@ -257,14 +348,24 @@
         0.00381552135161858,
         0.0
       ],
-      "seconds": 13.51164808300382
+      "pressure_scale": 5.781529903411865,
+      "base_reused_from_v2": true,
+      "seconds": 13.298316208994947
     },
     "31": {
       "success": true,
       "pressure_error": 0.23008429828897345,
-      "amplitude_error": 0.23008429828897345,
-      "swap_error": 0.2297742809451029,
-      "intervention_error": 0.22992928961703818,
+      "transfer_errors": [
+        {
+          "sample": 1,
+          "pressure_error": 0.2312508559842575
+        },
+        {
+          "sample": 2,
+          "pressure_error": 0.2275970333060765
+        }
+      ],
+      "intervention_error": 0.229423944645167,
       "parameters": [
         1.003138107360605,
         1.0031983668628792,
@@ -273,7 +374,9 @@
         0.0060037837839956275,
         0.0
       ],
-      "seconds": 12.849332084006164
+      "pressure_scale": 5.781529903411865,
+      "base_reused_from_v2": true,
+      "seconds": 13.518387833988527
     },
     "32": {
       "success": false,
@@ -285,7 +388,8 @@
         0.0,
         0.0,
         17268.466437375373
-      ]
+      ],
+      "pressure_scale": 5.781529903411865
     },
     "33": {
       "success": false,
@@ -297,7 +401,8 @@
         0.0,
         0.0,
         4059.112976293796
-      ]
+      ],
+      "pressure_scale": 5.781529903411865
     },
     "34": {
       "success": false,
@@ -309,14 +414,23 @@
         0.0,
         0.0,
         10146.914173066156
-      ]
+      ],
+      "pressure_scale": 5.781529903411865
     },
     "35": {
       "success": true,
-      "pressure_error": 0.2284368698769866,
-      "amplitude_error": 0.5875512566951049,
-      "swap_error": 0.22802045661508633,
-      "intervention_error": 0.4077858566550956,
+      "pressure_error": 0.2104357875653438,
+      "transfer_errors": [
+        {
+          "sample": 1,
+          "pressure_error": 0.22424124511384208
+        },
+        {
+          "sample": 2,
+          "pressure_error": 0.10516034877850572
+        }
+      ],
+      "intervention_error": 0.1647007969461739,
       "parameters": [
         1.0033786629469994,
         1.003093104564383,
@@ -325,14 +439,24 @@
         0.0,
         -24.276207073838876
       ],
-      "seconds": 19.520779124999535
+      "pressure_scale": 5.781529903411865,
+      "base_reused_from_v2": false,
+      "seconds": 20.18903012498049
     },
     "39": {
       "success": true,
-      "pressure_error": 0.2279976768681796,
-      "amplitude_error": 0.5869588030069898,
-      "swap_error": 0.22823910503168926,
-      "intervention_error": 0.40759895401933954,
+      "pressure_error": 0.21008372547593498,
+      "transfer_errors": [
+        {
+          "sample": 1,
+          "pressure_error": 0.22468356208738663
+        },
+        {
+          "sample": 2,
+          "pressure_error": 0.10493353482417384
+        }
+      ],
+      "intervention_error": 0.16480854845578025,
       "parameters": [
         1.0033767464970373,
         1.0030881149110247,
@@ -341,7 +465,9 @@
         0.0,
         -24.248038119434927
       ],
-      "seconds": 19.38563541599433
+      "pressure_scale": 5.781529903411865,
+      "base_reused_from_v2": false,
+      "seconds": 20.454102292016614
     },
     "40": {
       "success": false,
@@ -353,7 +479,8 @@
         0.6916145055760307,
         0.0,
         17302.873634121042
-      ]
+      ],
+      "pressure_scale": 5.781529903411865
     },
     "41": {
       "success": false,
@@ -365,7 +492,8 @@
         0.41184319361554445,
         0.0,
         4082.150274765677
-      ]
+      ],
+      "pressure_scale": 5.781529903411865
     },
     "42": {
       "success": false,
@@ -377,14 +505,23 @@
         0.7516710640616611,
         0.0,
         10183.868844492235
-      ]
+      ],
+      "pressure_scale": 5.781529903411865
     },
     "43": {
       "success": true,
-      "pressure_error": 0.22863530331796122,
-      "amplitude_error": 0.22990206485468975,
-      "swap_error": 0.22892232999878345,
-      "intervention_error": 0.2294121974267366,
+      "pressure_error": 0.22932927718622909,
+      "transfer_errors": [
+        {
+          "sample": 1,
+          "pressure_error": 0.23031094337434024
+        },
+        {
+          "sample": 2,
+          "pressure_error": 0.22784012747828772
+        }
+      ],
+      "intervention_error": 0.22907553542631398,
       "parameters": [
         1.0030752472686992,
         1.0031853543280822,
@@ -393,14 +530,24 @@
         0.0,
         3.848469006261929
       ],
-      "seconds": 19.398536916996818
+      "pressure_scale": 5.781529903411865,
+      "base_reused_from_v2": false,
+      "seconds": 20.707940833992325
     },
     "47": {
       "success": true,
-      "pressure_error": 0.22866862016824768,
-      "amplitude_error": 0.22947283484080544,
-      "swap_error": 0.2288887357845278,
-      "intervention_error": 0.2291807853126666,
+      "pressure_error": 0.22840517855523954,
+      "transfer_errors": [
+        {
+          "sample": 1,
+          "pressure_error": 0.23023186430244344
+        },
+        {
+          "sample": 2,
+          "pressure_error": 0.22709587068034123
+        }
+      ],
+      "intervention_error": 0.22866386749139234,
       "parameters": [
         1.0030736684838095,
         1.003181170390859,
@@ -409,7 +556,9 @@
         0.0,
         3.8697051923724435
       ],
-      "seconds": 19.494268207999994
+      "pressure_scale": 5.781529903411865,
+      "base_reused_from_v2": false,
+      "seconds": 20.936449583008653
     },
     "48": {
       "success": false,
@@ -421,7 +570,8 @@
         0.0,
         503.43642132167133,
         1605.137356656747
-      ]
+      ],
+      "pressure_scale": 5.781529903411865
     },
     "49": {
       "success": false,
@@ -433,7 +583,8 @@
         0.0,
         293.87687451612555,
         -3545.380076545476
-      ]
+      ],
+      "pressure_scale": 5.781529903411865
     },
     "50": {
       "success": false,
@@ -445,14 +596,23 @@
         0.0,
         186.06459972286697,
         4988.818748958936
-      ]
+      ],
+      "pressure_scale": 5.781529903411865
     },
     "51": {
       "success": true,
-      "pressure_error": 0.2307177713335515,
-      "amplitude_error": 0.9512522495188376,
-      "swap_error": 0.230297860389845,
-      "intervention_error": 0.5907750549543413,
+      "pressure_error": 0.2035062458621737,
+      "transfer_errors": [
+        {
+          "sample": 1,
+          "pressure_error": 0.1946184332248364
+        },
+        {
+          "sample": 2,
+          "pressure_error": 0.08692554133285715
+        }
+      ],
+      "intervention_error": 0.14077198727884677,
       "parameters": [
         1.0031103873866103,
         1.0027454796715998,
@@ -461,14 +621,24 @@
         0.706749653216294,
         -41.1492752375585
       ],
-      "seconds": 19.46005325000442
+      "pressure_scale": 5.781529903411865,
+      "base_reused_from_v2": false,
+      "seconds": 19.90395108301891
     },
     "55": {
       "success": true,
-      "pressure_error": 0.2306557476067779,
-      "amplitude_error": 0.9514132607889642,
-      "swap_error": 0.23072455845191894,
-      "intervention_error": 0.5910689096204416,
+      "pressure_error": 0.2036802091452795,
+      "transfer_errors": [
+        {
+          "sample": 1,
+          "pressure_error": 0.1939681461031027
+        },
+        {
+          "sample": 2,
+          "pressure_error": 0.08722593930130426
+        }
+      ],
+      "intervention_error": 0.14059704270220347,
       "parameters": [
         1.0031071598922572,
         1.0027387619822314,
@@ -477,7 +647,9 @@
         0.7101446373197738,
         -41.201830376282146
       ],
-      "seconds": 19.674778874992626
+      "pressure_scale": 5.781529903411865,
+      "base_reused_from_v2": false,
+      "seconds": 20.494733875006204
     },
     "56": {
       "success": false,
@@ -489,7 +661,8 @@
         0.058544438821486924,
         503.36266712294787,
         1610.34459103984
-      ]
+      ],
+      "pressure_scale": 5.781529903411865
     },
     "57": {
       "success": false,
@@ -501,7 +674,8 @@
         0.07490307010393145,
         293.78190484552533,
         -3538.7327399910264
-      ]
+      ],
+      "pressure_scale": 5.781529903411865
     },
     "58": {
       "success": false,
@@ -513,14 +687,23 @@
         0.5133596078681693,
         185.27170789352957,
         5036.03783059063
-      ]
+      ],
+      "pressure_scale": 5.781529903411865
     },
     "59": {
       "success": true,
-      "pressure_error": 0.2288442615911096,
-      "amplitude_error": 0.23116147360226832,
-      "swap_error": 0.22891194205219362,
-      "intervention_error": 0.23003670782723096,
+      "pressure_error": 0.22881860578303898,
+      "transfer_errors": [
+        {
+          "sample": 1,
+          "pressure_error": 0.2307012897478481
+        },
+        {
+          "sample": 2,
+          "pressure_error": 0.22798229614076518
+        }
+      ],
+      "intervention_error": 0.22934179294430662,
       "parameters": [
         1.0031053304926285,
         1.0032244258139127,
@@ -529,14 +712,24 @@
         -0.0794005838189112,
         5.749329556569581
       ],
-      "seconds": 19.429711458011298
+      "pressure_scale": 5.781529903411865,
+      "base_reused_from_v2": false,
+      "seconds": 20.868762625003
     },
     "63": {
       "success": true,
-      "pressure_error": 0.22886139916992126,
-      "amplitude_error": 0.2310909262705798,
-      "swap_error": 0.22850075716261475,
-      "intervention_error": 0.22979584171659728,
+      "pressure_error": 0.22906138982508661,
+      "transfer_errors": [
+        {
+          "sample": 1,
+          "pressure_error": 0.23090589484615126
+        },
+        {
+          "sample": 2,
+          "pressure_error": 0.22756612355858752
+        }
+      ],
+      "intervention_error": 0.2292360092023694,
       "parameters": [
         1.003102664814166,
         1.0032188335177492,
@@ -545,7 +738,9 @@
         -0.07652547615489658,
         5.701702667636743
       ],
-      "seconds": 19.38086391700199
+      "pressure_scale": 5.781529903411865,
+      "base_reused_from_v2": false,
+      "seconds": 20.99237904101028
     }
   }
 }

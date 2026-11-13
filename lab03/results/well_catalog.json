@@ -21,6 +21,7 @@
     "bootstrap_risk": 0.5,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -34,9 +35,9 @@
       0.0
     ],
     "validation": 0.6375483588937755,
-    "intervention": 0.585356070036049,
+    "intervention": 0.5668773942419256,
     "complexity": 1,
-    "J": 0.37976620424073537,
+    "J": 0.3705268663436737,
     "gate": false,
     "physical_tensor": true,
     "gate_failures": [
@@ -45,6 +46,7 @@
     "bootstrap_risk": 0.3333333333333333,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -58,9 +60,9 @@
       0.0
     ],
     "validation": 0.533312068052232,
-    "intervention": 0.5861898515033976,
+    "intervention": 0.5966076174762692,
     "complexity": 1,
-    "J": 0.3697594658902553,
+    "J": 0.37496834887669117,
     "gate": false,
     "physical_tensor": true,
     "gate_failures": [
@@ -69,6 +71,7 @@
     "bootstrap_risk": 0.3333333333333333,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -82,15 +85,25 @@
       0.0
     ],
     "validation": 0.02863111007610391,
-    "intervention": 0.02863127429373358,
+    "intervention": 0.03769265949854112,
     "complexity": 2,
-    "J": 0.17001736708439963,
+    "J": 0.1671199428846292,
     "gate": true,
     "physical_tensor": true,
     "gate_failures": [],
     "bootstrap_risk": 0.16666666666666666,
     "validation_pressure": 0.08367436332212405,
-    "intervention_pressure": 0.0836264521759971,
+    "intervention_pressure": 0.0778316037764562,
+    "transfer_errors": [
+      {
+        "sample": 1,
+        "pressure_error": 0.07627629796865297
+      },
+      {
+        "sample": 2,
+        "pressure_error": 0.07938690958425942
+      }
+    ],
     "forward_verified": true
   },
   {
@@ -104,9 +117,9 @@
       0.0
     ],
     "validation": 1.000582171950788,
-    "intervention": 1.000582171950788,
+    "intervention": 0.9997745146471873,
     "complexity": 1,
-    "J": 0.6253493031704728,
+    "J": 0.6249454745186724,
     "gate": false,
     "physical_tensor": false,
     "gate_failures": [
@@ -115,6 +128,7 @@
     "bootstrap_risk": 0.5,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -128,9 +142,9 @@
       0.0
     ],
     "validation": 0.6379908996979183,
-    "intervention": 0.585581150479625,
+    "intervention": 0.5665165934592609,
     "complexity": 2,
-    "J": 0.39992299854293767,
+    "J": 0.3903907200327556,
     "gate": false,
     "physical_tensor": false,
     "gate_failures": [
@@ -139,6 +153,7 @@
     "bootstrap_risk": 0.3333333333333333,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -152,9 +167,9 @@
       0.0
     ],
     "validation": 0.5333121004389784,
-    "intervention": 0.5862550296972231,
+    "intervention": 0.5966599886321038,
     "complexity": 2,
-    "J": 0.38979205822584273,
+    "J": 0.3949945376932831,
     "gate": false,
     "physical_tensor": false,
     "gate_failures": [
@@ -163,6 +178,7 @@
     "bootstrap_risk": 0.3333333333333333,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -176,15 +192,25 @@
       0.0
     ],
     "validation": 0.0286552065343013,
-    "intervention": 0.02865534198019576,
+    "intervention": 0.037691169829298266,
     "complexity": 3,
-    "J": 0.18985593129287504,
+    "J": 0.1861064049444614,
     "gate": true,
     "physical_tensor": true,
     "gate_failures": [],
     "bootstrap_risk": 0.16666666666666666,
     "validation_pressure": 0.08348221257924583,
-    "intervention_pressure": 0.08368306278706486,
+    "intervention_pressure": 0.07618401009023754,
+    "transfer_errors": [
+      {
+        "sample": 1,
+        "pressure_error": 0.07489526286245105
+      },
+      {
+        "sample": 2,
+        "pressure_error": 0.07747275731802403
+      }
+    ],
     "forward_verified": true
   },
   {
@@ -198,9 +224,9 @@
       0.0
     ],
     "validation": 1.0000098147206888,
-    "intervention": 1.0000098147206888,
+    "intervention": 1.0000075474328087,
     "complexity": 1,
-    "J": 0.6233392221657467,
+    "J": 0.6233380885218066,
     "gate": false,
     "physical_tensor": true,
     "gate_failures": [
@@ -209,6 +235,7 @@
     "bootstrap_risk": 0.3333333333333333,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -222,9 +249,9 @@
       0.0
     ],
     "validation": 0.6375098989339198,
-    "intervention": 0.5853387697090963,
+    "intervention": 0.5668123520034257,
     "complexity": 2,
-    "J": 0.39808704141460677,
+    "J": 0.3888238325617715,
     "gate": false,
     "physical_tensor": true,
     "gate_failures": [
@@ -233,6 +260,7 @@
     "bootstrap_risk": 0.16666666666666666,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -246,9 +274,9 @@
       0.0
     ],
     "validation": 0.5333321130034469,
-    "intervention": 0.5861820736001143,
+    "intervention": 0.5965678223297926,
     "complexity": 2,
-    "J": 0.38809091476706853,
+    "J": 0.39328378913190765,
     "gate": false,
     "physical_tensor": true,
     "gate_failures": [
@@ -257,6 +285,7 @@
     "bootstrap_risk": 0.16666666666666666,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -270,15 +299,25 @@
       0.0
     ],
     "validation": 0.028975967863393244,
-    "intervention": 0.028976465565016516,
+    "intervention": 0.036093663285731985,
     "complexity": 3,
-    "J": 0.4081173874738798,
+    "J": 0.40776629085616345,
     "gate": true,
     "physical_tensor": true,
     "gate_failures": [],
     "bootstrap_risk": 0.0,
     "validation_pressure": 0.23010320218443234,
-    "intervention_pressure": 0.23023317700621626,
+    "intervention_pressure": 0.22953098377078354,
+    "transfer_errors": [
+      {
+        "sample": 1,
+        "pressure_error": 0.23130876146915594
+      },
+      {
+        "sample": 2,
+        "pressure_error": 0.22775320607241115
+      }
+    ],
     "forward_verified": true
   },
   {
@@ -292,9 +331,9 @@
       0.0
     ],
     "validation": 1.0005932129869588,
-    "intervention": 1.0005932129869588,
+    "intervention": 0.9997820538204281,
     "complexity": 2,
-    "J": 0.6436892611255086,
+    "J": 0.6432836815422432,
     "gate": false,
     "physical_tensor": false,
     "gate_failures": [
@@ -303,6 +342,7 @@
     "bootstrap_risk": 0.3333333333333333,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -316,9 +356,9 @@
       0.0
     ],
     "validation": 0.6379498022308322,
-    "intervention": 0.5855619561077995,
+    "intervention": 0.5664529375867446,
     "complexity": 3,
-    "J": 0.4182426249436496,
+    "J": 0.40868811568312224,
     "gate": false,
     "physical_tensor": false,
     "gate_failures": [
@@ -327,6 +367,7 @@
     "bootstrap_risk": 0.16666666666666666,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -340,9 +381,9 @@
       0.0
     ],
     "validation": 0.5333316948371498,
-    "intervention": 0.5862456511990131,
+    "intervention": 0.5966191312757707,
     "complexity": 3,
-    "J": 0.4081226617498882,
+    "J": 0.41330940178826703,
     "gate": false,
     "physical_tensor": false,
     "gate_failures": [
@@ -351,6 +392,7 @@
     "bootstrap_risk": 0.16666666666666666,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -364,15 +406,25 @@
       0.0
     ],
     "validation": 0.028993773057650742,
-    "intervention": 0.028994258156274655,
+    "intervention": 0.03609193425863665,
     "complexity": 4,
-    "J": 0.42868655214434925,
+    "J": 0.4283377151274528,
     "gate": true,
     "physical_tensor": true,
     "gate_failures": [],
     "bootstrap_risk": 0.0,
     "validation_pressure": 0.23064336071431124,
-    "intervention_pressure": 0.23028762824854593,
+    "intervention_pressure": 0.22958995421475298,
+    "transfer_errors": [
+      {
+        "sample": 1,
+        "pressure_error": 0.23131498427839614
+      },
+      {
+        "sample": 2,
+        "pressure_error": 0.22786492415110984
+      }
+    ],
     "forward_verified": true
   },
   {
@@ -386,9 +438,9 @@
       0.0
     ],
     "validation": 0.7160585802020224,
-    "intervention": 0.7160585802020221,
+    "intervention": 0.7212826545625011,
     "complexity": 1,
-    "J": 0.4546351481212133,
+    "J": 0.4572471853014528,
     "gate": false,
     "physical_tensor": true,
     "gate_failures": [
@@ -397,6 +449,7 @@
     "bootstrap_risk": 0.5,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -410,9 +463,9 @@
       0.0
     ],
     "validation": 0.5575404085068507,
-    "intervention": 0.5082932392778008,
+    "intervention": 0.49567400830819586,
     "complexity": 2,
-    "J": 0.3532339938229188,
+    "J": 0.34692437833811635,
     "gate": false,
     "physical_tensor": true,
     "gate_failures": [
@@ -421,6 +474,7 @@
     "bootstrap_risk": 0.3333333333333333,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -434,9 +488,9 @@
       0.0
     ],
     "validation": 0.45972018920726454,
-    "intervention": 0.5078124124264227,
+    "intervention": 0.5184690383352377,
     "complexity": 2,
-    "J": 0.34321155846727114,
+    "J": 0.34853987142167864,
     "gate": false,
     "physical_tensor": true,
     "gate_failures": [
@@ -445,6 +499,7 @@
     "bootstrap_risk": 0.3333333333333333,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -458,15 +513,25 @@
       0.0
     ],
     "validation": 0.028631185378189206,
-    "intervention": 0.028631543948895354,
+    "intervention": 0.037691709687892795,
     "complexity": 3,
-    "J": 0.18559768076785493,
+    "J": 0.18354991244386135,
     "gate": true,
     "physical_tensor": true,
     "gate_failures": [],
     "bootstrap_risk": 0.16666666666666666,
     "validation_pressure": 0.08071365038904864,
-    "intervention_pressure": 0.08070849034864139,
+    "intervention_pressure": 0.07661295370065423,
+    "transfer_errors": [
+      {
+        "sample": 1,
+        "pressure_error": 0.07840145775431025
+      },
+      {
+        "sample": 2,
+        "pressure_error": 0.0748244496469982
+      }
+    ],
     "forward_verified": true
   },
   {
@@ -480,9 +545,9 @@
       0.0
     ],
     "validation": 0.7165399098724053,
-    "intervention": 0.716539909872405,
+    "intervention": 0.7212516283924765,
     "complexity": 2,
-    "J": 0.47492394592344306,
+    "J": 0.4772798051834788,
     "gate": false,
     "physical_tensor": false,
     "gate_failures": [
@@ -491,6 +556,7 @@
     "bootstrap_risk": 0.5,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -504,9 +570,9 @@
       0.0
     ],
     "validation": 0.5579965839584474,
-    "intervention": 0.5085234857237433,
+    "intervention": 0.4953644812047672,
     "complexity": 3,
-    "J": 0.3733947345910497,
+    "J": 0.36681523233156166,
     "gate": false,
     "physical_tensor": false,
     "gate_failures": [
@@ -515,6 +581,7 @@
     "bootstrap_risk": 0.3333333333333333,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -528,9 +595,9 @@
       0.0
     ],
     "validation": 0.4597046101917447,
-    "intervention": 0.507907165390422,
+    "intervention": 0.5185945691706761,
     "complexity": 3,
-    "J": 0.3632573770477188,
+    "J": 0.3686010789378459,
     "gate": false,
     "physical_tensor": false,
     "gate_failures": [
@@ -539,6 +606,7 @@
     "bootstrap_risk": 0.3333333333333333,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -552,15 +620,25 @@
       0.0
     ],
     "validation": 0.0286553272530606,
-    "intervention": 0.028655665873495176,
+    "intervention": 0.037690222034472434,
     "complexity": 4,
-    "J": 0.20480111849418392,
+    "J": 0.2027080939255019,
     "gate": true,
     "physical_tensor": true,
     "gate_failures": [],
     "bootstrap_risk": 0.16666666666666666,
     "validation_pressure": 0.0800008312221571,
-    "intervention_pressure": 0.08053617576010821,
+    "intervention_pressure": 0.07635012662274415,
+    "transfer_errors": [
+      {
+        "sample": 1,
+        "pressure_error": 0.0783959909603368
+      },
+      {
+        "sample": 2,
+        "pressure_error": 0.0743042622851515
+      }
+    ],
     "forward_verified": true
   },
   {
@@ -574,9 +652,9 @@
       0.0
     ],
     "validation": 0.7160611537483579,
-    "intervention": 0.7160611537483575,
+    "intervention": 0.7212846589441675,
     "complexity": 2,
-    "J": 0.4729700255823479,
+    "J": 0.4755817781802528,
     "gate": false,
     "physical_tensor": true,
     "gate_failures": [
@@ -585,6 +663,7 @@
     "bootstrap_risk": 0.3333333333333333,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -598,9 +677,9 @@
       0.0
     ],
     "validation": 0.5574939132964178,
-    "intervention": 0.5082613511933236,
+    "intervention": 0.4956028956467802,
     "complexity": 3,
-    "J": 0.37154673359297025,
+    "J": 0.36521750581969853,
     "gate": false,
     "physical_tensor": true,
     "gate_failures": [
@@ -609,6 +688,7 @@
     "bootstrap_risk": 0.16666666666666666,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -622,9 +702,9 @@
       0.0
     ],
     "validation": 0.45971592847407755,
-    "intervention": 0.5077873746986049,
+    "intervention": 0.5184228339478438,
     "complexity": 3,
-    "J": 0.36153194686337686,
+    "J": 0.3668496764879963,
     "gate": false,
     "physical_tensor": true,
     "gate_failures": [
@@ -633,6 +713,7 @@
     "bootstrap_risk": 0.16666666666666666,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -646,15 +727,25 @@
       0.0
     ],
     "validation": 0.028975956021719214,
-    "intervention": 0.02897645954739225,
+    "intervention": 0.03609362876771442,
     "complexity": 4,
-    "J": 0.42807133439234535,
+    "J": 0.42781076130121626,
     "gate": true,
     "physical_tensor": true,
     "gate_failures": [],
     "bootstrap_risk": 0.0,
     "validation_pressure": 0.23008499152136105,
-    "intervention_pressure": 0.23017749453762468,
+    "intervention_pressure": 0.22965634835536652,
+    "transfer_errors": [
+      {
+        "sample": 1,
+        "pressure_error": 0.23117873943286024
+      },
+      {
+        "sample": 2,
+        "pressure_error": 0.22813395727787278
+      }
+    ],
     "forward_verified": true
   },
   {
@@ -668,9 +759,9 @@
       0.0
     ],
     "validation": 0.7165429457556528,
-    "intervention": 0.7165429457556525,
+    "intervention": 0.7212539093282009,
     "complexity": 3,
-    "J": 0.49325910078672486,
+    "J": 0.49561458257299906,
     "gate": false,
     "physical_tensor": false,
     "gate_failures": [
@@ -679,6 +770,7 @@
     "bootstrap_risk": 0.3333333333333333,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -692,9 +784,9 @@
       0.0
     ],
     "validation": 0.5579476944329886,
-    "intervention": 0.508489772502519,
+    "intervention": 0.4952942930977754,
     "complexity": 4,
-    "J": 0.39170632236122505,
+    "J": 0.3851085826588533,
     "gate": false,
     "physical_tensor": false,
     "gate_failures": [
@@ -703,6 +795,7 @@
     "bootstrap_risk": 0.16666666666666666,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -716,9 +809,9 @@
       0.0
     ],
     "validation": 0.45969967765347075,
-    "intervention": 0.5078805173147072,
+    "intervention": 0.5185470052705112,
     "complexity": 4,
-    "J": 0.3815768930893674,
+    "J": 0.3869101370672694,
     "gate": false,
     "physical_tensor": false,
     "gate_failures": [
@@ -727,6 +820,7 @@
     "bootstrap_risk": 0.16666666666666666,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -740,15 +834,25 @@
       0.0
     ],
     "validation": 0.028993756523941937,
-    "intervention": 0.02899425097371089,
+    "intervention": 0.036091880964971776,
     "complexity": 5,
-    "J": 0.4479483187498867,
+    "J": 0.44769564626395114,
     "gate": true,
     "physical_tensor": true,
     "gate_failures": [],
     "bootstrap_risk": 0.0,
     "validation_pressure": 0.23008429828897345,
-    "intervention_pressure": 0.22992928961703818,
+    "intervention_pressure": 0.229423944645167,
+    "transfer_errors": [
+      {
+        "sample": 1,
+        "pressure_error": 0.2312508559842575
+      },
+      {
+        "sample": 2,
+        "pressure_error": 0.2275970333060765
+      }
+    ],
     "forward_verified": true
   },
   {
@@ -761,10 +865,10 @@
       0.0,
       17268.466437375373
     ],
-    "validation": 0.8919682022150225,
-    "intervention": 0.9404242344108579,
+    "validation": 0.8947333135902217,
+    "intervention": 0.9007505131214302,
     "complexity": 1,
-    "J": 0.5844089374269312,
+    "J": 0.5648485879197372,
     "gate": false,
     "physical_tensor": true,
     "gate_failures": [
@@ -773,6 +877,7 @@
     "bootstrap_risk": 0.5,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -785,10 +890,10 @@
       0.0,
       4059.112976293796
     ],
-    "validation": 0.615607002004555,
-    "intervention": 0.5598759165394243,
+    "validation": 0.6173423599099266,
+    "intervention": 0.5559762328029318,
     "complexity": 2,
-    "J": 0.384831991803501,
+    "J": 0.3830556857257919,
     "gate": false,
     "physical_tensor": true,
     "gate_failures": [
@@ -797,6 +902,7 @@
     "bootstrap_risk": 0.3333333333333333,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -809,10 +915,10 @@
       0.0,
       10146.914173066156
     ],
-    "validation": 0.5250785240316548,
-    "intervention": 0.620097400128609,
+    "validation": 0.5224230925524858,
+    "intervention": 0.5637441258787841,
     "complexity": 2,
-    "J": 0.4058898858008033,
+    "J": 0.37744770552797396,
     "gate": false,
     "physical_tensor": true,
     "gate_failures": [
@@ -821,6 +927,7 @@
     "bootstrap_risk": 0.3333333333333333,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -833,16 +940,26 @@
       0.0,
       -24.276207073838876
     ],
-    "validation": 0.028640887881895505,
-    "intervention": 0.028639585110313545,
+    "validation": 0.02864128582793042,
+    "intervention": 0.03769879476575887,
     "complexity": 3,
-    "J": 0.49686055365939064,
+    "J": 0.35731698128789047,
     "gate": true,
     "physical_tensor": true,
     "gate_failures": [],
     "bootstrap_risk": 0.16666666666666666,
-    "validation_pressure": 0.2284368698769866,
-    "intervention_pressure": 0.4077858566550956,
+    "validation_pressure": 0.2104357875653438,
+    "intervention_pressure": 0.1647007969461739,
+    "transfer_errors": [
+      {
+        "sample": 1,
+        "pressure_error": 0.22424124511384208
+      },
+      {
+        "sample": 2,
+        "pressure_error": 0.10516034877850572
+      }
+    ],
     "forward_verified": true
   },
   {
@@ -855,10 +972,10 @@
       0.0,
       17267.81916918928
     ],
-    "validation": 0.8924163324795817,
-    "intervention": 0.9407593988832657,
+    "validation": 0.8951923321371833,
+    "intervention": 0.9005433980505695,
     "complexity": 2,
-    "J": 0.6046213326895911,
+    "J": 0.584790932239003,
     "gate": false,
     "physical_tensor": false,
     "gate_failures": [
@@ -867,6 +984,7 @@
     "bootstrap_risk": 0.5,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -879,10 +997,10 @@
       0.0,
       4059.254364648882
     ],
-    "validation": 0.6160420091201266,
-    "intervention": 0.5600816836060588,
+    "validation": 0.6177789737130989,
+    "intervention": 0.5556187330471631,
     "complexity": 3,
-    "J": 0.4049783760483754,
+    "J": 0.4029205972282248,
     "gate": false,
     "physical_tensor": false,
     "gate_failures": [
@@ -891,6 +1009,7 @@
     "bootstrap_risk": 0.3333333333333333,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -903,10 +1022,10 @@
       0.0,
       10146.965961470129
     ],
-    "validation": 0.5250623266745374,
-    "intervention": 0.6201355009706138,
+    "validation": 0.5224096744127426,
+    "intervention": 0.563797471889715,
     "complexity": 3,
-    "J": 0.4259073164860939,
+    "J": 0.3974730367194651,
     "gate": false,
     "physical_tensor": false,
     "gate_failures": [
@@ -915,6 +1034,7 @@
     "bootstrap_risk": 0.3333333333333333,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -927,16 +1047,26 @@
       0.0,
       -24.248038119434927
     ],
-    "validation": 0.02866501411475783,
-    "intervention": 0.028663775811538963,
+    "validation": 0.028665390348844636,
+    "intervention": 0.03769727221157688,
     "complexity": 4,
-    "J": 0.5163303219559918,
+    "J": 0.3770212054053762,
     "gate": true,
     "physical_tensor": true,
     "gate_failures": [],
     "bootstrap_risk": 0.16666666666666666,
-    "validation_pressure": 0.2279976768681796,
-    "intervention_pressure": 0.40759895401933954,
+    "validation_pressure": 0.21008372547593498,
+    "intervention_pressure": 0.16480854845578025,
+    "transfer_errors": [
+      {
+        "sample": 1,
+        "pressure_error": 0.22468356208738663
+      },
+      {
+        "sample": 2,
+        "pressure_error": 0.10493353482417384
+      }
+    ],
     "forward_verified": true
   },
   {
@@ -949,10 +1079,10 @@
       0.0,
       17302.873634121042
     ],
-    "validation": 0.8918515053970975,
-    "intervention": 0.9405711704069588,
+    "validation": 0.894617422506156,
+    "intervention": 0.9006563443964073,
     "complexity": 2,
-    "J": 0.6028040690765225,
+    "J": 0.5831232477821526,
     "gate": false,
     "physical_tensor": true,
     "gate_failures": [
@@ -961,6 +1091,7 @@
     "bootstrap_risk": 0.3333333333333333,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -973,10 +1104,10 @@
       0.0,
       4082.150274765677
     ],
-    "validation": 0.6154480419747478,
-    "intervention": 0.5597745368743285,
+    "validation": 0.6171925008964441,
+    "intervention": 0.5558392742599966,
     "complexity": 3,
-    "J": 0.4030987393013057,
+    "J": 0.40130555388630934,
     "gate": false,
     "physical_tensor": true,
     "gate_failures": [
@@ -985,6 +1116,7 @@
     "bootstrap_risk": 0.16666666666666666,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -997,10 +1129,10 @@
       0.0,
       10183.868844492235
     ],
-    "validation": 0.525264106995626,
-    "intervention": 0.6204900375874263,
+    "validation": 0.522594051655202,
+    "intervention": 0.5636759558277542,
     "complexity": 3,
-    "J": 0.4244380961599424,
+    "J": 0.39576404974606394,
     "gate": false,
     "physical_tensor": true,
     "gate_failures": [
@@ -1009,6 +1141,7 @@
     "bootstrap_risk": 0.16666666666666666,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -1021,16 +1154,26 @@
       0.0,
       3.848469006261929
     ],
-    "validation": 0.028975349255442134,
-    "intervention": 0.02897707785360342,
+    "validation": 0.028975254270794355,
+    "intervention": 0.036092756398358364,
     "complexity": 4,
-    "J": 0.4262389369568737,
+    "J": 0.42676457032646553,
     "gate": true,
     "physical_tensor": true,
     "gate_failures": [],
     "bootstrap_risk": 0.0,
-    "validation_pressure": 0.22863530331796122,
-    "intervention_pressure": 0.2294121974267366,
+    "validation_pressure": 0.22932927718622909,
+    "intervention_pressure": 0.22907553542631398,
+    "transfer_errors": [
+      {
+        "sample": 1,
+        "pressure_error": 0.23031094337434024
+      },
+      {
+        "sample": 2,
+        "pressure_error": 0.22784012747828772
+      }
+    ],
     "forward_verified": true
   },
   {
@@ -1043,10 +1186,10 @@
       0.0,
       17302.16375895182
     ],
-    "validation": 0.8922933085720196,
-    "intervention": 0.9409002994824851,
+    "validation": 0.8950700578340188,
+    "intervention": 0.9004501499571884,
     "complexity": 3,
-    "J": 0.6230128139317779,
+    "J": 0.6030654140953294,
     "gate": false,
     "physical_tensor": false,
     "gate_failures": [
@@ -1055,6 +1198,7 @@
     "bootstrap_risk": 0.3333333333333333,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -1067,10 +1211,10 @@
       0.0,
       4082.2404970742473
     ],
-    "validation": 0.6158786755349942,
-    "intervention": 0.5599771534166563,
+    "validation": 0.6176247237310556,
+    "intervention": 0.555483991594393,
     "complexity": 4,
-    "J": 0.42324311092849426,
+    "J": 0.4211711348369688,
     "gate": false,
     "physical_tensor": false,
     "gate_failures": [
@@ -1079,6 +1223,7 @@
     "bootstrap_risk": 0.16666666666666666,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -1091,10 +1236,10 @@
       0.0,
       10183.904233142566
     ],
-    "validation": 0.5252473305103207,
-    "intervention": 0.6205254140624058,
+    "validation": 0.5225799489431642,
+    "intervention": 0.5637268098478868,
     "complexity": 4,
-    "J": 0.4444541067489016,
+    "J": 0.4157880664849265,
     "gate": false,
     "physical_tensor": false,
     "gate_failures": [
@@ -1103,6 +1248,7 @@
     "bootstrap_risk": 0.16666666666666666,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -1115,16 +1261,26 @@
       0.0,
       3.8697051923724435
     ],
-    "validation": 0.02899314386384654,
-    "intervention": 0.02899485388824654,
+    "validation": 0.028993051178605612,
+    "intervention": 0.03609102547863431,
     "complexity": 5,
-    "J": 0.44615832721096566,
+    "J": 0.4456364174187963,
     "gate": true,
     "physical_tensor": true,
     "gate_failures": [],
     "bootstrap_risk": 0.0,
-    "validation_pressure": 0.22866862016824768,
-    "intervention_pressure": 0.2291807853126666,
+    "validation_pressure": 0.22840517855523954,
+    "intervention_pressure": 0.22866386749139234,
+    "transfer_errors": [
+      {
+        "sample": 1,
+        "pressure_error": 0.23023186430244344
+      },
+      {
+        "sample": 2,
+        "pressure_error": 0.22709587068034123
+      }
+    ],
     "forward_verified": true
   },
   {
@@ -1137,10 +1293,10 @@
       503.43642132167133,
       1605.137356656747
     ],
-    "validation": 0.717043724741945,
-    "intervention": 0.7179753389850861,
+    "validation": 0.7170239974207123,
+    "intervention": 0.7213823314358987,
     "complexity": 2,
-    "J": 0.4756920419667376,
+    "J": 0.4773935654600206,
     "gate": false,
     "physical_tensor": true,
     "gate_failures": [
@@ -1149,6 +1305,7 @@
     "bootstrap_risk": 0.5,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -1161,10 +1318,10 @@
       293.87687451612555,
       -3545.380076545476
     ],
-    "validation": 0.5637384387731897,
-    "intervention": 0.523930315488613,
+    "validation": 0.5627258082338947,
+    "intervention": 0.49696153667457554,
     "complexity": 3,
-    "J": 0.3816723349549588,
+    "J": 0.36808668249401055,
     "gate": false,
     "physical_tensor": true,
     "gate_failures": [
@@ -1173,6 +1330,7 @@
     "bootstrap_risk": 0.3333333333333333,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -1185,10 +1343,10 @@
       186.06459972286697,
       4988.818748958936
     ],
-    "validation": 0.4740993994187096,
-    "intervention": 0.5406193990839392,
+    "validation": 0.47232430807411413,
+    "intervention": 0.5203231477802037,
     "complexity": 3,
-    "J": 0.3810529728171739,
+    "J": 0.37072733803084656,
     "gate": false,
     "physical_tensor": true,
     "gate_failures": [
@@ -1197,6 +1355,7 @@
     "bootstrap_risk": 0.3333333333333333,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -1209,16 +1368,26 @@
       0.706749653216294,
       -41.1492752375585
     ],
-    "validation": 0.028649866939894204,
-    "intervention": 0.02865212978897666,
+    "validation": 0.02865076452910154,
+    "intervention": 0.03769875619831774,
     "complexity": 4,
-    "J": 0.6106369521713783,
+    "J": 0.35842398262117386,
     "gate": true,
     "physical_tensor": true,
     "gate_failures": [],
     "bootstrap_risk": 0.16666666666666666,
-    "validation_pressure": 0.2307177713335515,
-    "intervention_pressure": 0.5907750549543413,
+    "validation_pressure": 0.2035062458621737,
+    "intervention_pressure": 0.14077198727884677,
+    "transfer_errors": [
+      {
+        "sample": 1,
+        "pressure_error": 0.1946184332248364
+      },
+      {
+        "sample": 2,
+        "pressure_error": 0.08692554133285715
+      }
+    ],
     "forward_verified": true
   },
   {
@@ -1231,10 +1400,10 @@
       503.4572716825138,
       1603.7874039025871
     ],
-    "validation": 0.7175156812183764,
-    "intervention": 0.7184333425901885,
+    "validation": 0.7174975230793839,
+    "intervention": 0.7213402328757835,
     "complexity": 3,
-    "J": 0.4959682394169319,
+    "J": 0.49741986874583016,
     "gate": false,
     "physical_tensor": false,
     "gate_failures": [
@@ -1243,6 +1412,7 @@
     "bootstrap_risk": 0.5,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -1255,10 +1425,10 @@
       293.9056868503441,
       -3545.965590360871
     ],
-    "validation": 0.564205270809392,
-    "intervention": 0.5241796794803157,
+    "validation": 0.563190373060816,
+    "intervention": 0.4966666026613453,
     "complexity": 4,
-    "J": 0.4018437001544304,
+    "J": 0.3879856719700876,
     "gate": false,
     "physical_tensor": false,
     "gate_failures": [
@@ -1267,6 +1437,7 @@
     "bootstrap_risk": 0.3333333333333333,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -1279,10 +1450,10 @@
       186.08847899591677,
       4988.2322276383
     ],
-    "validation": 0.47407364352695497,
-    "intervention": 0.5406763259054636,
+    "validation": 0.47230090003984676,
+    "intervention": 0.5204221598772096,
     "complexity": 4,
-    "J": 0.40107886063876064,
+    "J": 0.3907745032759228,
     "gate": false,
     "physical_tensor": false,
     "gate_failures": [
@@ -1291,6 +1462,7 @@
     "bootstrap_risk": 0.3333333333333333,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -1303,16 +1475,26 @@
       0.7101446373197738,
       -41.201830376282146
     ],
-    "validation": 0.02867433909229156,
-    "intervention": 0.028676777300405604,
+    "validation": 0.028675202192324042,
+    "intervention": 0.03769736955516163,
     "complexity": 5,
-    "J": 0.6307243029928945,
+    "J": 0.3785129173822803,
     "gate": true,
     "physical_tensor": true,
     "gate_failures": [],
     "bootstrap_risk": 0.16666666666666666,
-    "validation_pressure": 0.2306557476067779,
-    "intervention_pressure": 0.5910689096204416,
+    "validation_pressure": 0.2036802091452795,
+    "intervention_pressure": 0.14059704270220347,
+    "transfer_errors": [
+      {
+        "sample": 1,
+        "pressure_error": 0.1939681461031027
+      },
+      {
+        "sample": 2,
+        "pressure_error": 0.08722593930130426
+      }
+    ],
     "forward_verified": true
   },
   {
@@ -1325,10 +1507,10 @@
       503.36266712294787,
       1610.34459103984
     ],
-    "validation": 0.7170358651714374,
-    "intervention": 0.7179730375408604,
+    "validation": 0.7170160738972123,
+    "intervention": 0.7213746239888928,
     "complexity": 3,
-    "J": 0.49402343862090725,
+    "J": 0.49572225271750103,
     "gate": false,
     "physical_tensor": true,
     "gate_failures": [
@@ -1337,6 +1519,7 @@
     "bootstrap_risk": 0.3333333333333333,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -1349,10 +1532,10 @@
       293.78190484552533,
       -3538.7327399910264
     ],
-    "validation": 0.5637042953845046,
-    "intervention": 0.5238751698724651,
+    "validation": 0.5626934998009817,
+    "intervention": 0.4969267492972843,
     "complexity": 4,
-    "J": 0.3999746811413497,
+    "J": 0.386399391295407,
     "gate": false,
     "physical_tensor": true,
     "gate_failures": [
@@ -1361,6 +1544,7 @@
     "bootstrap_risk": 0.16666666666666666,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -1373,10 +1557,10 @@
       185.27170789352957,
       5036.03783059063
     ],
-    "validation": 0.4743245203266714,
-    "intervention": 0.5410558350056405,
+    "validation": 0.4725326773460163,
+    "intervention": 0.5203464302574058,
     "complexity": 4,
-    "J": 0.39962703620215406,
+    "J": 0.3890931495299712,
     "gate": false,
     "physical_tensor": true,
     "gate_failures": [
@@ -1385,6 +1569,7 @@
     "bootstrap_risk": 0.16666666666666666,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -1397,16 +1582,26 @@
       -0.0794005838189112,
       5.749329556569581
     ],
-    "validation": 0.028975317009048724,
-    "intervention": 0.028977584711872912,
+    "validation": 0.028975178564974648,
+    "intervention": 0.036093055164243305,
     "complexity": 5,
-    "J": 0.44676014720562995,
+    "J": 0.44638702011168974,
     "gate": true,
     "physical_tensor": true,
     "gate_failures": [],
     "bootstrap_risk": 0.0,
-    "validation_pressure": 0.2288442615911096,
-    "intervention_pressure": 0.23003670782723096,
+    "validation_pressure": 0.22881860578303898,
+    "intervention_pressure": 0.22934179294430662,
+    "transfer_errors": [
+      {
+        "sample": 1,
+        "pressure_error": 0.2307012897478481
+      },
+      {
+        "sample": 2,
+        "pressure_error": 0.22798229614076518
+      }
+    ],
     "forward_verified": true
   },
   {
@@ -1419,10 +1614,10 @@
       503.3854174758968,
       1608.8604163907316
     ],
-    "validation": 0.7175074168539576,
-    "intervention": 0.7184304559651071,
+    "validation": 0.71748920034127,
+    "intervention": 0.721332610321836,
     "complexity": 4,
-    "J": 0.5142993030012827,
+    "J": 0.5157485585283783,
     "gate": false,
     "physical_tensor": false,
     "gate_failures": [
@@ -1431,6 +1626,7 @@
     "bootstrap_risk": 0.3333333333333333,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -1443,10 +1639,10 @@
       293.81202120427344,
       -3539.411225434581
     ],
-    "validation": 0.5641707255487238,
-    "intervention": 0.5241246192960519,
+    "validation": 0.5631576427928718,
+    "intervention": 0.4966324483027984,
     "complexity": 5,
-    "J": 0.420146048869565,
+    "J": 0.4062986550973531,
     "gate": false,
     "physical_tensor": false,
     "gate_failures": [
@@ -1455,6 +1651,7 @@
     "bootstrap_risk": 0.16666666666666666,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -1467,10 +1664,10 @@
       185.2958125637591,
       5035.4207387872075
     ],
-    "validation": 0.47429772955453015,
-    "intervention": 0.5411099233358265,
+    "validation": 0.4725082150957207,
+    "intervention": 0.52044290719285,
     "complexity": 5,
-    "J": 0.419651401290033,
+    "J": 0.40913894177266374,
     "gate": false,
     "physical_tensor": false,
     "gate_failures": [
@@ -1479,6 +1676,7 @@
     "bootstrap_risk": 0.16666666666666666,
     "validation_pressure": null,
     "intervention_pressure": null,
+    "transfer_errors": null,
     "forward_verified": false
   },
   {
@@ -1491,16 +1689,26 @@
       -0.07652547615489658,
       5.701702667636743
     ],
-    "validation": 0.028993082437459985,
-    "intervention": 0.0289953031946805,
+    "validation": 0.028992949167982597,
+    "intervention": 0.03609130167956209,
     "complexity": 6,
-    "J": 0.4666586282719659,
+    "J": 0.46657868934306956,
     "gate": true,
     "physical_tensor": true,
     "gate_failures": [],
     "bootstrap_risk": 0.0,
-    "validation_pressure": 0.22886139916992126,
-    "intervention_pressure": 0.22979584171659728,
+    "validation_pressure": 0.22906138982508661,
+    "intervention_pressure": 0.2292360092023694,
+    "transfer_errors": [
+      {
+        "sample": 1,
+        "pressure_error": 0.23090589484615126
+      },
+      {
+        "sample": 2,
+        "pressure_error": 0.22756612355858752
+      }
+    ],
     "forward_verified": true
   }
 ]

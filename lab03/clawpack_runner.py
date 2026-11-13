@@ -14,7 +14,7 @@ import argparse
 import hashlib
 import numpy as np
 
-SOLVER_VERSION='clawpack-5.9-mc-ssprk-source-v2.1'
+SOLVER_VERSION='clawpack-5.9-mc-ssprk-source-v3.0-fixed-training-scale'
 ROOT=Path(__file__).resolve().parent
 
 
@@ -32,14 +32,14 @@ def serial_backend():
     return pyclaw,riemann
 
 
-def solve_arrays(pressure,rho,c,times,theta,amplitude=1.,swap=False,max_error=None):
+def solve_arrays(pressure,rho,c,times,theta,amplitude=1.,swap=False,max_error=None,pressure_scale=None):
     pyclaw,riemann=serial_backend()
     theta=np.asarray(theta,float)
     if theta[0]<-1e-10 or theta[1]<-1e-10 or theta[2]**2>4*theta[0]*theta[1]+1e-12:
         raise ValueError('Nonpositive spatial tensor')
     if swap:pressure=pressure.transpose(0,2,1);rho=rho.T;c=c.T
     initial=amplitude*pressure[0]
-    scale=max(float(np.max(abs(pressure[0]))),1e-15)  # fixed before intervention
+    scale=max(float(np.max(abs(pressure[0]))) if pressure_scale is None else float(pressure_scale),1e-15)
     sx,sy=np.sqrt(np.maximum(theta[:2],1e-12))
     solver=pyclaw.ClawSolver2D(riemann.vc_acoustics_2D)
     solver.dimensional_split=False;solver.limiters=pyclaw.limiters.tvd.MC
@@ -102,13 +102,14 @@ def solve_arrays(pressure,rho,c,times,theta,amplitude=1.,swap=False,max_error=No
 def run_case(split,model,sample=1):
     path=ROOT/'data'/f'well_{split}_{sample}.npz'
     with np.load(path) as d:pressure=d['p'];rho=d['rho'];c=d['c'];times=d['t'].astype(float)[::2]
-    theta=([1.,1.,0.,0.,0.,0.] if model=='original' else
-        json.loads((ROOT/'results/report.json').read_text())['well']['selected']['parameters'])
-    prediction=solve_arrays(pressure,rho,c,times,theta)
+    report=json.loads((ROOT/'results/report.json').read_text())
+    theta=([1.,1.,0.,0.,0.,0.] if model=='original' else report['well']['selected']['parameters'])
+    scale=report['well']['input']['train']['pressure_scale']
+    prediction=solve_arrays(pressure,rho,c,times,theta,pressure_scale=scale)
     reference=pressure[::2]
     out=ROOT/'results'/f'clawpack_{split}{sample}_{model}.npz'
     np.savez_compressed(out,p=prediction,t=times,theta=theta,sample=sample,
-        input_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),solver_version=SOLVER_VERSION)
+        input_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),solver_version=SOLVER_VERSION,pressure_scale=scale)
     print(json.dumps({'split':split,'sample':sample,'model':model,
         'relative_L2':float(np.linalg.norm(prediction-reference)/np.linalg.norm(reference)),
         'final_relative_L2':float(np.linalg.norm(prediction[-1]-reference[-1])/np.linalg.norm(reference[-1]))}),flush=True)

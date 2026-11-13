@@ -1,0 +1,1645 @@
+{
+  "seed": 20261112,
+  "method": "Rejection sampling (method 4)",
+  "data_status": "Published simulations and exact analytical benchmark; no experimental measurements; 2D+time.",
+  "candidate_terms": [
+    "x_flux",
+    "y_flux",
+    "cross_flux",
+    "damping",
+    "reaction",
+    "cubic"
+  ],
+  "candidate_count": 64,
+  "criterion": {
+    "version": 2,
+    "moment_weight": 0.1,
+    "pressure_weight": 1.0,
+    "complexity_weight_per_branch": 0.02,
+    "intervention_weight": 0.5,
+    "bootstrap_weight": 0.01,
+    "fresh_well_test_sample": 1,
+    "fresh_analytic_test_seed": 55001,
+    "validation_well_sample": 0,
+    "validation_analytic_case": 1,
+    "note": "Frozen before evaluating the fresh test; bootstrap is a soft diagnostic, never a branch veto.",
+    "max_validation_pressure_error": 0.5
+  },
+  "evaluation": {
+    "well_test_sample": 1,
+    "analytic_test_seed": 55001,
+    "old_well_test_0": "Development-only after criterion v1 was inspected"
+  },
+  "verification": {
+    "standing_wave": [
+      {
+        "n": 33,
+        "relative_L2": 0.005324681257701851,
+        "steps": 40
+      },
+      {
+        "n": 65,
+        "relative_L2": 0.0012829825909995724,
+        "steps": 60
+      },
+      {
+        "n": 129,
+        "relative_L2": 0.0003085857697931496,
+        "steps": 100
+      }
+    ],
+    "refinement_ratios": [
+      4.150236562098157,
+      4.157620721978133
+    ],
+    "constant_field_error": 0.0,
+    "method": "Centered finite-volume flux, velocity Verlet, Strang damping",
+    "limitation": "Different numerical diffusion and open boundary approximation from Clawpack."
+  },
+  "well": {
+    "selected": {
+      "mask": 3,
+      "parameters": [
+        1.0029436230093474,
+        1.0029613636330716,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "validation": 0.02863111007610391,
+      "intervention": 0.02863127429373358,
+      "complexity": 2,
+      "J": 0.17001736708439963,
+      "gate": true,
+      "physical_tensor": true,
+      "gate_failures": [],
+      "bootstrap_risk": 0.16666666666666666,
+      "validation_pressure": 0.08367436332212405,
+      "intervention_pressure": 0.0836264521759971,
+      "forward_verified": true,
+      "test_moment_error": 0.028102816774947668,
+      "ci95_selected": [
+        [
+          1.0022796451661835,
+          1.0026792164785885,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0033228183863536,
+          1.0033078698499287,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "rule": {
+      "records": [
+        {
+          "term": "x_flux",
+          "index": 0,
+          "block": 4,
+          "ci95": [
+            1.0022231854488008,
+            1.0037114244082728
+          ],
+          "includes_zero": false,
+          "delta_upper95": 0.45342391705038804,
+          "W1_SD": 0.30016682947424655,
+          "remove": false
+        },
+        {
+          "term": "y_flux",
+          "index": 1,
+          "block": 4,
+          "ci95": [
+            1.002706819844956,
+            1.0035888340636865
+          ],
+          "includes_zero": false,
+          "delta_upper95": 0.5606624039904216,
+          "W1_SD": 0.33843048260304026,
+          "remove": false
+        },
+        {
+          "term": "cross_flux",
+          "index": 2,
+          "block": 4,
+          "ci95": [
+            -0.0003666075983841662,
+            0.0018387090304722736
+          ],
+          "includes_zero": true,
+          "delta_upper95": -7.37631308573562e-06,
+          "W1_SD": 0.36661487368799206,
+          "remove": true
+        },
+        {
+          "term": "damping",
+          "index": 3,
+          "block": 4,
+          "ci95": [
+            0.49425812918730305,
+            0.5230605789412272
+          ],
+          "includes_zero": false,
+          "delta_upper95": 1.6781485818662708e-05,
+          "W1_SD": 0.32322084560125164,
+          "remove": false
+        },
+        {
+          "term": "reaction",
+          "index": 4,
+          "block": 4,
+          "ci95": [
+            -0.2508367000568442,
+            0.1005325798343913
+          ],
+          "includes_zero": true,
+          "delta_upper95": 3.4852730140554817e-07,
+          "W1_SD": 0.35349536943100435,
+          "remove": true
+        },
+        {
+          "term": "cubic",
+          "index": 5,
+          "block": 4,
+          "ci95": [
+            -12.494171524910062,
+            41.630995329897964
+          ],
+          "includes_zero": true,
+          "delta_upper95": 1.0558893838822575e-06,
+          "W1_SD": 0.31700684950737784,
+          "remove": true
+        },
+        {
+          "term": "x_flux",
+          "index": 0,
+          "block": 8,
+          "ci95": [
+            1.0021709351639847,
+            1.003742150607019
+          ],
+          "includes_zero": false,
+          "delta_upper95": 0.4521014235017824,
+          "W1_SD": 0.32016005060002045,
+          "remove": false
+        },
+        {
+          "term": "y_flux",
+          "index": 1,
+          "block": 8,
+          "ci95": [
+            1.0026823194094392,
+            1.003550574313862
+          ],
+          "includes_zero": false,
+          "delta_upper95": 0.5640165365503426,
+          "W1_SD": 0.3233872556452617,
+          "remove": false
+        },
+        {
+          "term": "cross_flux",
+          "index": 2,
+          "block": 8,
+          "ci95": [
+            -0.00037470271975753046,
+            0.0015772578587583735
+          ],
+          "includes_zero": true,
+          "delta_upper95": -4.077949542161961e-06,
+          "W1_SD": 0.31598135378552816,
+          "remove": true
+        },
+        {
+          "term": "damping",
+          "index": 3,
+          "block": 8,
+          "ci95": [
+            0.495255167754086,
+            0.5182903526477458
+          ],
+          "includes_zero": false,
+          "delta_upper95": 4.6166739783924113e-05,
+          "W1_SD": 0.2926068930221138,
+          "remove": false
+        },
+        {
+          "term": "reaction",
+          "index": 4,
+          "block": 8,
+          "ci95": [
+            -0.23761493420846697,
+            0.05885892599851497
+          ],
+          "includes_zero": true,
+          "delta_upper95": 3.142256259261426e-07,
+          "W1_SD": 0.3879205953609241,
+          "remove": true
+        },
+        {
+          "term": "cubic",
+          "index": 5,
+          "block": 8,
+          "ci95": [
+            -7.94912603800449,
+            45.700541298515354
+          ],
+          "includes_zero": true,
+          "delta_upper95": 9.203757512793591e-07,
+          "W1_SD": 0.24119570805747664,
+          "remove": true
+        },
+        {
+          "term": "x_flux",
+          "index": 0,
+          "block": 12,
+          "ci95": [
+            1.00213881816115,
+            1.003708622429351
+          ],
+          "includes_zero": false,
+          "delta_upper95": 0.4503692067456914,
+          "W1_SD": 0.3303528653749444,
+          "remove": false
+        },
+        {
+          "term": "y_flux",
+          "index": 1,
+          "block": 12,
+          "ci95": [
+            1.0026636708359848,
+            1.0034757046590426
+          ],
+          "includes_zero": false,
+          "delta_upper95": 0.5674859281983319,
+          "W1_SD": 0.3567066521066426,
+          "remove": false
+        },
+        {
+          "term": "cross_flux",
+          "index": 2,
+          "block": 12,
+          "ci95": [
+            -0.00042302918672299325,
+            0.0011638865494236824
+          ],
+          "includes_zero": true,
+          "delta_upper95": -3.657434687143032e-06,
+          "W1_SD": 0.3906391425617064,
+          "remove": true
+        },
+        {
+          "term": "damping",
+          "index": 3,
+          "block": 12,
+          "ci95": [
+            0.4962848352811155,
+            0.5143616653921197
+          ],
+          "includes_zero": false,
+          "delta_upper95": 1.320409674964876e-05,
+          "W1_SD": 0.37119257413532264,
+          "remove": false
+        },
+        {
+          "term": "reaction",
+          "index": 4,
+          "block": 12,
+          "ci95": [
+            -0.22681332953128414,
+            0.0582652053255489
+          ],
+          "includes_zero": true,
+          "delta_upper95": 1.8831557980060939e-07,
+          "W1_SD": 0.4917795059624699,
+          "remove": true
+        },
+        {
+          "term": "cubic",
+          "index": 5,
+          "block": 12,
+          "ci95": [
+            -3.7045303956564237,
+            41.42367233194318
+          ],
+          "includes_zero": true,
+          "delta_upper95": 7.857193684753397e-07,
+          "W1_SD": 0.3256396838682859,
+          "remove": true
+        }
+      ],
+      "removable": [
+        false,
+        false,
+        true,
+        false,
+        true,
+        true
+      ],
+      "tolerance": 0.01,
+      "W1_SD_max": 1.0,
+      "blocks": [
+        4,
+        8,
+        12
+      ],
+      "n_boot": 1000,
+      "full_parameters": [
+        1.0031026648141708,
+        1.0032188335177523,
+        0.0006124122417836589,
+        0.5095539711642086,
+        -0.076525476157442,
+        5.701702667626381
+      ]
+    },
+    "rounds": [
+      {
+        "T": 0.4374224396776575,
+        "seed": 20261112,
+        "acceptance_rate": 0.104,
+        "expected_acceptance_rate": 0.10413134568307329,
+        "total_variation": 0.05948986639183412,
+        "attempts": 5000,
+        "accepted_count": 520
+      },
+      {
+        "T": 0.18985593129287504,
+        "seed": 20261113,
+        "acceptance_rate": 0.0402,
+        "expected_acceptance_rate": 0.039219922361828134,
+        "total_variation": 0.08934912928023378,
+        "attempts": 5000,
+        "accepted_count": 201
+      },
+      {
+        "T": 0.12340635534036878,
+        "seed": 20261114,
+        "acceptance_rate": 0.0184,
+        "expected_acceptance_rate": 0.01810834446245963,
+        "total_variation": 0.13753669659434967,
+        "attempts": 5000,
+        "accepted_count": 92
+      }
+    ],
+    "input": {
+      "train": {
+        "shape": [
+          44,
+          59,
+          59
+        ],
+        "dt_group": 0.03980100154876709,
+        "source": "well_train_0.npz",
+        "sigma_t": 1.4,
+        "sigma_x": 2.0,
+        "bulk": 4.000000166434347,
+        "dx": 0.0078125,
+        "time_range": [
+          0.13930347561836243,
+          1.8507462739944458
+        ]
+      },
+      "validation": {
+        "shape": [
+          44,
+          59,
+          59
+        ],
+        "dt_group": 0.03980100154876709,
+        "source": "well_valid_0.npz",
+        "sigma_t": 1.4,
+        "sigma_x": 2.0,
+        "bulk": 4.000000166434347,
+        "dx": 0.0078125,
+        "time_range": [
+          0.13930347561836243,
+          1.8507462739944458
+        ]
+      },
+      "test": {
+        "shape": [
+          44,
+          59,
+          59
+        ],
+        "dt_group": 0.03980100154876709,
+        "source": "well_test_1.npz",
+        "sigma_t": 1.4,
+        "sigma_x": 2.0,
+        "bulk": 4.000000166434347,
+        "dx": 0.0078125,
+        "time_range": [
+          0.13930347561836243,
+          1.8507462739944458
+        ]
+      }
+    },
+    "comparison": {
+      "selected_without_interventions": 3,
+      "ungated_best": {
+        "mask": 3,
+        "parameters": [
+          1.0029436230093474,
+          1.0029613636330716,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "validation": 0.02863111007610391,
+        "intervention": 0.02863127429373358,
+        "complexity": 2,
+        "J": 0.17001736708439963,
+        "gate": true,
+        "physical_tensor": true,
+        "gate_failures": [],
+        "bootstrap_risk": 0.16666666666666666,
+        "validation_pressure": 0.08367436332212405,
+        "intervention_pressure": 0.0836264521759971,
+        "forward_verified": true
+      },
+      "exhaustive_best_under_gate": 3,
+      "repeats": [
+        {
+          "seed": 7000,
+          "selected": 3,
+          "acceptance_rates": [
+            0.1038,
+            0.0396,
+            0.0184
+          ]
+        },
+        {
+          "seed": 7001,
+          "selected": 3,
+          "acceptance_rates": [
+            0.1028,
+            0.038,
+            0.017
+          ]
+        },
+        {
+          "seed": 7002,
+          "selected": 3,
+          "acceptance_rates": [
+            0.1036,
+            0.0408,
+            0.016
+          ]
+        },
+        {
+          "seed": 7003,
+          "selected": 3,
+          "acceptance_rates": [
+            0.1052,
+            0.0368,
+            0.019
+          ]
+        },
+        {
+          "seed": 7004,
+          "selected": 3,
+          "acceptance_rates": [
+            0.0988,
+            0.0386,
+            0.0192
+          ]
+        },
+        {
+          "seed": 7005,
+          "selected": 3,
+          "acceptance_rates": [
+            0.1116,
+            0.0416,
+            0.0218
+          ]
+        },
+        {
+          "seed": 7006,
+          "selected": 3,
+          "acceptance_rates": [
+            0.107,
+            0.045,
+            0.0182
+          ]
+        },
+        {
+          "seed": 7007,
+          "selected": 3,
+          "acceptance_rates": [
+            0.112,
+            0.0426,
+            0.0166
+          ]
+        },
+        {
+          "seed": 7008,
+          "selected": 3,
+          "acceptance_rates": [
+            0.1044,
+            0.038,
+            0.0214
+          ]
+        },
+        {
+          "seed": 7009,
+          "selected": 3,
+          "acceptance_rates": [
+            0.103,
+            0.04,
+            0.018
+          ]
+        }
+      ],
+      "audit_TV": 0.011788666175583076,
+      "audit_acceptance_rate": 0.10419,
+      "audit_expected_acceptance_rate": 0.10413134568307329
+    },
+    "original_physics": {
+      "mask": 3,
+      "parameters": [
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "test_moment_error": 0.028156785176361956
+    },
+    "original_rollout": {
+      "relative_L2": 0.626748263835907,
+      "lowpass_relative_L2": 0.22773687014838173,
+      "final_relative_L2": 0.7612712979316711,
+      "steps": 950
+    },
+    "selected_rollout": {
+      "relative_L2": 0.626151978969574,
+      "lowpass_relative_L2": 0.22485960907936647,
+      "final_relative_L2": 0.7629078030586243,
+      "steps": 950
+    },
+    "source_amplitude_covariance_error": 5.132225311399452e-08,
+    "clawpack_original": {
+      "relative_L2": 0.05369046702980995,
+      "final_relative_L2": 0.06755149364471436,
+      "solver": "Clawpack 5.9.0, unsplit MC, CFL 0.9"
+    },
+    "clawpack_selected": {
+      "relative_L2": 0.06901424378156662,
+      "final_relative_L2": 0.10213513672351837,
+      "solver": "Clawpack 5.9.0, unsplit MC, CFL 0.9"
+    }
+  },
+  "analytic_archive_audit": [
+    {
+      "case": 0,
+      "endpoint_relative_error": 2.5850202892148277e-15
+    },
+    {
+      "case": 1,
+      "endpoint_relative_error": 2.5206156501697778e-15
+    },
+    {
+      "case": 2,
+      "endpoint_relative_error": 2.2659828111596323e-15
+    }
+  ],
+  "analytic": {
+    "selected": {
+      "mask": 3,
+      "parameters": [
+        1.0000000000000009,
+        0.9999999999999986,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "validation": 0.0,
+      "intervention": 1.0579190976798296e-08,
+      "complexity": 2,
+      "J": 0.040000000985205404,
+      "gate": true,
+      "physical_tensor": true,
+      "gate_failures": [],
+      "bootstrap_risk": 0.0,
+      "validation_pressure": 7.116040054646543e-10,
+      "intervention_pressure": 5.472027946048195e-10,
+      "forward_verified": true,
+      "test_moment_error": 9.090135373477594e-16,
+      "ci95_selected": [
+        [
+          0.9999999999999992,
+          0.9999999999999987,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0000000000000016,
+          1.0000000000000004,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "rule": {
+      "records": [
+        {
+          "term": "x_flux",
+          "index": 0,
+          "block": 4,
+          "ci95": [
+            0.9999999999999987,
+            1.000000000000002
+          ],
+          "includes_zero": false,
+          "delta_upper95": 0.5226412950886846,
+          "W1_SD": 3.796962744218035e-07,
+          "remove": false
+        },
+        {
+          "term": "y_flux",
+          "index": 1,
+          "block": 4,
+          "ci95": [
+            0.9999999999999981,
+            1.000000000000001
+          ],
+          "includes_zero": false,
+          "delta_upper95": 0.5269088456216319,
+          "W1_SD": 6.972200594645986e-07,
+          "remove": false
+        },
+        {
+          "term": "cross_flux",
+          "index": 2,
+          "block": 4,
+          "ci95": [
+            -9.343253237217903e-16,
+            9.055695001857374e-16
+          ],
+          "includes_zero": true,
+          "delta_upper95": -3.034366526865282e-16,
+          "W1_SD": 5.206396050988679e-07,
+          "remove": true
+        },
+        {
+          "term": "damping",
+          "index": 3,
+          "block": 4,
+          "ci95": [
+            -1.577821459925316e-15,
+            1.6672602557583949e-15
+          ],
+          "includes_zero": true,
+          "delta_upper95": -1.754453234128804e-18,
+          "W1_SD": 3.0453492315935597e-07,
+          "remove": true
+        },
+        {
+          "term": "reaction",
+          "index": 4,
+          "block": 4,
+          "ci95": [
+            -1.217383440475424e-14,
+            1.7115882819608167e-14
+          ],
+          "includes_zero": true,
+          "delta_upper95": 6.471114958740055e-17,
+          "W1_SD": 2.044427177495849e-06,
+          "remove": true
+        },
+        {
+          "term": "cubic",
+          "index": 5,
+          "block": 4,
+          "ci95": [
+            -8.102174665956844e-14,
+            5.805448965621428e-14
+          ],
+          "includes_zero": true,
+          "delta_upper95": -1.6123777581562808e-16,
+          "W1_SD": 1.2125405041525898e-05,
+          "remove": true
+        },
+        {
+          "term": "x_flux",
+          "index": 0,
+          "block": 8,
+          "ci95": [
+            0.9999999999999987,
+            1.000000000000002
+          ],
+          "includes_zero": false,
+          "delta_upper95": 0.5226866029849578,
+          "W1_SD": 7.582823258189818e-07,
+          "remove": false
+        },
+        {
+          "term": "y_flux",
+          "index": 1,
+          "block": 8,
+          "ci95": [
+            0.9999999999999982,
+            1.0000000000000009
+          ],
+          "includes_zero": false,
+          "delta_upper95": 0.5271686227744803,
+          "W1_SD": 1.3788969965844446e-06,
+          "remove": false
+        },
+        {
+          "term": "cross_flux",
+          "index": 2,
+          "block": 8,
+          "ci95": [
+            -9.569365523657987e-16,
+            1.0253858555003988e-15
+          ],
+          "includes_zero": true,
+          "delta_upper95": -2.991262335748858e-16,
+          "W1_SD": 8.665942207612046e-07,
+          "remove": true
+        },
+        {
+          "term": "damping",
+          "index": 3,
+          "block": 8,
+          "ci95": [
+            -1.527251716431196e-15,
+            2.1153066197762426e-15
+          ],
+          "includes_zero": true,
+          "delta_upper95": -1.164090714057803e-19,
+          "W1_SD": 4.0783996208808147e-07,
+          "remove": true
+        },
+        {
+          "term": "reaction",
+          "index": 4,
+          "block": 8,
+          "ci95": [
+            -1.0913493254550981e-14,
+            1.8342092027858285e-14
+          ],
+          "includes_zero": true,
+          "delta_upper95": 6.86771676530304e-17,
+          "W1_SD": 2.9730118885150952e-06,
+          "remove": true
+        },
+        {
+          "term": "cubic",
+          "index": 5,
+          "block": 8,
+          "ci95": [
+            -7.95365945304832e-14,
+            5.433293918477606e-14
+          ],
+          "includes_zero": true,
+          "delta_upper95": -1.5586291694665354e-16,
+          "W1_SD": 1.0985039473261435e-05,
+          "remove": true
+        },
+        {
+          "term": "x_flux",
+          "index": 0,
+          "block": 12,
+          "ci95": [
+            0.9999999999999984,
+            1.000000000000002
+          ],
+          "includes_zero": false,
+          "delta_upper95": 0.5220477402949097,
+          "W1_SD": 1.5287771049088403e-06,
+          "remove": false
+        },
+        {
+          "term": "y_flux",
+          "index": 1,
+          "block": 12,
+          "ci95": [
+            0.9999999999999982,
+            1.0000000000000009
+          ],
+          "includes_zero": false,
+          "delta_upper95": 0.5271996360266494,
+          "W1_SD": 1.7674750552032488e-06,
+          "remove": false
+        },
+        {
+          "term": "cross_flux",
+          "index": 2,
+          "block": 12,
+          "ci95": [
+            -9.272451704705148e-16,
+            1.0970543031814592e-15
+          ],
+          "includes_zero": true,
+          "delta_upper95": -2.9763103311380294e-16,
+          "W1_SD": 1.1523081728164379e-06,
+          "remove": true
+        },
+        {
+          "term": "damping",
+          "index": 3,
+          "block": 12,
+          "ci95": [
+            -1.9184314743970886e-15,
+            1.622699600804878e-15
+          ],
+          "includes_zero": true,
+          "delta_upper95": 4.6588184925864605e-19,
+          "W1_SD": 4.842141940334475e-07,
+          "remove": true
+        },
+        {
+          "term": "reaction",
+          "index": 4,
+          "block": 12,
+          "ci95": [
+            -1.1935965934619137e-14,
+            1.7062287052546574e-14
+          ],
+          "includes_zero": true,
+          "delta_upper95": 7.025144352423843e-17,
+          "W1_SD": 2.3072310813788737e-06,
+          "remove": true
+        },
+        {
+          "term": "cubic",
+          "index": 5,
+          "block": 12,
+          "ci95": [
+            -8.014105059240869e-14,
+            5.095478848292368e-14
+          ],
+          "includes_zero": true,
+          "delta_upper95": -1.5414138039967574e-16,
+          "W1_SD": 1.1345797151043399e-05,
+          "remove": true
+        }
+      ],
+      "removable": [
+        false,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "tolerance": 0.01,
+      "W1_SD_max": 1.0,
+      "blocks": [
+        4,
+        8,
+        12
+      ],
+      "n_boot": 1000,
+      "full_parameters": [
+        0.9999999999999992,
+        0.9999999999999988,
+        7.088940652492123e-16,
+        4.348179028798843e-16,
+        -5.0422357205008624e-15,
+        -3.5265355026920205e-15
+      ]
+    },
+    "rounds": [
+      {
+        "T": 0.08000000098520545,
+        "seed": 20261112,
+        "acceptance_rate": 0.0946,
+        "expected_acceptance_rate": 0.09488160719757541,
+        "total_variation": 0.05733294156150352,
+        "attempts": 5000,
+        "accepted_count": 473
+      },
+      {
+        "T": 0.05200000064038354,
+        "seed": 20261113,
+        "acceptance_rate": 0.0574,
+        "expected_acceptance_rate": 0.05777247349944009,
+        "total_variation": 0.07448650282775343,
+        "attempts": 5000,
+        "accepted_count": 287
+      },
+      {
+        "T": 0.04,
+        "seed": 20261114,
+        "acceptance_rate": 0.0358,
+        "expected_acceptance_rate": 0.038289668495174775,
+        "total_variation": 0.1061733804351972,
+        "attempts": 5000,
+        "accepted_count": 179
+      }
+    ],
+    "input": {
+      "train": {
+        "shape": [
+          45,
+          32,
+          32
+        ],
+        "source": "CNO_published_OOD_case_0",
+        "seed": 4100,
+        "modes": 32,
+        "decay": 0.85,
+        "dt_group": 0.1090909090909091
+      },
+      "validation": {
+        "shape": [
+          45,
+          32,
+          32
+        ],
+        "source": "CNO_published_OOD_case_1",
+        "seed": 4101,
+        "modes": 32,
+        "decay": 0.85,
+        "dt_group": 0.1090909090909091
+      },
+      "test": {
+        "shape": [
+          45,
+          32,
+          32
+        ],
+        "source": "CNO_formula_seed_55001_K32_r0.85",
+        "seed": 55001,
+        "modes": 32,
+        "decay": 0.85,
+        "dt_group": 0.1090909090909091
+      }
+    },
+    "comparison": {
+      "selected_without_interventions": 3,
+      "ungated_best": {
+        "mask": 3,
+        "parameters": [
+          1.0000000000000009,
+          0.9999999999999986,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "validation": 0.0,
+        "intervention": 1.0579190976798296e-08,
+        "complexity": 2,
+        "J": 0.040000000985205404,
+        "gate": true,
+        "physical_tensor": true,
+        "gate_failures": [],
+        "bootstrap_risk": 0.0,
+        "validation_pressure": 7.116040054646543e-10,
+        "intervention_pressure": 5.472027946048195e-10,
+        "forward_verified": true
+      },
+      "exhaustive_best_under_gate": 3,
+      "repeats": [
+        {
+          "seed": 7000,
+          "selected": 3,
+          "acceptance_rates": [
+            0.0966,
+            0.0582,
+            0.0378
+          ]
+        },
+        {
+          "seed": 7001,
+          "selected": 3,
+          "acceptance_rates": [
+            0.0946,
+            0.0562,
+            0.0426
+          ]
+        },
+        {
+          "seed": 7002,
+          "selected": 3,
+          "acceptance_rates": [
+            0.092,
+            0.0588,
+            0.0314
+          ]
+        },
+        {
+          "seed": 7003,
+          "selected": 3,
+          "acceptance_rates": [
+            0.0974,
+            0.0518,
+            0.0382
+          ]
+        },
+        {
+          "seed": 7004,
+          "selected": 3,
+          "acceptance_rates": [
+            0.0876,
+            0.0596,
+            0.0404
+          ]
+        },
+        {
+          "seed": 7005,
+          "selected": 3,
+          "acceptance_rates": [
+            0.0994,
+            0.059,
+            0.0424
+          ]
+        },
+        {
+          "seed": 7006,
+          "selected": 3,
+          "acceptance_rates": [
+            0.0988,
+            0.0624,
+            0.0388
+          ]
+        },
+        {
+          "seed": 7007,
+          "selected": 3,
+          "acceptance_rates": [
+            0.1006,
+            0.0574,
+            0.0364
+          ]
+        },
+        {
+          "seed": 7008,
+          "selected": 3,
+          "acceptance_rates": [
+            0.0948,
+            0.0574,
+            0.037
+          ]
+        },
+        {
+          "seed": 7009,
+          "selected": 3,
+          "acceptance_rates": [
+            0.093,
+            0.0554,
+            0.0384
+          ]
+        }
+      ],
+      "audit_TV": 0.012154315254379502,
+      "audit_acceptance_rate": 0.09461,
+      "audit_expected_acceptance_rate": 0.09488160719757541
+    },
+    "original_physics": {
+      "mask": 3,
+      "parameters": [
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "test_moment_error": 3.9410333196820443e-16
+    },
+    "ood_moment_error": 0.0,
+    "selected_rollout": {
+      "relative_L2": 7.215471600409775e-10,
+      "final_relative_L2": 1.1181479986281426e-09,
+      "steps": null,
+      "solver": "Sine-Galerkin + DOP853, rtol=1e-9"
+    },
+    "original_rollout": {
+      "relative_L2": 7.215469574077019e-10
+    }
+  },
+  "analytic_noise": {
+    "selected": {
+      "mask": 3,
+      "parameters": [
+        1.000114383015925,
+        0.9999531334652179,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "validation": 5.936270418308901e-05,
+      "intervention": 6.021910665322737e-05,
+      "complexity": 2,
+      "J": 0.04190834314629845,
+      "gate": true,
+      "physical_tensor": true,
+      "gate_failures": [],
+      "bootstrap_risk": 0.16666666666666666,
+      "validation_pressure": 0.00016392919903428322,
+      "intervention_pressure": 0.00014362202035838584,
+      "forward_verified": true,
+      "test_moment_error": 6.130042311172851e-05,
+      "ci95_selected": [
+        [
+          0.9999637908619462,
+          0.9998118882564166,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0003079333541607,
+          1.0000730639139166,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "rule": {
+      "records": [
+        {
+          "term": "x_flux",
+          "index": 0,
+          "block": 4,
+          "ci95": [
+            0.999948375127204,
+            1.0004026498471281
+          ],
+          "includes_zero": false,
+          "delta_upper95": 0.5224223345746013,
+          "W1_SD": 0.27254891572054274,
+          "remove": false
+        },
+        {
+          "term": "y_flux",
+          "index": 1,
+          "block": 4,
+          "ci95": [
+            0.9997659745964701,
+            1.0000775530140336
+          ],
+          "includes_zero": false,
+          "delta_upper95": 0.5267077685467756,
+          "W1_SD": 0.2544601200962226,
+          "remove": false
+        },
+        {
+          "term": "cross_flux",
+          "index": 2,
+          "block": 4,
+          "ci95": [
+            -0.00048263007585096424,
+            -7.435275821181532e-05
+          ],
+          "includes_zero": false,
+          "delta_upper95": -2.677314270565469e-05,
+          "W1_SD": 0.3122394004888311,
+          "remove": false
+        },
+        {
+          "term": "damping",
+          "index": 3,
+          "block": 4,
+          "ci95": [
+            -0.0007838466760435476,
+            0.0013986336706007323
+          ],
+          "includes_zero": true,
+          "delta_upper95": -7.846801255519291e-06,
+          "W1_SD": 0.24583217105340424,
+          "remove": true
+        },
+        {
+          "term": "reaction",
+          "index": 4,
+          "block": 4,
+          "ci95": [
+            -0.003001589339073523,
+            0.0047090210265315294
+          ],
+          "includes_zero": true,
+          "delta_upper95": -5.711962128585362e-06,
+          "W1_SD": 0.2868743102417,
+          "remove": true
+        },
+        {
+          "term": "cubic",
+          "index": 5,
+          "block": 4,
+          "ci95": [
+            -0.033284612578398785,
+            0.010029794239789086
+          ],
+          "includes_zero": true,
+          "delta_upper95": -2.306939161423431e-05,
+          "W1_SD": 0.21880459058913057,
+          "remove": true
+        },
+        {
+          "term": "x_flux",
+          "index": 0,
+          "block": 8,
+          "ci95": [
+            1.0000214724273444,
+            1.0003178958382286
+          ],
+          "includes_zero": false,
+          "delta_upper95": 0.5224521385629448,
+          "W1_SD": 0.26077719511378045,
+          "remove": false
+        },
+        {
+          "term": "y_flux",
+          "index": 1,
+          "block": 8,
+          "ci95": [
+            0.9998251541292364,
+            1.0000998594434436
+          ],
+          "includes_zero": false,
+          "delta_upper95": 0.5269328920219677,
+          "W1_SD": 0.2184717445778378,
+          "remove": false
+        },
+        {
+          "term": "cross_flux",
+          "index": 2,
+          "block": 8,
+          "ci95": [
+            -0.0005136507761052889,
+            -7.055868836788367e-05
+          ],
+          "includes_zero": false,
+          "delta_upper95": -2.760617713059801e-05,
+          "W1_SD": 0.3452397379369937,
+          "remove": false
+        },
+        {
+          "term": "damping",
+          "index": 3,
+          "block": 8,
+          "ci95": [
+            -0.0008925434349712878,
+            0.0015396879950796073
+          ],
+          "includes_zero": true,
+          "delta_upper95": -8.242145389345213e-06,
+          "W1_SD": 0.2280700917228846,
+          "remove": true
+        },
+        {
+          "term": "reaction",
+          "index": 4,
+          "block": 8,
+          "ci95": [
+            -0.002841216047684603,
+            0.004778622995577454
+          ],
+          "includes_zero": true,
+          "delta_upper95": -3.0876746354219017e-06,
+          "W1_SD": 0.26210117239381076,
+          "remove": true
+        },
+        {
+          "term": "cubic",
+          "index": 5,
+          "block": 8,
+          "ci95": [
+            -0.03664693269452495,
+            0.010824375525119974
+          ],
+          "includes_zero": true,
+          "delta_upper95": -1.4619405062854024e-05,
+          "W1_SD": 0.20368475447858359,
+          "remove": true
+        },
+        {
+          "term": "x_flux",
+          "index": 0,
+          "block": 12,
+          "ci95": [
+            1.0000236023542242,
+            1.0003194399483801
+          ],
+          "includes_zero": false,
+          "delta_upper95": 0.5218512580800898,
+          "W1_SD": 0.27033700291156204,
+          "remove": false
+        },
+        {
+          "term": "y_flux",
+          "index": 1,
+          "block": 12,
+          "ci95": [
+            0.9998320793327575,
+            1.000110065378171
+          ],
+          "includes_zero": false,
+          "delta_upper95": 0.5270052290296883,
+          "W1_SD": 0.2976080167454746,
+          "remove": false
+        },
+        {
+          "term": "cross_flux",
+          "index": 2,
+          "block": 12,
+          "ci95": [
+            -0.0005322049119740357,
+            -6.386802421732723e-05
+          ],
+          "includes_zero": false,
+          "delta_upper95": -2.8083920356185244e-05,
+          "W1_SD": 0.34462739844285656,
+          "remove": false
+        },
+        {
+          "term": "damping",
+          "index": 3,
+          "block": 12,
+          "ci95": [
+            -0.0009094285969320837,
+            0.0014059336226183634
+          ],
+          "includes_zero": true,
+          "delta_upper95": -8.470857343476108e-06,
+          "W1_SD": 0.19309490676329485,
+          "remove": true
+        },
+        {
+          "term": "reaction",
+          "index": 4,
+          "block": 12,
+          "ci95": [
+            -0.003124469789012072,
+            0.004109986833266877
+          ],
+          "includes_zero": true,
+          "delta_upper95": -2.622869340290638e-06,
+          "W1_SD": 0.2848900146004863,
+          "remove": true
+        },
+        {
+          "term": "cubic",
+          "index": 5,
+          "block": 12,
+          "ci95": [
+            -0.029574420739986274,
+            0.010654456247758815
+          ],
+          "includes_zero": true,
+          "delta_upper95": -1.3272644693917045e-05,
+          "W1_SD": 0.2029767185347166,
+          "remove": true
+        }
+      ],
+      "removable": [
+        false,
+        false,
+        false,
+        true,
+        true,
+        true
+      ],
+      "tolerance": 0.01,
+      "W1_SD_max": 1.0,
+      "blocks": [
+        4,
+        8,
+        12
+      ],
+      "n_boot": 1000,
+      "full_parameters": [
+        1.0001320045579085,
+        0.9999561528668895,
+        -0.00027192691404588366,
+        0.0003314956156812593,
+        0.000915111380407734,
+        -0.008494424237623267
+      ]
+    },
+    "rounds": [
+      {
+        "T": 0.08498038423987413,
+        "seed": 20261112,
+        "acceptance_rate": 0.0954,
+        "expected_acceptance_rate": 0.09531157303875167,
+        "total_variation": 0.05593858922294538,
+        "attempts": 5000,
+        "accepted_count": 477
+      },
+      {
+        "T": 0.055237249755918184,
+        "seed": 20261113,
+        "acceptance_rate": 0.0584,
+        "expected_acceptance_rate": 0.05818495475176792,
+        "total_variation": 0.07140830658681503,
+        "attempts": 5000,
+        "accepted_count": 292
+      },
+      {
+        "T": 0.04,
+        "seed": 20261114,
+        "acceptance_rate": 0.0334,
+        "expected_acceptance_rate": 0.0346923181061876,
+        "total_variation": 0.09934273750070019,
+        "attempts": 5000,
+        "accepted_count": 167
+      }
+    ],
+    "input": {
+      "train": {
+        "shape": [
+          45,
+          32,
+          32
+        ],
+        "source": "CNO_published_OOD_case_0",
+        "seed": 4100,
+        "modes": 32,
+        "decay": 0.85,
+        "dt_group": 0.1090909090909091
+      },
+      "validation": {
+        "shape": [
+          45,
+          32,
+          32
+        ],
+        "source": "CNO_published_OOD_case_1",
+        "seed": 4101,
+        "modes": 32,
+        "decay": 0.85,
+        "dt_group": 0.1090909090909091
+      },
+      "test": {
+        "shape": [
+          45,
+          32,
+          32
+        ],
+        "source": "CNO_formula_seed_55001_K32_r0.85",
+        "seed": 55001,
+        "modes": 32,
+        "decay": 0.85,
+        "dt_group": 0.1090909090909091
+      }
+    },
+    "comparison": {
+      "selected_without_interventions": 3,
+      "ungated_best": {
+        "mask": 3,
+        "parameters": [
+          1.000114383015925,
+          0.9999531334652179,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "validation": 5.936270418308901e-05,
+        "intervention": 6.021910665322737e-05,
+        "complexity": 2,
+        "J": 0.04190834314629845,
+        "gate": true,
+        "physical_tensor": true,
+        "gate_failures": [],
+        "bootstrap_risk": 0.16666666666666666,
+        "validation_pressure": 0.00016392919903428322,
+        "intervention_pressure": 0.00014362202035838584,
+        "forward_verified": true
+      },
+      "exhaustive_best_under_gate": 3,
+      "repeats": [
+        {
+          "seed": 7000,
+          "selected": 3,
+          "acceptance_rates": [
+            0.0976,
+            0.0578,
+            0.0344
+          ]
+        },
+        {
+          "seed": 7001,
+          "selected": 3,
+          "acceptance_rates": [
+            0.0956,
+            0.0558,
+            0.0394
+          ]
+        },
+        {
+          "seed": 7002,
+          "selected": 3,
+          "acceptance_rates": [
+            0.0918,
+            0.059,
+            0.0292
+          ]
+        },
+        {
+          "seed": 7003,
+          "selected": 3,
+          "acceptance_rates": [
+            0.098,
+            0.0514,
+            0.0346
+          ]
+        },
+        {
+          "seed": 7004,
+          "selected": 3,
+          "acceptance_rates": [
+            0.0892,
+            0.0606,
+            0.0374
+          ]
+        },
+        {
+          "seed": 7005,
+          "selected": 3,
+          "acceptance_rates": [
+            0.0994,
+            0.059,
+            0.039
+          ]
+        },
+        {
+          "seed": 7006,
+          "selected": 3,
+          "acceptance_rates": [
+            0.0984,
+            0.0626,
+            0.0348
+          ]
+        },
+        {
+          "seed": 7007,
+          "selected": 3,
+          "acceptance_rates": [
+            0.1008,
+            0.058,
+            0.0328
+          ]
+        },
+        {
+          "seed": 7008,
+          "selected": 3,
+          "acceptance_rates": [
+            0.0954,
+            0.0584,
+            0.0328
+          ]
+        },
+        {
+          "seed": 7009,
+          "selected": 3,
+          "acceptance_rates": [
+            0.0942,
+            0.0556,
+            0.0362
+          ]
+        }
+      ],
+      "audit_TV": 0.011523986933458557,
+      "audit_acceptance_rate": 0.0952,
+      "audit_expected_acceptance_rate": 0.09531157303875167
+    },
+    "original_physics": {
+      "mask": 3,
+      "parameters": [
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "test_moment_error": 3.9410333196820443e-16
+    }
+  },
+  "runtime_seconds": 7.716424917016411,
+  "data_hashes": {
+    "analytic_coefficients.npz": "638cbd9fd028a0c326e392548407cad50514d041bc666b5286b5cb539bcb1de4",
+    "cno_published_cases.npz": "ea564ed109e256fd852080bb165778437e6315061c47f6c1c3cb3a8f61ca6b3c",
+    "well_test_0.npz": "72c94cfcff1092ddbc3e7e3d0c27c99e5f569aa41bdba254d25717fc6b42cd3a",
+    "well_test_1.npz": "abddfb55f1bea3e9a3f06c1e56e9dfbac8177339f53475af79a32ae6bec67bd4",
+    "well_train_0.npz": "3b5c65b558f53d65b4cc11b0078206ba09ab3bd3d992b7335e7383db576a2084",
+    "well_valid_0.npz": "615bd46995811b977ff8aca5e09738cba30652b9377eca4115ea5ea925aee8ea"
+  }
+}

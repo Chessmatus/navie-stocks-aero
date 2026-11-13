@@ -10,7 +10,7 @@ from scipy.ndimage import gaussian_filter
 from .model import ROOT,TERMS,bits,fit,well_features,relative_error,export_graph
 from .analytic import feature_set,published_feature_set,archive_audit,save_coefficients,coefficients,evaluate
 from .statistics import pruning,bootstrap
-from .sampling import catalog,transformed,run_sampler,sample_round,error,summary
+from .sampling import catalog,run_sampler,sample_round,error,summary
 from .solver import solve,verification
 from .modal_solver import validation_catalog,solve_modes,exact_modes,relative_modal_error
 
@@ -22,29 +22,36 @@ def clean_record(data):
 def experiment(name,train,valid,test,extra,n_boot):
     print('Inference',name,flush=True)
     rule=pruning(train,valid,n_boot=n_boot)
-    interventions=[transformed(valid,1.5),transformed(valid,swap=True)]+extra
+    interventions=extra
+    config=json.loads((ROOT/'criterion.json').read_text())
     preliminary=catalog(train,valid,interventions,rule)
     if name=='well':
         cache=ROOT/'results/well_forward_validation.json'
         payload=json.loads(cache.read_text()) if cache.exists() else {}
-        forward=payload.get('records',{})
+        expected_inputs={f'well_valid_{i}.npz':hashlib.sha256((ROOT/'data'/f'well_valid_{i}.npz').read_bytes()).hexdigest()
+            for i in [config['validation_well_sample']]+config['transfer_well_samples']}
+        current=(payload.get('criterion_version')==3 and payload.get('inputs')==expected_inputs
+            and payload.get('pressure_scale')==train['pressure_scale']
+            and payload.get('transfer_samples')==config['transfer_well_samples'])
+        forward=payload.get('records',{}) if current else {}
         need=[row for row in preliminary if row['physical_tensor'] and
               (str(row['mask']) not in forward or not np.allclose(
                forward[str(row['mask'])].get('parameters',[]),row['parameters'],atol=1e-9,rtol=1e-9))]
         if need:
-            (ROOT/'results/validation_candidates.json').write_text(json.dumps(preliminary,indent=2))
+            (ROOT/'results/validation_candidates.json').write_text(json.dumps([{**row,'pressure_scale':train['pressure_scale']} for row in preliminary],indent=2))
             python=ROOT.parent/'.clawpack/bin/python'
             if not python.exists():raise RuntimeError('Missing Clawpack validation cache: create lab03/clawpack.yml environment')
             subprocess.run([str(python),str(ROOT/'clawpack_validation.py')],check=True)
             forward=json.loads(cache.read_text())['records']
     else:
         cache=ROOT/'results'/f'{name}_forward_validation.json'
-        signature=hashlib.sha256(valid['A'].tobytes()+extra[0]['A'].tobytes()+
-            np.array([row['parameters'] for row in preliminary]).tobytes()).hexdigest()
+        signature=hashlib.sha256(b'criterion-v3-independent-transfer'+valid['A'].tobytes()
+            +b''.join(z['A'].tobytes() for z in extra)+str(train['pressure_scale']).encode()
+            +np.array([row['parameters'] for row in preliminary]).tobytes()).hexdigest()
         saved=json.loads(cache.read_text()) if cache.exists() else {}
         if saved.get('signature')==signature:forward=saved['records']
         else:
-            forward=validation_catalog(preliminary,valid['A'],extra[0]['A'])
+            forward=validation_catalog(preliminary,valid['A'],[z['A'] for z in extra],train['pressure_scale'])
             cache.write_text(json.dumps({'signature':signature,'records':forward},indent=2))
     records=catalog(train,valid,interventions,rule,forward=forward)
     rounds,selected=run_sampler(records)
@@ -76,7 +83,7 @@ def experiment(name,train,valid,test,extra,n_boot):
     roundinfo=[{k:v for k,v in r.items() if k not in ('proposal','uniform','accepted','reason','expected_pmf','empirical_pmf')}
         | {'attempts':len(r['proposal']),'accepted_count':int(r['accepted'].sum())} for r in rounds]
     result={'selected':selected_record,'rule':rule,'rounds':roundinfo,
-        'input':{'train':clean_record(train),'validation':clean_record(valid),'test':clean_record(test)},
+        'input':{'train':clean_record(train),'validation':clean_record(valid),'transfer':[clean_record(z) for z in extra],'test':clean_record(test)},
         'comparison':{'selected_without_interventions':without,
             'ungated_best':ungated,'exhaustive_best_under_gate':exact_best,
             'repeats':repeats,'audit_TV':audit['total_variation'],
@@ -91,32 +98,41 @@ def experiment(name,train,valid,test,extra,n_boot):
 def run(n_boot=1000):
     started=time.monotonic()
     ROOT.joinpath('results').mkdir(exist_ok=True);save_coefficients()
+    config=json.loads((ROOT/'criterion.json').read_text())
+    test_sample=config['fresh_well_test_sample'];test_seed=config['fresh_analytic_test_seed']
     report={'seed':20261112,'method':'Rejection sampling (method 4)',
         'data_status':'Published simulations and exact analytical benchmark; no experimental measurements; 2D+time.',
         'candidate_terms':list(TERMS),'candidate_count':64,
         'criterion':json.loads((ROOT/'criterion.json').read_text()),
-        'evaluation':{'well_test_sample':1,'analytic_test_seed':55001,
-            'old_well_test_0':'Development-only after criterion v1 was inspected'},
+        'evaluation':{'well_test_sample':test_sample,'analytic_test_seed':test_seed,
+            'well_transfer_samples':config['transfer_well_samples'],'analytic_transfer_seeds':config['transfer_analytic_seeds'],
+            'old_well_tests':[0,1],'old_analytic_tests':[55001],
+            'note':'Old tests are development only; new tests are not used in graph selection'},
         'verification':verification()}
-    tr=well_features(ROOT/'data/well_train_0.npz')
-    va=well_features(ROOT/'data/well_valid_0.npz')
-    report['well']=experiment('well',tr,va,lambda:well_features(ROOT/'data/well_test_1.npz'),[],n_boot)
+    tr=well_features(ROOT/'data/well_train_0.npz');P=tr['pressure_scale']
+    va=well_features(ROOT/'data/well_valid_0.npz',pressure_scale=P)
+    transfers=[well_features(ROOT/'data'/f'well_valid_{i}.npz',pressure_scale=P)
+        for i in config['transfer_well_samples']]
+    report['well']=experiment('well',tr,va,lambda:well_features(ROOT/'data'/f'well_test_{test_sample}.npz',pressure_scale=P),transfers,n_boot)
     report['analytic_archive_audit']=archive_audit()
-    report['analytic']=experiment('analytic',published_feature_set(0),published_feature_set(1),
-        lambda:feature_set(55001,32,.85),[feature_set(3104)],n_boot)
-    report['analytic_noise']=experiment('analytic_noise',published_feature_set(0,noise=.01),published_feature_set(1),
-        lambda:feature_set(55001,32,.85),[feature_set(3104)],n_boot)
+    atr=published_feature_set(0);AP=atr['pressure_scale']
+    ava=published_feature_set(1,pressure_scale=AP)
+    extras=[feature_set(seed,pressure_scale=AP) for seed in config['transfer_analytic_seeds']]
+    report['analytic']=experiment('analytic',atr,ava,
+        lambda:feature_set(test_seed,32,.85,pressure_scale=AP),extras,n_boot)
+    report['analytic_noise']=experiment('analytic_noise',published_feature_set(0,noise=.01,pressure_scale=AP),ava,
+        lambda:feature_set(test_seed,32,.85,pressure_scale=AP),extras,n_boot)
     p=np.array(report['analytic']['selected']['parameters'])
-    report['analytic']['ood_moment_error']=error(summary(feature_set(3105,32,.85)),p)
+    report['analytic']['ood_moment_error']=error(summary(feature_set(3105,32,.85,pressure_scale=AP)),p)
     print('PDE rollouts',flush=True)
-    with np.load(ROOT/'data/well_test_1.npz') as d:
+    with np.load(ROOT/'data'/f'well_test_{test_sample}.npz') as d:
         p0=d['p'][0];rho=d['rho'];bulk=np.median(d['rho']*d['c']**2)
         # All test frames are untouched until model and thresholds have been fixed.
         times=d['t'].astype(float)[::2];reference=d['p'][::2]
     rolls={}
     for label,theta in [('original',[1.,1.,0.,0.,0.,0.]),
                         ('selected',report['well']['selected']['parameters'])]:
-        pred,steps=solve(p0,rho,bulk,times,theta,2/p0.shape[0])
+        pred,steps=solve(p0,rho,bulk,times,theta,2/p0.shape[0],pressure_scale=P)
         smooth_ref=gaussian_filter(reference.astype(float),(0,2.,2.))
         smooth_pred=gaussian_filter(pred.astype(float),(0,2.,2.))
         report['well'][f'{label}_rollout']={'relative_L2':relative_error(reference,pred),
@@ -126,14 +142,10 @@ def run(n_boot=1000):
         print(label,report['well'][f'{label}_rollout'],flush=True)
     np.savez_compressed(ROOT/'results/well_rollout.npz',times=times,reference=reference,
         rho=rho,**rolls)
-    # Physical source-amplitude intervention, solved independently on the same grid.
-    theta=report['well']['selected']['parameters']
-    perturbed,_=solve(1.5*p0,rho,bulk,times,theta,2/p0.shape[0],pressure_scale=float(np.max(abs(p0))))
-    report['well']['source_amplitude_covariance_error']=relative_error(1.5*rolls['selected'],perturbed)
     x=np.linspace(0,1,129);times=np.linspace(0,5,51)
-    A=coefficients(55001,32,.85)
+    A=coefficients(test_seed,32,.85)
     exact=evaluate(A,x,times)['p']
-    modal=solve_modes(A,times,p);S=np.sin(x[:,None]*np.pi*np.arange(1,len(A)+1))
+    modal=solve_modes(A,times,p,pressure_scale=AP);S=np.sin(x[:,None]*np.pi*np.arange(1,len(A)+1))
     pred=np.asarray([S@z@S.T for z in modal]);steps=None
     original_modes=solve_modes(A,times,[1,1,0,0,0,0])
     original=np.asarray([S@z@S.T for z in original_modes])
@@ -147,15 +159,15 @@ def run(n_boot=1000):
     (ROOT/'results/report.json').write_text(json.dumps(report,indent=2,ensure_ascii=False))
     python=ROOT.parent/'.clawpack/bin/python'
     for model in ('original','selected'):
-        path=ROOT/'results'/f'clawpack_test1_{model}.npz'
+        path=ROOT/'results'/f'clawpack_test{test_sample}_{model}.npz'
         expected=np.array([1.,1.,0.,0.,0.,0.] if model=='original' else report['well']['selected']['parameters'])
         valid_cache=False
         if path.exists():
             with np.load(path) as d:valid_cache=(np.allclose(d['theta'],expected,atol=1e-10,rtol=1e-10)
-                and int(d['sample'])==1)
+                and int(d['sample'])==test_sample and float(d['pressure_scale'])==P)
         if not valid_cache:
             if not python.exists():raise RuntimeError('Create the isolated Clawpack environment to run the new test')
-            subprocess.run([str(python),str(ROOT/'clawpack_runner.py'),'--model',model,'--sample','1'],check=True)
+            subprocess.run([str(python),str(ROOT/'clawpack_runner.py'),'--model',model,'--sample',str(test_sample)],check=True)
     report['runtime_seconds']=time.monotonic()-started
     report['data_hashes']={f.name:hashlib.sha256(f.read_bytes()).hexdigest() for f in sorted((ROOT/'data').glob('*.npz'))}
     attach_clawpack(report)
@@ -165,9 +177,10 @@ def run(n_boot=1000):
 
 
 def attach_clawpack(report):
-    with np.load(ROOT/'data/well_test_1.npz') as d:ref=d['p'][::2]
+    test_sample=report['evaluation']['well_test_sample']
+    with np.load(ROOT/'data'/f'well_test_{test_sample}.npz') as d:ref=d['p'][::2]
     for model in ('original','selected'):
-        path=ROOT/'results'/f'clawpack_test1_{model}.npz'
+        path=ROOT/'results'/f'clawpack_test{test_sample}_{model}.npz'
         if path.exists():
             with np.load(path) as d:p=d['p']
             report['well'][f'clawpack_{model}']={

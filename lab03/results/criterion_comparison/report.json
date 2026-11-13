@@ -1,0 +1,743 @@
+{
+  "protocol": {
+    "comparison": "Post-hoc criterion ablation on the same v3 data and fitted coefficients",
+    "seed": 20261112,
+    "attempts_per_round": 5000,
+    "rounds": 3,
+    "paired_proposals": true,
+    "paired_uniforms": true,
+    "paired_temperatures": true,
+    "complexity_weight": [
+      0.02,
+      0.0,
+      0.0
+    ],
+    "bootstrap_soft_weight": 0.01,
+    "hard_gate": [
+      false,
+      false,
+      true
+    ],
+    "test_status": "Previously inspected sample_2 / seed55002: diagnostic comparison, not a fresh blind test",
+    "test_well_sample": 2,
+    "test_analytic_seed": 55002,
+    "criterion_sha256": "41bf93daf300a6f21b597ffd5c89532c8df9c6115fafe37da9c9c1cb4afccc38"
+  },
+  "datasets": {
+    "well": {
+      "catalog_sha256": "ed8f29fa11035c849a97dabbe1f15eaafdf96cb70f149f5bd74f9d0597d8fbc1",
+      "required_terms": [
+        "x_flux",
+        "y_flux",
+        "damping"
+      ],
+      "temperatures": [
+        0.3931396041192219,
+        0.1861064049444614,
+        0.12096916321389992
+      ],
+      "cases": {
+        "current": {
+          "label": "1. Текущий критерий",
+          "selected": {
+            "mask": 3,
+            "parameters": [
+              1.0029436230093474,
+              1.0029613636330716,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "validation": 0.02863111007610391,
+            "intervention": 0.03769265949854112,
+            "complexity": 2,
+            "J": 0.1671199428846292,
+            "gate": true,
+            "physical_tensor": true,
+            "gate_failures": [],
+            "bootstrap_risk": 0.16666666666666666,
+            "validation_pressure": 0.08367436332212405,
+            "intervention_pressure": 0.0778316037764562,
+            "transfer_errors": [
+              {
+                "sample": 1,
+                "pressure_error": 0.07627629796865297
+              },
+              {
+                "sample": 2,
+                "pressure_error": 0.07938690958425942
+              }
+            ],
+            "forward_verified": true,
+            "base_gate": true,
+            "statistical_gate": false,
+            "complexity_weight": 0.02
+          },
+          "terms": [
+            "x_flux",
+            "y_flux"
+          ],
+          "allowed_count": 16,
+          "exhaustive_best": 3,
+          "repeat_selections": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "rounds": [
+            {
+              "T": 0.3931396041192219,
+              "attempts": 5000,
+              "accepted": 514,
+              "acceptance_rate": 0.1028
+            },
+            {
+              "T": 0.1861064049444614,
+              "attempts": 5000,
+              "accepted": 224,
+              "acceptance_rate": 0.0448
+            },
+            {
+              "T": 0.12096916321389992,
+              "attempts": 5000,
+              "accepted": 105,
+              "acceptance_rate": 0.021
+            }
+          ],
+          "test_pressure_error": 0.08208405993206151,
+          "test_final_error": 0.12471665005421252
+        },
+        "no_complexity": {
+          "label": "2. Без штрафа за сложность",
+          "selected": {
+            "mask": 23,
+            "parameters": [
+              1.0028500393343671,
+              1.0028855680901367,
+              0.0007367085610401231,
+              0.0,
+              0.11414608195216408,
+              0.0
+            ],
+            "validation": 0.0286553272530606,
+            "intervention": 0.037690222034472434,
+            "complexity": 4,
+            "J": 0.12270809392550192,
+            "gate": true,
+            "physical_tensor": true,
+            "gate_failures": [],
+            "bootstrap_risk": 0.16666666666666666,
+            "validation_pressure": 0.0800008312221571,
+            "intervention_pressure": 0.07635012662274415,
+            "transfer_errors": [
+              {
+                "sample": 1,
+                "pressure_error": 0.0783959909603368
+              },
+              {
+                "sample": 2,
+                "pressure_error": 0.0743042622851515
+              }
+            ],
+            "forward_verified": true,
+            "base_gate": true,
+            "statistical_gate": false,
+            "complexity_weight": 0.0
+          },
+          "terms": [
+            "x_flux",
+            "y_flux",
+            "cross_flux",
+            "reaction"
+          ],
+          "allowed_count": 16,
+          "exhaustive_best": 23,
+          "repeat_selections": [
+            23,
+            23,
+            23,
+            23,
+            23,
+            23,
+            23,
+            23,
+            23,
+            23
+          ],
+          "rounds": [
+            {
+              "T": 0.3931396041192219,
+              "attempts": 5000,
+              "accepted": 633,
+              "acceptance_rate": 0.1266
+            },
+            {
+              "T": 0.1861064049444614,
+              "attempts": 5000,
+              "accepted": 319,
+              "acceptance_rate": 0.0638
+            },
+            {
+              "T": 0.12096916321389992,
+              "attempts": 5000,
+              "accepted": 173,
+              "acceptance_rate": 0.0346
+            }
+          ],
+          "test_pressure_error": 0.08231830336807915,
+          "test_final_error": 0.12878406315770233
+        },
+        "hard_filter": {
+          "label": "3. Без сложности + исходный фильтр",
+          "selected": {
+            "mask": 47,
+            "parameters": [
+              1.0030736684838095,
+              1.003181170390859,
+              0.0006133542362694592,
+              0.5094624725980311,
+              0.0,
+              3.8697051923724435
+            ],
+            "validation": 0.028993051178605612,
+            "intervention": 0.03609102547863431,
+            "complexity": 5,
+            "J": 0.34563641741879625,
+            "gate": true,
+            "physical_tensor": true,
+            "gate_failures": [],
+            "bootstrap_risk": 0.0,
+            "validation_pressure": 0.22840517855523954,
+            "intervention_pressure": 0.22866386749139234,
+            "transfer_errors": [
+              {
+                "sample": 1,
+                "pressure_error": 0.23023186430244344
+              },
+              {
+                "sample": 2,
+                "pressure_error": 0.22709587068034123
+              }
+            ],
+            "forward_verified": true,
+            "base_gate": true,
+            "statistical_gate": true,
+            "complexity_weight": 0.0
+          },
+          "terms": [
+            "x_flux",
+            "y_flux",
+            "cross_flux",
+            "damping",
+            "cubic"
+          ],
+          "allowed_count": 8,
+          "exhaustive_best": 47,
+          "repeat_selections": [
+            47,
+            47,
+            47,
+            47,
+            47,
+            47,
+            47,
+            47,
+            47,
+            47
+          ],
+          "rounds": [
+            {
+              "T": 0.3931396041192219,
+              "attempts": 5000,
+              "accepted": 237,
+              "acceptance_rate": 0.0474
+            },
+            {
+              "T": 0.1861064049444614,
+              "attempts": 5000,
+              "accepted": 104,
+              "acceptance_rate": 0.0208
+            },
+            {
+              "T": 0.12096916321389992,
+              "attempts": 5000,
+              "accepted": 41,
+              "acceptance_rate": 0.0082
+            }
+          ],
+          "test_pressure_error": 0.23221007251421866,
+          "test_final_error": 0.39153762448468904
+        }
+      }
+    },
+    "analytic": {
+      "catalog_sha256": "0e84d2fc0ceba02fe8388c72a3a062d3c45256a80e90f36195c822fb7c1b041a",
+      "required_terms": [
+        "x_flux",
+        "y_flux"
+      ],
+      "temperatures": [
+        0.08000000078575448,
+        0.05200000051074041,
+        0.04
+      ],
+      "cases": {
+        "current": {
+          "label": "1. Текущий критерий",
+          "selected": {
+            "mask": 3,
+            "parameters": [
+              1.0000000000000009,
+              0.9999999999999986,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "validation": 0.0,
+            "intervention": 1.5868786465197446e-08,
+            "complexity": 2,
+            "J": 0.04000000078575445,
+            "gate": true,
+            "physical_tensor": true,
+            "gate_failures": [],
+            "bootstrap_risk": 0.0,
+            "validation_pressure": 6.686037202711882e-10,
+            "intervention_pressure": 2.3430145595028357e-10,
+            "transfer_errors": [
+              2.5688360435203745e-10,
+              2.1171930754852972e-10
+            ],
+            "forward_verified": true,
+            "base_gate": true,
+            "statistical_gate": true,
+            "complexity_weight": 0.02
+          },
+          "terms": [
+            "x_flux",
+            "y_flux"
+          ],
+          "allowed_count": 16,
+          "exhaustive_best": 3,
+          "repeat_selections": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "rounds": [
+            {
+              "T": 0.08000000078575448,
+              "attempts": 5000,
+              "accepted": 473,
+              "acceptance_rate": 0.0946
+            },
+            {
+              "T": 0.05200000051074041,
+              "attempts": 5000,
+              "accepted": 287,
+              "acceptance_rate": 0.0574
+            },
+            {
+              "T": 0.04,
+              "attempts": 5000,
+              "accepted": 179,
+              "acceptance_rate": 0.0358
+            }
+          ],
+          "test_pressure_error": 3.317118416221946e-10
+        },
+        "no_complexity": {
+          "label": "2. Без штрафа за сложность",
+          "selected": {
+            "mask": 43,
+            "parameters": [
+              1.0000000000000013,
+              0.9999999999999986,
+              0.0,
+              3.306433453375252e-16,
+              0.0,
+              3.324714416184575e-14
+            ],
+            "validation": 0.0,
+            "intervention": 1.5868786465197446e-08,
+            "complexity": 4,
+            "J": 7.857542629455853e-10,
+            "gate": true,
+            "physical_tensor": true,
+            "gate_failures": [],
+            "bootstrap_risk": 0.0,
+            "validation_pressure": 6.686035770630467e-10,
+            "intervention_pressure": 2.34301371765077e-10,
+            "transfer_errors": [
+              2.568835204875188e-10,
+              2.1171922304263515e-10
+            ],
+            "forward_verified": true,
+            "base_gate": true,
+            "statistical_gate": true,
+            "complexity_weight": 0.0
+          },
+          "terms": [
+            "x_flux",
+            "y_flux",
+            "damping",
+            "cubic"
+          ],
+          "allowed_count": 16,
+          "exhaustive_best": 43,
+          "repeat_selections": [
+            43,
+            43,
+            43,
+            43,
+            43,
+            43,
+            43,
+            43,
+            43,
+            43
+          ],
+          "rounds": [
+            {
+              "T": 0.08000000078575448,
+              "attempts": 5000,
+              "accepted": 1222,
+              "acceptance_rate": 0.2444
+            },
+            {
+              "T": 0.05200000051074041,
+              "attempts": 5000,
+              "accepted": 1214,
+              "acceptance_rate": 0.2428
+            },
+            {
+              "T": 0.04,
+              "attempts": 5000,
+              "accepted": 1228,
+              "acceptance_rate": 0.2456
+            }
+          ],
+          "test_pressure_error": 3.317117209792871e-10
+        },
+        "hard_filter": {
+          "label": "3. Без сложности + исходный фильтр",
+          "selected": {
+            "mask": 43,
+            "parameters": [
+              1.0000000000000013,
+              0.9999999999999986,
+              0.0,
+              3.306433453375252e-16,
+              0.0,
+              3.324714416184575e-14
+            ],
+            "validation": 0.0,
+            "intervention": 1.5868786465197446e-08,
+            "complexity": 4,
+            "J": 7.857542629455853e-10,
+            "gate": true,
+            "physical_tensor": true,
+            "gate_failures": [],
+            "bootstrap_risk": 0.0,
+            "validation_pressure": 6.686035770630467e-10,
+            "intervention_pressure": 2.34301371765077e-10,
+            "transfer_errors": [
+              2.568835204875188e-10,
+              2.1171922304263515e-10
+            ],
+            "forward_verified": true,
+            "base_gate": true,
+            "statistical_gate": true,
+            "complexity_weight": 0.0
+          },
+          "terms": [
+            "x_flux",
+            "y_flux",
+            "damping",
+            "cubic"
+          ],
+          "allowed_count": 16,
+          "exhaustive_best": 43,
+          "repeat_selections": [
+            43,
+            43,
+            43,
+            43,
+            43,
+            43,
+            43,
+            43,
+            43,
+            43
+          ],
+          "rounds": [
+            {
+              "T": 0.08000000078575448,
+              "attempts": 5000,
+              "accepted": 1222,
+              "acceptance_rate": 0.2444
+            },
+            {
+              "T": 0.05200000051074041,
+              "attempts": 5000,
+              "accepted": 1214,
+              "acceptance_rate": 0.2428
+            },
+            {
+              "T": 0.04,
+              "attempts": 5000,
+              "accepted": 1228,
+              "acceptance_rate": 0.2456
+            }
+          ],
+          "test_pressure_error": 3.317117209792871e-10
+        }
+      }
+    },
+    "analytic_noise": {
+      "catalog_sha256": "4976b91b4e41e928e605b1609898972a62ed225657e9a7d4d5874dd47d304122",
+      "required_terms": [
+        "x_flux",
+        "y_flux",
+        "cross_flux"
+      ],
+      "temperatures": [
+        0.09978503573504859,
+        0.06250838730976367,
+        0.040630451751346386
+      ],
+      "cases": {
+        "current": {
+          "label": "1. Текущий критерий",
+          "selected": {
+            "mask": 3,
+            "parameters": [
+              1.000114383015925,
+              0.9999531334652179,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "validation": 5.936270418308901e-05,
+            "intervention": 6.099278128207064e-05,
+            "complexity": 2,
+            "J": 0.04189405155933945,
+            "gate": true,
+            "physical_tensor": true,
+            "gate_failures": [],
+            "bootstrap_risk": 0.16666666666666666,
+            "validation_pressure": 0.00016392920648532612,
+            "intervention_pressure": 0.0001150388315382904,
+            "transfer_errors": [
+              0.00012331485682473667,
+              0.00010676280625184413
+            ],
+            "forward_verified": true,
+            "base_gate": true,
+            "statistical_gate": false,
+            "complexity_weight": 0.02
+          },
+          "terms": [
+            "x_flux",
+            "y_flux"
+          ],
+          "allowed_count": 16,
+          "exhaustive_best": 3,
+          "repeat_selections": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "rounds": [
+            {
+              "T": 0.09978503573504859,
+              "attempts": 5000,
+              "accepted": 472,
+              "acceptance_rate": 0.0944
+            },
+            {
+              "T": 0.06250838730976367,
+              "attempts": 5000,
+              "accepted": 274,
+              "acceptance_rate": 0.0548
+            },
+            {
+              "T": 0.040630451751346386,
+              "attempts": 5000,
+              "accepted": 138,
+              "acceptance_rate": 0.0276
+            }
+          ],
+          "test_pressure_error": 0.00013003018188222624
+        },
+        "no_complexity": {
+          "label": "2. Без штрафа за сложность",
+          "selected": {
+            "mask": 7,
+            "parameters": [
+              1.0001228522086378,
+              0.9999493212932268,
+              -0.0002705825422717996,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "validation": 0.0001179022709151817,
+            "intervention": 0.00011713262733031487,
+            "complexity": 3,
+            "J": 0.00037914299472365946,
+            "gate": true,
+            "physical_tensor": true,
+            "gate_failures": [],
+            "bootstrap_risk": 0.0,
+            "validation_pressure": 0.0002789259172116416,
+            "intervention_pressure": 0.0001768537008409993,
+            "transfer_errors": [
+              0.00019107165727236402,
+              0.00016263574440963463
+            ],
+            "forward_verified": true,
+            "base_gate": true,
+            "statistical_gate": true,
+            "complexity_weight": 0.0
+          },
+          "terms": [
+            "x_flux",
+            "y_flux",
+            "cross_flux"
+          ],
+          "allowed_count": 16,
+          "exhaustive_best": 7,
+          "repeat_selections": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+          ],
+          "rounds": [
+            {
+              "T": 0.09978503573504859,
+              "attempts": 5000,
+              "accepted": 1010,
+              "acceptance_rate": 0.202
+            },
+            {
+              "T": 0.06250838730976367,
+              "attempts": 5000,
+              "accepted": 865,
+              "acceptance_rate": 0.173
+            },
+            {
+              "T": 0.040630451751346386,
+              "attempts": 5000,
+              "accepted": 759,
+              "acceptance_rate": 0.1518
+            }
+          ],
+          "test_pressure_error": 0.00021330958055306153
+        },
+        "hard_filter": {
+          "label": "3. Без сложности + исходный фильтр",
+          "selected": {
+            "mask": 7,
+            "parameters": [
+              1.0001228522086378,
+              0.9999493212932268,
+              -0.0002705825422717996,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "validation": 0.0001179022709151817,
+            "intervention": 0.00011713262733031487,
+            "complexity": 3,
+            "J": 0.00037914299472365946,
+            "gate": true,
+            "physical_tensor": true,
+            "gate_failures": [],
+            "bootstrap_risk": 0.0,
+            "validation_pressure": 0.0002789259172116416,
+            "intervention_pressure": 0.0001768537008409993,
+            "transfer_errors": [
+              0.00019107165727236402,
+              0.00016263574440963463
+            ],
+            "forward_verified": true,
+            "base_gate": true,
+            "statistical_gate": true,
+            "complexity_weight": 0.0
+          },
+          "terms": [
+            "x_flux",
+            "y_flux",
+            "cross_flux"
+          ],
+          "allowed_count": 8,
+          "exhaustive_best": 7,
+          "repeat_selections": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+          ],
+          "rounds": [
+            {
+              "T": 0.09978503573504859,
+              "attempts": 5000,
+              "accepted": 509,
+              "acceptance_rate": 0.1018
+            },
+            {
+              "T": 0.06250838730976367,
+              "attempts": 5000,
+              "accepted": 456,
+              "acceptance_rate": 0.0912
+            },
+            {
+              "T": 0.040630451751346386,
+              "attempts": 5000,
+              "accepted": 402,
+              "acceptance_rate": 0.0804
+            }
+          ],
+          "test_pressure_error": 0.00021330958055306153
+        }
+      }
+    }
+  }
+}

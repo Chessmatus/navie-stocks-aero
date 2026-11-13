@@ -47,27 +47,24 @@ def exact_modes(A,times):
 def relative_modal_error(a,b):return float(np.linalg.norm(a-b)/np.linalg.norm(b))
 
 
-def validation_catalog(records,A,extra_A):
+def validation_catalog(records,A,extra_arrays,pressure_scale):
+    """Separate initial fields, each with its own exact reference trajectory."""
     times=np.linspace(0,5,51);reference=exact_modes(A,times)
-    extra_reference=exact_modes(extra_A,times)
+    extra_references=[exact_modes(extra,times) for extra in extra_arrays]
     answer={}
     for row in records:
         if not row['physical_tensor']:continue
         theta=row['parameters']
         try:
-            pred=solve_modes(A,times,theta)
+            pred=solve_modes(A,times,theta,pressure_scale=pressure_scale)
             base=relative_modal_error(pred,reference)
             if base>.5:raise ValueError('Validation pressure error exceeds 0.5')
-            if abs(theta[5])<1e-12:amplitude=base
-            else:
-                nq=2*len(A)+1;x=np.arange(1,nq+1)/(nq+1)
-                S=np.sin(x[:,None]*np.pi*np.arange(1,len(A)+1))
-                scale=float(np.max(abs(S@A@S.T)))
-                amplitude=relative_modal_error(solve_modes(1.5*A,times,theta,scale),1.5*reference)
-            extra=relative_modal_error(solve_modes(extra_A,times,theta),extra_reference)
+            errors=[relative_modal_error(solve_modes(extra,times,theta,pressure_scale=pressure_scale),ref)
+                for extra,ref in zip(extra_arrays,extra_references)]
             answer[str(row['mask'])]={'success':True,'pressure_error':base,
-                'intervention_error':(amplitude+extra)/2,'amplitude_error':amplitude,'new_initial_error':extra,
-                'parameters':list(theta),'solver':'Sine-Galerkin, DOP853, rtol=1e-9'}
+                'intervention_error':float(np.mean(errors)),'transfer_errors':errors,
+                'parameters':list(theta),'pressure_scale':pressure_scale,
+                'solver':'Sine-Galerkin, DOP853, rtol=1e-9'}
         except (ValueError,FloatingPointError,RuntimeError,OverflowError) as ex:
             answer[str(row['mask'])]={'success':False,'failure':str(ex)}
     return answer
