@@ -49,9 +49,13 @@ $$p_{tt}=K\partial_x(\rho^{-1}p_x)+K\partial_y(\rho^{-1}p_y).$$
 Плотность задаёт лабиринт; выносить её за производную нельзя. Известны
 $p(0)=p_0$, $p_t(0)=0$. Решение интегрируется из этих условий.
 
-Расширенная библиотека:
-$$p_{tt}=\theta_1F_x+\theta_2F_y+\theta_3F_{xy}
--\theta_4p_t/T_0-\theta_5p/T_0^2-\theta_6p^3/(P_0^2T_0^2).$$
+Полная подбираемая модель:
+$$\begin{aligned}
+p_{tt}={}&\theta_1K\partial_x(\rho^{-1}p_x)+\theta_2K\partial_y(\rho^{-1}p_y)\\
+&+\frac{\theta_3K}{2}[\partial_x(\rho^{-1}p_y)+\partial_y(\rho^{-1}p_x)]\\
+&-\theta_4\frac{p_t}{T_0}-\theta_5\frac{p}{T_0^2}
+-\theta_6\frac{p^3}{P_0^2T_0^2}.
+\end{aligned}$$
 Здесь $F_x=K\partial_x(\rho^{-1}p_x)$, $F_y=K\partial_y(\rho^{-1}p_y)$,
 $F_{xy}=K[\partial_x(\rho^{-1}p_y)+\partial_y(\rho^{-1}p_x)]/2$,
 $T_0=1$, $P_0=\max|p_{0,train}|$ фиксируется **по обучающей траектории**
@@ -113,7 +117,17 @@ with np.load(ROOT/'data/well_train_0.npz') as d:
 ''')
     md(r'''## 3. Аналитический benchmark и оценка моментов
 
-$$p=\sum_{i,j=1}^{32}A_{ij}\sin(\pi ix)\sin(\pi jy)
+Полная модель, из которой выбирается структура в однородной среде:
+$$\begin{aligned}
+p_{tt}={}&c^2\theta_1p_{xx}+c^2\theta_2p_{yy}+c^2\theta_3p_{xy}\\
+&-\theta_4\frac{p_t}{T_0}-\theta_5\frac{p}{T_0^2}
+-\theta_6\frac{p^3}{P_0^2T_0^2},\qquad c=0.1.
+\end{aligned}$$
+Структура фиксирует исключённые коэффициенты в нуле; остальные подбираются
+по обучению. Эталонные данные созданы при $\theta^*=(1,1,0,0,0,0)$.
+Следующая формула задаёт **эталон при этих значениях**, а не произвольного кандидата:
+
+$$p_*=\sum_{i,j=1}^{32}A_{ij}\sin(\pi ix)\sin(\pi jy)
 \cos\left(0.1\pi t\sqrt{i^2+j^2}\right).$$
 Коэффициенты опубликованных случаев восстановлены DST-I из поля на 64 узлах.
 Поля сохраняют исходные амплитуды; min/max метаданные не применяются повторно.
